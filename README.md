@@ -2,7 +2,7 @@
 
 🎓 Electronics and Communication Engineering student at Rajalakshmi Engineering College  
 🔧 Interested in Embedded Systems, IoT, and Electronics Projects  
-💡 Currently working with Arduino and ESP32 for hands-on learning  
+💡 Currently working with Linux, Arduino & ESP32 for hands-on learning  
 🚀 Passionate about building real-world solutions through technology  
 
 ## 🔧 Skills
