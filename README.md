@@ -13,9 +13,9 @@
 
 ## 💼 Projects
 - **Obstacle-Aware Rover** – Arduino-based rover with ultrasonic sensor for autonomous navigation.
-- **Automatic Braking System** – A vehicle safety project using Arduino and sensors.
+- **Analog Password System** – A Robust Lock using Just Analog Discrete Components like Op-Amp and Push Buttons.
 - **Dual-Mode Smart Car** - A Car that can Operate in a Manual Mode and can be Switched to Automatic to find it's own Path and Behave Autonomously.
-- **Pathfinder Pro** – A basic satellite tracking concept using sensors and motors *(planned)*
+- **Wireless Quiz Buzzer System** – A 10 Team professional Grade Quiz Buzzer system made for Conducting Quiz Competitions at College Level with Web Server.
 
 > More projects coming soon...
 
