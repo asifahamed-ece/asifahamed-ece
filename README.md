@@ -11,7 +11,7 @@
 ### /* ==== PROFILE ==== */
 
 <details>
-<summary>👤 About Me</summary>
+<summary>[ About Me ]</summary>
 
 ```diff
 - Location:     Tamil Nadu, India
@@ -223,6 +223,70 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ---
 
+### /* ==== PROGRESS ==== */
+
+<p align="center">
+
+```text
+Currently Working On
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+| Project | Status | Description |
+|:--------|:------:|:------------|
+| `ciopt` | 🔨 Building | AI-Powered C Code Complexity Analyzer |
+| `FreeRTOS_Esp32` | 📚 Learning | Mastering FreeRTOS task scheduling |
+| `dotfiles` | ✅ Maintained | Arch Linux rice & terminal config |
+
+```text
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Learning Roadmap
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+| Phase | Goal | Status |
+|:-----:|:-----|:------:|
+| Phase 1 | C & Bare-Metal | ✅ Complete |
+| Phase 2 | FreeRTOS & ESP-IDF | 🔄 In Progress |
+| Phase 3 | Linux Kernel Drivers | 📋 Planned |
+| Phase 4 | RTOS Internals (Zephyr/RTOS) | 📋 Planned |
+
+</p>
+
+---
+
+### /* ==== REPO STRUCTURE ==== */
+
+<details>
+<summary>[ asifahamed-dev Repository ]</summary>
+
+```bash
+asifahamed-dev/
+├── .github/
+│   └── workflows/
+│       └── snake.yml          # Contribution snake generator
+├── output/
+│   └── github-contribution-grid-snake.svg  # Auto-generated
+├── [REC-Quiz-Buzzer-System]/  # ESP32 wireless quiz system
+├── [BareMetal_I2C_Driver]/    # STM32F411 I2C driver (no HAL)
+├── [ciopt]/                   # C code complexity analyzer
+├── [SilvaLink]/               # LoRa/BLE mesh emergency node
+├── [FreeRTOS_Esp32]/          # FreeRTOS learning portfolio
+├── [I2C_Simulator]/           # I2C protocol simulation
+├── [RescuePulse]/             # Edge AI vehicle classification
+├── [QNX_RTOS_Encryption]/     # QNX RTOS cryptography
+├── [embedded-systems-journey]/ # Embedded systems portfolio
+├── [Linux_Kernel_and_Driver_Development]/ # LKM development
+├── [system_programming]/      # Linux systems programming guide
+├── [dotfiles]/                # Arch Linux rice & configs
+├── [sentinel]/                # IoT security framework
+├── [Deep-Learning--Neural-Networks]/ # CSIR internship work
+└── README.md                  # This profile
+```
+</details>
+
+---
+
 ### /* ==== STATS ==== */
 
 <p align="center">
@@ -284,13 +348,9 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 ### /* ==== EOF ==== */
 
 ```diff
-- ┌─[asif@archlinux]─[~/profile]
-- └──╼ $ echo "Thanks for visiting!"
-- Built with C, Linux, and lots of debugging.
-- ┌─[asif@archlinux]─[~/profile]
-- └──╼ $ exit
++ /* Thanks for visiting! */
++ /* Built with C, Linux, and lots of debugging. */
 + [EOF] Connection closed by foreign host.
-+ [asif@archlinux] ~/profile $ 
 ```
 
 <p align="center">
