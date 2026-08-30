@@ -3,13 +3,13 @@
 <!-- Hacker/Developer Theme | Matrix-Inspired Aesthetic -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000 01100001 01100011 01101011 01100101 01100110 01100001 01100110 01100001 01100101 01110010" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
 </p>
 
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Bust%20in%20Silhouette.png" alt="Profile" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Bust%20in%20Silhouette.png" alt="Profile" width="32" height="32" style="vertical-align: middle;" />
   <code>$ whoami</code>
 </h2>
 
@@ -29,7 +29,7 @@
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="32" style="vertical-align: middle;" />
   <code>$ ls ./projects/</code>
 </h2>
 
@@ -41,7 +41,7 @@
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" /> <code>[REC-Quiz-Buzzer-System]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" style="vertical-align: middle;" /> <code>[REC-Quiz-Buzzer-System]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>ESP32</code> <code>ESP-NOW</code> <code>WebSockets</code> <code>C++</code>
 </p>
@@ -53,7 +53,7 @@ A wireless, real-time quiz buzzer system with <strong>microsecond precision</str
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Electric%20Plug.png" width="20" height="20" /> <code>[BareMetal_I2C_Driver]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Electric%20Plug.png" width="20" height="20" style="vertical-align: middle;" /> <code>[BareMetal_I2C_Driver]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>STM32F411</code> <code>C</code> <code>Register-Level</code>
 </p>
@@ -67,7 +67,7 @@ A from-scratch I2C driver for SSD1306 OLED displays on STM32F411 Black Pill. <st
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="20" height="20" /> <code>[ciopt]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Magnifying%20Glass%20Tilted%20Left.png" width="20" height="20" style="vertical-align: middle;" /> <code>[ciopt]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C</code> <code>Tree-sitter</code> <code>Static Analysis</code>
 </p>
@@ -79,7 +79,7 @@ CiOpt — AI-Powered C Code Complexity and Optimization Engine. Detects Big-O co
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" /> <code>[SilvaLink]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" style="vertical-align: middle;" /> <code>[SilvaLink]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>ESP32</code> <code>LoRa</code> <code>BLE</code> <code>Low-Power</code>
 </p>
@@ -93,7 +93,7 @@ Bidirectional mesh emergency node with a duty-cycled low-power FSM. Sub-1800 INR
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel/Rocket.png" width="20" height="20" /> <code>[FreeRTOS_Esp32]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="20" height="20" style="vertical-align: middle;" /> <code>[FreeRTOS_Esp32]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>FreeRTOS</code> <code>ESP-IDF</code> <code>ESP32</code> <code>C</code>
 </p>
@@ -105,7 +105,7 @@ A structured learning journey and project portfolio documenting mastery of FreeR
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" height="20" /> <code>[I2C_Simulator]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" height="20" style="vertical-align: middle;" /> <code>[I2C_Simulator]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>JavaScript</code> <code>HTML/CSS</code> <code>Simulation</code>
 </p>
@@ -119,7 +119,7 @@ An interactive simulation of the Inter Integrated Circuit Protocol (I2C) for con
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hospital.png" width="20" height="20" /> <code>[RescuePulse]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Ambulance.png" width="20" height="20" style="vertical-align: middle;" /> <code>[RescuePulse]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C++</code> <code>Edge AI</code> <code>Machine Learning</code>
 </p>
@@ -131,7 +131,7 @@ Edge AI based Emergency Vehicle Classification using machine learning. On-device
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="20" height="20" /> <code>[QNX_RTOS_Encryption]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Locked.png" width="20" height="20" style="vertical-align: middle;" /> <code>[QNX_RTOS_Encryption]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C</code> <code>QNX RTOS</code> <code>Cryptography</code>
 </p>
@@ -145,7 +145,7 @@ A QNX RTOS encryption implementation focusing on secure communication primitives
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel/Rocket.png" width="20" height="20" /> <code>[embedded-systems-journey]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="20" height="20" style="vertical-align: middle;" /> <code>[embedded-systems-journey]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C</code> <code>Embedded Systems</code> <code>IoT</code>
 </p>
@@ -157,7 +157,7 @@ A curated portfolio of hands-on projects and learning logs in embedded systems a
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Linux%20Penguin.png" width="20" height="20" /> <code>[Linux_Kernel_and_Driver_Development]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Penguin.png" width="20" height="20" style="vertical-align: middle;" /> <code>[Linux_Kernel_and_Driver_Development]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C</code> <code>Linux Kernel</code> <code>LKMs</code>
 </p>
@@ -171,7 +171,7 @@ My journey into Linux Kernel Development, Loadable Kernel Modules (LKMs), and Ch
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" width="20" height="20" /> <code>[system_programming]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" width="20" height="20" style="vertical-align: middle;" /> <code>[system_programming]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C</code> <code>Linux</code> <code>Systems</code>
 </p>
@@ -183,7 +183,7 @@ A comprehensive technical guide covering fundamental concepts of Linux System Pr
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" height="20" /> <code>[dotfiles]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="20" height="20" style="vertical-align: middle;" /> <code>[dotfiles]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>Shell</code> <code>Arch Linux</code> <code>Bash</code>
 </p>
@@ -197,7 +197,7 @@ My first Arch Linux Rice — curated configuration files and dotfiles for a term
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="20" height="20" /> <code>[sentinel]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="20" height="20" style="vertical-align: middle;" /> <code>[sentinel]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>C++</code> <code>Security</code> <code>Embedded</code>
 </p>
@@ -209,7 +209,7 @@ A lightweight security-focused embedded framework for IoT devices featuring secu
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Brain.png" width="20" height="20" /> <code>[Deep-Learning--Neural-Networks]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Brain.png" width="20" height="20" style="vertical-align: middle;" /> <code>[Deep-Learning--Neural-Networks]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>Python</code> <code>Jupyter</code> <code>Neural Networks</code>
 </p>
@@ -225,7 +225,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" style="vertical-align: middle;" />
   <code>$ cat /etc/tech-stack.conf</code>
 </h2>
 
@@ -266,7 +266,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 <!--
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel/Rocket.png" alt="Progress" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Progress" width="32" height="32" style="vertical-align: middle;" />
   <code>$ ./progress.sh --status</code>
 </h2>
 
@@ -303,7 +303,7 @@ Learning Roadmap
 -->
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" style="vertical-align: middle;" />
   <code>$ tree . --dirsfirst</code>
 </h2>
 
@@ -338,18 +338,23 @@ asifahamed-dev/
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
   <code>$ ./stats.sh --live</code>
 </h2>
 
+<!--
+  SELFHOST-STATS: github-readme-stats.vercel.app is currently DOWN (HTTP 503 DEPLOYMENT_PAUSED for everyone).
+  To self-host, deploy deploy/github-readme-stats to Vercel (see deploy/DEPLOY.md), then replace the
+  placeholder domain "github-readme-stats-asif.vercel.app" below with your real deployment URL.
+-->
 <p align="center">
   <table>
     <tr>
       <td>
-        <img src="https://github-readme-stats.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
+        <img src="https://github-readme-stats-asif.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
       </td>
       <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
+        <img src="https://github-readme-stats-asif.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
       </td>
     </tr>
     <tr>
@@ -361,27 +366,37 @@ asifahamed-dev/
 </p>
 
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
   <code>$ ./trophies.sh</code>
 </h3>
 
+<!--
+  SELFHOST-TROPHIES: github-profile-trophy.vercel.app is currently DOWN (HTTP 402 DEPLOYMENT_DISABLED for everyone).
+  To self-host, deploy deploy/github-profile-trophy to Vercel (see deploy/DEPLOY.md), then replace the
+  placeholder domain "github-profile-trophy-asif.vercel.app" below with your real deployment URL.
+-->
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-asif.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel/Fire.png" alt="Commit Consistency" width="28" height="28" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" style="vertical-align: middle;" />
   <code>$ git log --graph --oneline</code>
 </h3>
 
+<!--
+  SELFHOST-GRAPH: github-readme-activity-graph.vercel.app is currently DOWN (HTTP 402 DEPLOYMENT_DISABLED for everyone).
+  To self-host, deploy deploy/github-readme-activity-graph to Vercel (see deploy/DEPLOY.md), then replace the
+  placeholder domain "github-readme-activity-graph-asif.vercel.app" below with your real deployment URL.
+-->
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
+  <img src="https://github-readme-activity-graph-asif.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
 </p>
 
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" />
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" style="vertical-align: middle;" />
   <code>$ ./contact.sh --connect</code>
 </h2>
 

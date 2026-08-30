@@ -1,0 +1,9 @@
+[submodule "deploy/github-readme-stats"]
+	path = deploy/github-readme-stats
+	url = https://github.com/anuraghazra/github-readme-stats.git
+[submodule "deploy/github-readme-activity-graph"]
+	path = deploy/github-readme-activity-graph
+	url = https://github.com/Ashutosh00710/github-readme-activity-graph.git
+[submodule "deploy/github-profile-trophy"]
+	path = deploy/github-profile-trophy
+	url = https://github.com/ryo-ma/github-profile-trophy.git
