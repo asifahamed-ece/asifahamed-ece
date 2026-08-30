@@ -43,8 +43,9 @@ def main(path: str) -> None:
         text_parts.append(f'<text class="snkcnt snkcnt{i}">{i}</text>')
 
     overlay_css = (
-        ".snkcnt{font:700 11px 'Fira Code',Consolas,monospace;fill:#0b1f10;"
-        "text-anchor:end;opacity:0;animation:none 48700ms linear infinite}"
+        ".snkcnt{font:700 12px 'Fira Code',Consolas,monospace;"
+        "text-anchor:end;opacity:0;animation:none 48700ms linear infinite;"
+        "fill:#00FF9D;filter:url(#snkcntglow)}"
         + "".join(
             f".snkcnt.snkcnt{i}{{animation-name:snkcnt{i}}}" for i in range(total + 1)
         )
@@ -52,11 +53,19 @@ def main(path: str) -> None:
     )
 
     svg = svg.replace("</style>", overlay_css + "</style>", 1)
-    # Right end of the green bar (bar rects end at x~848.6, baseline y~154)
+    # Right end of the green bar (bar rects end at x~848.6, y=144..156).
+    # A dark badge with a neon-green border sits behind the glowing numbers so
+    # they stay readable on any background (GitHub light/dark).
     counter = (
-        '<g transform="translate(848.6,154)">'
+        '<defs><filter id="snkcntglow" x="-60%" y="-60%" width="220%" height="220%">'
+        '<feGaussianBlur stdDeviation="2" result="b"/>'
+        '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/>'
+        '<feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
+        '<g transform="translate(848.6,144)">'
+        '<rect x="-40" y="-3" width="40" height="18" rx="4" ry="4" '
+        'fill="#000000" stroke="#00FF9D" stroke-width="1"/>'
         + "".join(
-            f'<text class="snkcnt snkcnt{i}" x="0" y="0">{i}</text>'
+            f'<text class="snkcnt snkcnt{i}" x="-6" y="12">{i}</text>'
             for i in range(total + 1)
         )
         + "</g>"
