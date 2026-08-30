@@ -36,7 +36,7 @@
 
   <!-- About Me lines -->
   <text x="24" y="84" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Location :</tspan> Tamil Nadu, India</text>
-  <text x="24" y="112" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Education:</tspan> B.E. ECE @ Rajalakshmi Engineering College (CGPA: 8.3)</text>
+  <text x="24" y="112" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Education:</tspan> B.E. ECE @ Rajalakshmi Engineering College</text>
   <text x="24" y="140" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Focus    :</tspan> Bare-metal firmware | Device drivers | FreeRTOS</text>
   <text x="24" y="168" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Wireless :</tspan> ESP-NOW | LoRa | BLE | WiFi</text>
   <text x="24" y="196" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Status   :</tspan> Building low-power embedded systems</text>
