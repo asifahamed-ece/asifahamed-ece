@@ -9,7 +9,7 @@
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Detective.png" alt="Profile" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f464/128.gif" alt="Profile" width="32" height="32" />
   <code>$ whoami</code>
 </h2>
 
@@ -29,162 +29,194 @@
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Files/Folder.png" alt="Projects" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f40e/128.gif" alt="Projects" width="32" height="32" />
   <code>$ ls ./projects/</code>
 </h2>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
+</p>
+
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[REC-Quiz-Buzzer-System]`
-**Stack:** `ESP32` `ESP-NOW` `WebSockets` `C++`
-
-A wireless, real-time quiz buzzer system with **microsecond precision** timing and a live web dashboard. Professional features for academic competitions.
-
-[Repository →](https://github.com/asifahamed-ece/REC-Quiz-Buzzer-System)
+<h4>📡 <code>[REC-Quiz-Buzzer-System]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>ESP32</code> <code>ESP-NOW</code> <code>WebSockets</code> <code>C++</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
+A wireless, real-time quiz buzzer system with <strong>microsecond precision</strong> timing and a live web dashboard. Professional features for academic competitions.
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/REC-Quiz-Buzzer-System">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[BareMetal_I2C_Driver]`
-**Stack:** `STM32F411` `C` `Register-Level`
-
-A from-scratch I2C driver for SSD1306 OLED displays on STM32F411 Black Pill. **No HAL**. Direct register configuration from the ARM Cortex-M4 reference manual.
-
-[Repository →](https://github.com/asifahamed-ece/BareMetal_I2C_Driver)
+<h4>🔌 <code>[BareMetal_I2C_Driver]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>STM32F411</code> <code>C</code> <code>Register-Level</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
+A from-scratch I2C driver for SSD1306 OLED displays on STM32F411 Black Pill. <strong>No HAL</strong>. Direct register configuration from the ARM Cortex-M4 reference manual.
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/BareMetal_I2C_Driver">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[ciopt]`
-**Stack:** `C` `Tree-sitter` `Static Analysis`
-
+<h4>🔍 <code>[ciopt]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C</code> <code>Tree-sitter</code> <code>Static Analysis</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 CiOpt — AI-Powered C Code Complexity and Optimization Engine. Detects Big-O complexity, unsafe memory ops, and dead code.
-
-[Repository →](https://github.com/asifahamed-ece/ciopt)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/ciopt">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[SilvaLink]`
-**Stack:** `ESP32` `LoRa` `BLE` `Low-Power`
-
+<h4>📡 <code>[SilvaLink]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>ESP32</code> <code>LoRa</code> <code>BLE</code> <code>Low-Power</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 Bidirectional mesh emergency node with a duty-cycled low-power FSM. Sub-1800 INR per node. (Makeathon 7.0 - 2nd Place Hardware)
-
-[Repository →](https://github.com/asifahamed-ece/SilvaLink)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/SilvaLink">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[FreeRTOS_Esp32]`
-**Stack:** `FreeRTOS` `ESP-IDF` `ESP32` `C`
-
+<h4>🚀 <code>[FreeRTOS_Esp32]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>FreeRTOS</code> <code>ESP-IDF</code> <code>ESP32</code> <code>C</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 A structured learning journey and project portfolio documenting mastery of FreeRTOS on the ESP32. Bare-metal concepts, task scheduling, IPC, and real-world embedded applications.
-
-[Repository →](https://github.com/asifahamed-ece/FreeRTOS_Esp32)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/FreeRTOS_Esp32">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[I2C_Simulator]`
-**Stack:** `JavaScript` `HTML/CSS` `Simulation`
-
+<h4>💻 <code>[I2C_Simulator]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>JavaScript</code> <code>HTML/CSS</code> <code>Simulation</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 An interactive simulation of the Inter Integrated Circuit Protocol (I2C) for conceptual clarity. Visualizes start/stop conditions, ACK/NACK, and data transfer.
-
-[Repository →](https://github.com/asifahamed-ece/I2C_Simulator)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/I2C_Simulator">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[RescuePulse]`
-**Stack:** `C++` `Edge AI` `Machine Learning`
-
+<h4>🏥 <code>[RescuePulse]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C++</code> <code>Edge AI</code> <code>Machine Learning</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 Edge AI based Emergency Vehicle Classification using machine learning. On-device inference for real-time detection.
-
-[Repository →](https://github.com/asifahamed-ece/RescuePulse)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/RescuePulse">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[QNX_RTOS_Encryption]`
-**Stack:** `C` `QNX RTOS` `Cryptography`
-
+<h4>🔐 <code>[QNX_RTOS_Encryption]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C</code> <code>QNX RTOS</code> <code>Cryptography</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 A QNX RTOS encryption implementation focusing on secure communication primitives for real-time systems.
-
-[Repository →](https://github.com/asifahamed-ece/QNX_RTOS_Encryption)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/QNX_RTOS_Encryption">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[embedded-systems-journey]`
-**Stack:** `C` `Embedded Systems` `IoT`
-
+<h4>⚡ <code>[embedded-systems-journey]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C</code> <code>Embedded Systems</code> <code>IoT</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 A curated portfolio of hands-on projects and learning logs in embedded systems and IoT. Demonstrates C programming, microcontroller development, and wireless communication.
-
-[Repository →](https://github.com/asifahamed-ece/embedded-systems-journey)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/embedded-systems-journey">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[Linux_Kernel_and_Driver_Development]`
-**Stack:** `C` `Linux Kernel` `LKMs`
-
+<h4>🐧 <code>[Linux_Kernel_and_Driver_Development]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C</code> <code>Linux Kernel</code> <code>LKMs</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 My journey into Linux Kernel Development, Loadable Kernel Modules (LKMs), and Character Drivers.
-
-[Repository →](https://github.com/asifahamed-ece/Linux_Kernel_and_Driver_Development)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/Linux_Kernel_and_Driver_Development">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[system_programming]`
-**Stack:** `C` `Linux` `Systems`
-
+<h4>⚙️ <code>[system_programming]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C</code> <code>Linux</code> <code>Systems</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 A comprehensive technical guide covering fundamental concepts of Linux System Programming: file operations, process management, thread synchronization, and IPC.
-
-[Repository →](https://github.com/asifahamed-ece/system_programming)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/system_programming">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[dotfiles]`
-**Stack:** `Shell` `Arch Linux` `Bash`
-
+<h4>🖥️ <code>[dotfiles]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>Shell</code> <code>Arch Linux</code> <code>Bash</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 My first Arch Linux Rice — curated configuration files and dotfiles for a terminal-centric development environment.
-
-[Repository →](https://github.com/asifahamed-ece/dotfiles)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/dotfiles">Repository →</a></p>
 
 </td>
 </tr>
 <tr>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[sentinel]`
-**Stack:** `C++` `Security` `Embedded`
-
+<h4>🛡️ <code>[sentinel]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>C++</code> <code>Security</code> <code>Embedded</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 A lightweight security-focused embedded framework for IoT devices featuring secure boot, encrypted communications, and intrusion detection.
-
-[Repository →](https://github.com/asifahamed-ece/sentinel)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/sentinel">Repository →</a></p>
 
 </td>
-<td width="50%" valign="top">
+<td width="50%" valign="top" style="padding: 12px;">
 
-### `[Deep-Learning--Neural-Networks]`
-**Stack:** `Python` `Jupyter` `Neural Networks`
-
+<h4>🧠 <code>[Deep-Learning--Neural-Networks]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>Python</code> <code>Jupyter</code> <code>Neural Networks</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
 Work done during my Internship at CSIR, Chennai. Neural network experiments and implementations.
-
-[Repository →](https://github.com/asifahamed-ece/Deep-Learning--Neural-Networks)
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/Deep-Learning--Neural-Networks">Repository →</a></p>
 
 </td>
 </tr>
@@ -193,7 +225,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f527/128.gif" alt="Tech Stack" width="32" height="32" />
   <code>$ cat /etc/tech-stack.conf</code>
 </h2>
 
@@ -233,7 +265,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Progress" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f680/128.gif" alt="Progress" width="32" height="32" />
   <code>$ ./progress.sh --status</code>
 </h2>
 
@@ -268,7 +300,7 @@ Learning Roadmap
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Repo Structure" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f4c1/128.gif" alt="Repo Structure" width="32" height="32" />
   <code>$ tree . --dirsfirst</code>
 </h2>
 
@@ -303,7 +335,7 @@ asifahamed-dev/
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f4ca/128.gif" alt="Stats" width="32" height="32" />
   <code>$ ./stats.sh --live</code>
 </h2>
 
@@ -326,7 +358,7 @@ asifahamed-dev/
 </p>
 
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Awards/Trophy.png" alt="Trophies" width="28" height="28" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f3c6/128.gif" alt="Trophies" width="28" height="28" />
   <code>$ ./trophies.sh</code>
 </h3>
 
@@ -335,7 +367,7 @@ asifahamed-dev/
 </p>
 
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f525/128.gif" alt="Commit Consistency" width="28" height="28" />
   <code>$ git log --graph --oneline</code>
 </h3>
 
@@ -346,7 +378,7 @@ asifahamed-dev/
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" />
+  <img src="https://fonts.gstatic.com/s/notoemoji/15.0.0_1f44b/128.gif" alt="Contact" width="32" height="32" />
   <code>$ ./contact.sh --connect</code>
 </h2>
 
@@ -362,17 +394,6 @@ asifahamed-dev/
   <a href="https://github.com/asifahamed-ece">
     <img src="https://img.shields.io/badge/GitHub-asifahamed--ece-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-</p>
-
----
-
-<h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Snake.png" alt="Snake" width="32" height="32" />
-  <code>$ ./contribution-snake.sh</code>
-</h2>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
 </p>
 
 ---
