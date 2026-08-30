@@ -14,7 +14,7 @@
 </h2>
 
 <details>
-<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg" alt="$ cat about.txt" height="22" style="vertical-align: middle;" /></summary>
+<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg" alt="$ cat about.txt" style="vertical-align: middle;" /></summary>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg" alt="About Me" />
@@ -335,7 +335,7 @@ Learning Roadmap
 </h2>
 
 <details>
-<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg" alt="$ ls -la asifahamed-dev/" height="22" style="vertical-align: middle;" /></summary>
+<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg" alt="$ ls -la asifahamed-dev/" style="vertical-align: middle;" /></summary>
 
 ```bash
 asifahamed-dev/
