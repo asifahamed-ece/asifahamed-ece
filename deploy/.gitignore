@@ -1,0 +1,7 @@
+# Prevent committing real tokens/secrets
+.env
+.env.*
+!.env.example
+!.env.stats.example
+!.env.graph.example
+!.env.trophy.example
