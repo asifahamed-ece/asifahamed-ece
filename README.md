@@ -28,14 +28,46 @@
 
 ---
 
-<h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ ls ./projects/</code>
-</h2>
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
 </p>
+
+---
+
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
+  <code>$ ./stats.sh --live</code>
+</h2>
+
+<!--
+  SELFHOST-STATS: github-readme-stats.vercel.app is currently DOWN (HTTP 503 DEPLOYMENT_PAUSED for everyone).
+  To self-host, deploy deploy/github-readme-stats to Vercel (see deploy/DEPLOY.md), then replace the
+  placeholder domain "github-readme-stats-asif.vercel.app" below with your real deployment URL.
+-->
+<p align="center">
+  <table>
+    <tr>
+      <td>
+        <img src="https://github-readme-stats-asif.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
+      </td>
+      <td>
+        <img src="https://github-readme-stats-asif.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D" alt="Commit Streak" />
+      </td>
+    </tr>
+  </table>
+</p>
+
+---
+
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="40" style="vertical-align: middle;" />
+  <code>$ ls ./projects/</code>
+</h2>
 
 <table>
 <tr>
@@ -336,34 +368,6 @@ asifahamed-dev/
 </details>
 
 ---
-
-<h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ ./stats.sh --live</code>
-</h2>
-
-<!--
-  SELFHOST-STATS: github-readme-stats.vercel.app is currently DOWN (HTTP 503 DEPLOYMENT_PAUSED for everyone).
-  To self-host, deploy deploy/github-readme-stats to Vercel (see deploy/DEPLOY.md), then replace the
-  placeholder domain "github-readme-stats-asif.vercel.app" below with your real deployment URL.
--->
-<p align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github-readme-stats-asif.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
-      </td>
-      <td>
-        <img src="https://github-readme-stats-asif.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">
-        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D" alt="Commit Streak" />
-      </td>
-    </tr>
-  </table>
-</p>
 
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
