@@ -8,7 +8,10 @@
 
 ---
 
-### /* ==== PROFILE ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Detective.png" alt="Profile" width="32" height="32" />
+  <code>$ whoami</code>
+</h2>
 
 <details>
 <summary>[ About Me ]</summary>
@@ -25,7 +28,10 @@
 
 ---
 
-### /* ==== PROJECTS ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Files/Folder.png" alt="Projects" width="32" height="32" />
+  <code>$ ls ./projects/</code>
+</h2>
 
 <table>
 <tr>
@@ -186,7 +192,10 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ---
 
-### /* ==== TECH STACK ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" />
+  <code>$ cat /etc/tech-stack.conf</code>
+</h2>
 
 #### Microcontrollers & Platforms
 <p align="center">
@@ -212,18 +221,21 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 #### Development Tools
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/vscode/vscode-original.svg" width="48" height="48" alt="VS Code" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="48" height="48" alt="VS Code" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/linux/linux-original.svg" width="48" height="48" alt="Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="48" height="48" alt="Linux" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/git/git-original.svg" width="48" height="48" alt="Git" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" height="48" alt="Git" />
   &nbsp;
   <img src="https://cdn.simpleicons.org/platformio/FF7B00" width="48" height="48" alt="PlatformIO" />
 </p>
 
 ---
 
-### /* ==== PROGRESS ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Progress" width="32" height="32" />
+  <code>$ ./progress.sh --status</code>
+</h2>
 
 <p align="center">
 
@@ -255,7 +267,10 @@ Learning Roadmap
 
 ---
 
-### /* ==== REPO STRUCTURE ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Repo Structure" width="32" height="32" />
+  <code>$ tree . --dirsfirst</code>
+</h2>
 
 <details>
 <summary>[ asifahamed-dev Repository ]</summary>
@@ -287,7 +302,10 @@ asifahamed-dev/
 
 ---
 
-### /* ==== STATS ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" />
+  <code>$ ./stats.sh --live</code>
+</h2>
 
 <p align="center">
   <table>
@@ -307,19 +325,30 @@ asifahamed-dev/
   </table>
 </p>
 
-### Trophies
+<h3 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Awards/Trophy.png" alt="Trophies" width="28" height="28" />
+  <code>$ ./trophies.sh</code>
+</h3>
+
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
-### Commit Consistency
+<h3 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" />
+  <code>$ git log --graph --oneline</code>
+</h3>
+
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
 </p>
 
 ---
 
-### /* ==== CONTACT ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" />
+  <code>$ ./contact.sh --connect</code>
+</h2>
 
 <p align="center">
   <a href="mailto:asifahamed670@gmail.com">
@@ -337,7 +366,10 @@ asifahamed-dev/
 
 ---
 
-### /* ==== CONTRIBUTION SNAKE ==== */
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Animals/Snake.png" alt="Snake" width="32" height="32" />
+  <code>$ ./contribution-snake.sh</code>
+</h2>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
@@ -345,7 +377,9 @@ asifahamed-dev/
 
 ---
 
-### /* ==== EOF ==== */
+<h2 align="center">
+  <code>$ exit 0</code>
+</h2>
 
 ```diff
 + /* Thanks for visiting! */
