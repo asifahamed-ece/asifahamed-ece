@@ -260,9 +260,9 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="48" height="48" alt="Arduino" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/stmicroelectronics/03234B" width="48" height="48" alt="STM32" />
+  <img src="https://cdn.simpleicons.org/stmicroelectronics/03234B/FFFFFF" width="48" height="48" alt="STM32" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/nxp/000000" width="48" height="48" alt="NXP" />
+  <img src="https://cdn.simpleicons.org/nxp/000000/FFFFFF" width="48" height="48" alt="NXP" />
   &nbsp;
   <img src="https://cdn.simpleicons.org/espressif/E7352C" width="48" height="48" alt="ESP32" />
 </p>
@@ -370,12 +370,12 @@ asifahamed-dev/
 </h3>
 
 <!--
-  SELFHOST-TROPHIES: github-profile-trophy.vercel.app is currently DOWN (HTTP 402 DEPLOYMENT_DISABLED for everyone).
-  To self-host, deploy deploy/github-profile-trophy to Vercel (see deploy/DEPLOY.md), then replace the
-  placeholder domain "github-profile-trophy-asif.vercel.app" below with your real deployment URL.
+  SELFHOST-TROPHIES: The canonical github-profile-trophy.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED).
+  Using a currently-working public mirror (github-profile-trophy-orcin-eta.vercel.app) as a temporary stopgap below.
+  DURABLE FIX: deploy your own instance (deploy/github-profile-trophy, see deploy/DEPLOY.md) and replace the mirror URL.
 -->
 <p align="center">
-  <img src="https://github-profile-trophy-asif.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-orcin-eta.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
 <h3 align="center">
@@ -384,9 +384,11 @@ asifahamed-dev/
 </h3>
 
 <!--
-  SELFHOST-GRAPH: github-readme-activity-graph.vercel.app is currently DOWN (HTTP 402 DEPLOYMENT_DISABLED for everyone).
-  To self-host, deploy deploy/github-readme-activity-graph to Vercel (see deploy/DEPLOY.md), then replace the
-  placeholder domain "github-readme-activity-graph-asif.vercel.app" below with your real deployment URL.
+  SELFHOST-GRAPH: The canonical github-readme-activity-graph.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED),
+  and NO public mirror is currently available (I verified several candidates return 404). This card shows a broken image
+  until you deploy your own instance.
+  DURABLE FIX: run "vercel deploy --prod --env TOKEN=<pat>" inside deploy/github-readme-activity-graph (see deploy/DEPLOY.md),
+  then replace the placeholder domain below with your real URL.
 -->
 <p align="center">
   <img src="https://github-readme-activity-graph-asif.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />

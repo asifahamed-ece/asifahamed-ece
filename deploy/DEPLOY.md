@@ -73,6 +73,10 @@ vercel alias <deployment-url> github-profile-trophy-asif
 ```
 The resulting base URL is used for the **trophies** card.
 
+> **Stopgap:** until you self-host, the README currently points at a working public mirror
+> (`github-profile-trophy-orcin-eta.vercel.app`). It renders but is a third-party deployment
+> that may go offline at any time — prefer your own instance for reliability.
+
 ## Point the README at your self-hosted instances
 After your first deploy, replace the placeholder domains in `README.md` with the real
 Vercel URLs:
