@@ -1,41 +1,31 @@
 <!-- GitHub Profile README - Asif Ahamed -->
 <!-- Embedded Systems Developer | Bare-Metal C Programmer | IoT Engineer -->
-<!-- Terminal/Rice Style | Arch Linux Inspired -->
+<!-- Hacker/Developer Theme | Matrix-Inspired Aesthetic -->
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3500&pause=1000&color=00FF9D&background=0D111700&center=true&vCenter=true&width=700&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware" alt="Typing SVG" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/asifahamed-ece">
-    <img src="https://img.shields.io/github/followers/asifahamed-ece?label=Followers&style=for-the-badge&color=00FF9D&logo=github&logoColor=00FF9D" alt="GitHub Followers" />
-  </a>
-  <a href="https://komarev.com/ghpvc/?username=asifahamed-ece">
-    <img src="https://komarev.com/ghpvc/?username=asifahamed-ece&label=Profile+Views&style=for-the-badge&color=00FF9D" alt="Profile Views" />
-  </a>
-  <a href="https://github.com/asifahamed-ece?tab=repositories&sort=stargazers">
-    <img src="https://img.shields.io/github/stars/asifahamed-ece?style=for-the-badge&color=00FF9D&logo=github&logoColor=00FF9D" alt="Total Stars" />
-  </a>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000 01100001 01100011 01101011 01100101 01100110 01100001 01100110 01100001 01100101 01110010" alt="Typing SVG" />
 </p>
 
 ---
 
-```text
-┌─[asif@archlinux]─[~/profile]
-└──╼ $ whoami
-Asif Ahamed S
-┌─[asif@archlinux]─[~/profile]
-└──╼ $ cat /etc/profile/info
-┌── Location:     Tamil Nadu, India
-├── Education:    B.E. ECE @ Rajalakshmi Engineering College (CGPA: 8.3)
-├── Focus:        Bare-metal firmware | Device drivers | FreeRTOS
-├── Wireless:     ESP-NOW | LoRa | BLE | WiFi
-└── Status:       Building low-power embedded systems
+### /* ==== PROFILE ==== */
+
+<details>
+<summary>👤 About Me</summary>
+
+```diff
+- Location:     Tamil Nadu, India
++ Education:    B.E. ECE @ Rajalakshmi Engineering College (CGPA: 8.3)
++ Focus:        Bare-metal firmware | Device drivers | FreeRTOS
++ Wireless:     ESP-NOW | LoRa | BLE | WiFi
++ Status:       Building low-power embedded systems
++ Motto:        "Debugging is just aggressive learning."
 ```
+</details>
 
 ---
 
-## `>>` Projects
+### /* ==== PROJECTS ==== */
 
 <table>
 <tr>
@@ -176,6 +166,10 @@ My first Arch Linux Rice — curated configuration files and dotfiles for a term
 ### `[sentinel]`
 **Stack:** `C++` `Security` `Embedded`
 
+A lightweight security-focused embedded framework for IoT devices featuring secure boot, encrypted communications, and intrusion detection.
+
+[Repository →](https://github.com/asifahamed-ece/sentinel)
+
 </td>
 <td width="50%" valign="top">
 
@@ -192,9 +186,9 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ---
 
-## `>>` Tech Stack
+### /* ==== TECH STACK ==== */
 
-### Microcontrollers & Platforms
+#### Microcontrollers & Platforms
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="48" height="48" alt="Arduino" />
   &nbsp;
@@ -205,7 +199,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
   <img src="https://cdn.simpleicons.org/arm/0091BD" width="48" height="48" alt="STM32" />
 </p>
 
-### Languages
+#### Languages
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="48" height="48" alt="C" />
   &nbsp;
@@ -216,34 +210,34 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" width="48" height="48" alt="Bash" />
 </p>
 
-### Development Tools
+#### Development Tools
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="48" height="48" alt="VS Code" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/vscode/vscode-original.svg" width="48" height="48" alt="VS Code" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="48" height="48" alt="Linux" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/linux/linux-original.svg" width="48" height="48" alt="Linux" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" height="48" alt="Git" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicons/icons/git/git-original.svg" width="48" height="48" alt="Git" />
   &nbsp;
   <img src="https://cdn.simpleicons.org/platformio/FF7B00" width="48" height="48" alt="PlatformIO" />
 </p>
 
 ---
 
-## `>>` Stats
+### /* ==== STATS ==== */
 
 <p align="center">
   <table>
     <tr>
       <td>
-        <img src="https://github-readme-stats.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
+        <img src="https://github-readme-stats.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
       </td>
       <td>
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
       </td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=0D1117&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D" alt="Commit Streak" />
+        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D" alt="Commit Streak" />
       </td>
     </tr>
   </table>
@@ -256,12 +250,12 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ### Commit Consistency
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=0D1117&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
 </p>
 
 ---
 
-## `>>` Contact
+### /* ==== CONTACT ==== */
 
 <p align="center">
   <a href="mailto:asifahamed670@gmail.com">
@@ -279,7 +273,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ---
 
-## `>>` Contribution Snake
+### /* ==== CONTRIBUTION SNAKE ==== */
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
@@ -287,12 +281,16 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 ---
 
-```text
-┌─[asif@archlinux]─[~/profile]
-└──╼ $ echo "Thanks for visiting!"
-Built with C, Linux, and lots of debugging.
-┌─[asif@archlinux]─[~/profile]
-└──╼ $ exit
+### /* ==== EOF ==== */
+
+```diff
+- ┌─[asif@archlinux]─[~/profile]
+- └──╼ $ echo "Thanks for visiting!"
+- Built with C, Linux, and lots of debugging.
+- ┌─[asif@archlinux]─[~/profile]
+- └──╼ $ exit
++ [EOF] Connection closed by foreign host.
++ [asif@archlinux] ~/profile $ 
 ```
 
 <p align="center">

@@ -8,8 +8,6 @@ on:
 jobs:
   generate-snake:
     runs-on: ubuntu-latest
-    outputs:
-      path: ${{ steps.snake.outputs.svgPath }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,8 +20,9 @@ jobs:
         id: snake
         uses: Platane/snk@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          svg_path: output/github-contribution-grid-snake.svg
+          github_user_name: asifahamed-ece
+          outputs: |
+            output/github-contribution-grid-snake.svg
 
       - name: Commit and push snake
         run: |
