@@ -22,8 +22,8 @@ jobs:
         id: snake
         uses: Platane/snk@v3
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          svg-path: output/github-contribution-grid-snake.svg
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          svg_path: output/github-contribution-grid-snake.svg
 
       - name: Commit and push snake
         run: |
