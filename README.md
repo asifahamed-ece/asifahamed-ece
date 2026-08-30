@@ -10,28 +10,28 @@
 
 <h2 align="center">
   <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ whoami</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
 </h2>
 
 <details>
 <summary>[ About Me ]</summary>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg" alt="About Me" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/about-glow.svg" alt="About Me" />
 </p>
 </details>
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
 </p>
 
 ---
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ ./stats.sh --live</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
 </h2>
 
 <!--
@@ -61,7 +61,7 @@
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="40" style="vertical-align: middle;" />
-  <code>$ ls ./projects/</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-projects-glow.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
 </h2>
 
 <table>
@@ -253,7 +253,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ cat /etc/tech-stack.conf</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-techstack-glow.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
 </h2>
 
 #### Microcontrollers & Platforms
@@ -331,14 +331,14 @@ Learning Roadmap
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ tree . --dirsfirst</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-tree-glow.svg" alt="$ tree . --dirsfirst" style="vertical-align: middle;" />
 </h2>
 
 <details>
-<summary>[ asifahamed-dev Repository ]</summary>
+<summary>[ asifahamed-ece Repository ]</summary>
 
 ```bash
-asifahamed-dev/
+asifahamed-ece/
 ├── .github/
 │   └── workflows/
 │       └── snake.yml          # Contribution snake generator
@@ -366,7 +366,7 @@ asifahamed-dev/
 
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
-  <code>$ ./trophies.sh</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-trophies-glow.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
 </h3>
 
 <!--
@@ -380,25 +380,24 @@ asifahamed-dev/
 
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" style="vertical-align: middle;" />
-  <code>$ git log --graph --oneline</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-graph-glow.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
 </h3>
 
 <!--
-  SELFHOST-GRAPH: The canonical github-readme-activity-graph.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED),
-  and NO public mirror is currently available (I verified several candidates return 404). This card shows a broken image
-  until you deploy your own instance.
+  SELFHOST-GRAPH: The canonical github-readme-activity-graph.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED).
+  Currently using the verified-working public instance activity-graph.vercel.app (tested 200 + renders the graph).
   DURABLE FIX: run "vercel deploy --prod --env TOKEN=<pat>" inside deploy/github-readme-activity-graph (see deploy/DEPLOY.md),
-  then replace the placeholder domain below with your real URL.
+  then replace the domain below with your real URL if this public instance ever goes down.
 -->
 <p align="center">
-  <img src="https://github-readme-activity-graph-asif.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
+   <img src="https://activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
 </p>
 
 ---
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ ./contact.sh --connect</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-contact-glow.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
 </h2>
 
 <p align="center">
@@ -418,7 +417,7 @@ asifahamed-dev/
 ---
 
 <h2 align="center">
-  <code>$ exit 0</code>
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-exit-glow.svg" alt="$ exit 0" />
 </h2>
 
 ```diff

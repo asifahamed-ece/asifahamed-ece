@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 558 90" width="558" height="90" style="background-color: #00000000;">
+  <defs>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 30px; fill: #FF7043; opacity: 0.6; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 30px; fill: #FF7043; font-weight: 700; }
+    .glow   { filter: url(#neon); }
+    .cursor { animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  </style>
+
+  <text x="36" y="56" class="prompt">$</text>
+  <text x="62" y="56" class="cmd glow">git log --graph --oneline</text>
+  <rect x="508" y="28" width="14" height="34" rx="2" fill="#FF7043" class="cursor" />
+</svg>
