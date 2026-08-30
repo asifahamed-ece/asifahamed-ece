@@ -53,7 +53,7 @@ def main(path: str) -> None:
     )
 
     svg = svg.replace("</style>", overlay_css + "</style>", 1)
-    # Right end of the green bar (bar rects end at x~848.6, y=144..156).
+    # Left end of the green bar (bar rects start near x=0, y=144..156).
     # A dark badge with a neon-green border sits behind the glowing numbers so
     # they stay readable on any background (GitHub light/dark).
     counter = (
@@ -61,11 +61,11 @@ def main(path: str) -> None:
         '<feGaussianBlur stdDeviation="2" result="b"/>'
         '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/>'
         '<feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
-        '<g transform="translate(848.6,144)">'
-        '<rect x="-40" y="-3" width="40" height="18" rx="4" ry="4" '
+        '<g transform="translate(0,144)">'
+        '<rect x="0" y="-3" width="40" height="18" rx="4" ry="4" '
         'fill="#000000" stroke="#00FF9D" stroke-width="1"/>'
         + "".join(
-            f'<text class="snkcnt snkcnt{i}" x="-6" y="12">{i}</text>'
+            f'<text class="snkcnt snkcnt{i}" x="34" y="12">{i}</text>'
             for i in range(total + 1)
         )
         + "</g>"
