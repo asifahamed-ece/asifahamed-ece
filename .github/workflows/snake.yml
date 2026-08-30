@@ -24,6 +24,9 @@ jobs:
           outputs: |
             output/github-contribution-grid-snake.svg
 
+      - name: Add eaten-dots counter
+        run: python3 tools/add_snake_counter.py output/github-contribution-grid-snake.svg
+
       - name: Commit and push snake
         run: |
           git config --local user.email "action@github.com"

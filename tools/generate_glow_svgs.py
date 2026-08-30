@@ -24,13 +24,15 @@ HEADINGS = [
     ("graph",     "$ git log --graph --oneline", "#FF7043"),  # orange
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252"),  # red
+    ("about",     "$ cat about.txt",             "#00FF9D"),  # matrix green
+    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF"),  # cyan
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
-FONT_SIZE = 30
-CHAR_W = 18  # approx monospace advance width at 30px
-PAD = 36
-HEIGHT = 90
+FONT_SIZE = 18
+CHAR_W = 11  # approx monospace advance width at 18px
+PAD = 24
+HEIGHT = 54
 
 
 def make_svg(text: str, color: str) -> str:
@@ -40,7 +42,7 @@ def make_svg(text: str, color: str) -> str:
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {HEIGHT}" width="{width}" height="{HEIGHT}" style="background-color: #00000000;">
   <defs>
     <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="blur" />
