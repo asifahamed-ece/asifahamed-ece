@@ -9,21 +9,16 @@
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Bust%20in%20Silhouette.png" alt="Profile" width="32" height="32" style="vertical-align: middle;" />
+  <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
   <code>$ whoami</code>
 </h2>
 
 <details>
 <summary>[ About Me ]</summary>
 
-```diff
-- Location:     Tamil Nadu, India
-+ Education:    B.E. ECE @ Rajalakshmi Engineering College (CGPA: 8.3)
-+ Focus:        Bare-metal firmware | Device drivers | FreeRTOS
-+ Wireless:     ESP-NOW | LoRa | BLE | WiFi
-+ Status:       Building low-power embedded systems
-+ Motto:        "Debugging is just aggressive learning."
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg" alt="About Me" />
+</p>
 </details>
 
 ---
@@ -233,11 +228,11 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="48" height="48" alt="Arduino" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg" width="48" height="48" alt="Raspberry Pi" />
+  <img src="https://cdn.simpleicons.org/stmicroelectronics/03234B" width="48" height="48" alt="STM32" />
+  &nbsp;
+  <img src="https://cdn.simpleicons.org/nxp/000000" width="48" height="48" alt="NXP" />
   &nbsp;
   <img src="https://cdn.simpleicons.org/espressif/E7352C" width="48" height="48" alt="ESP32" />
-  &nbsp;
-  <img src="https://cdn.simpleicons.org/arm/0091BD" width="48" height="48" alt="STM32" />
 </p>
 
 #### Languages

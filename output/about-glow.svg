@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 780 250" width="780" height="250" style="background-color: #00000000;">
+  <defs>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .t {
+      font-family: 'Fira Code', Consolas, 'Courier New', monospace;
+      font-size: 19px;
+      fill: #00FF9D;
+    }
+    .dim { fill: #4dffb5; opacity: 0.65; }
+    .accent { fill: #FFFFFF; font-weight: 700; }
+    .glow { filter: url(#neon); }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+  </style>
+
+  <!-- cursor blink (terminal vibe) -->
+  <rect x="740" y="18" width="12" height="22" rx="2" fill="#00FF9D" class="pulse" />
+
+  <!-- prompt line -->
+  <text x="20" y="38" class="t dim">$</text>
+  <text x="44" y="38" class="t"><tspan class="glow">./about.sh --human</tspan></text>
+
+  <line x1="20" y1="55" x2="760" y2="55" stroke="#00FF9D" stroke-opacity="0.35" stroke-width="1" />
+
+  <!-- About Me lines -->
+  <text x="24" y="84" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Location :</tspan> Tamil Nadu, India</text>
+  <text x="24" y="112" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Education:</tspan> B.E. ECE @ Rajalakshmi Engineering College (CGPA: 8.3)</text>
+  <text x="24" y="140" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Focus    :</tspan> Bare-metal firmware | Device drivers | FreeRTOS</text>
+  <text x="24" y="168" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Wireless :</tspan> ESP-NOW | LoRa | BLE | WiFi</text>
+  <text x="24" y="196" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Status   :</tspan> Building low-power embedded systems</text>
+  <text x="24" y="226" class="t"><tspan class="accent">&gt;</tspan> <tspan class="dim">Motto    :</tspan> <tspan class="glow">&quot;Debugging is just aggressive learning.&quot;</tspan></text>
+</svg>
