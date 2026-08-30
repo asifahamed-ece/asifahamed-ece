@@ -1,0 +1,68 @@
+diff --git a/src/GraphCards.ts b/src/GraphCards.ts
+index da04477..6b8ad59 100644
+--- a/src/GraphCards.ts
++++ b/src/GraphCards.ts
+@@ -1,7 +1,36 @@
++import moment from 'moment';
+ import { createGraph } from './createChart';
+ import { graphSvg } from './svgs';
+ import { Colors, ContributionDay } from './interfaces/interface';
+ 
++/**
++ * Inject a <title> tooltip into every .ct-point element of a chartist SVG so
++ * that hovering a point shows "<date>: <n> contributions". Chartist emits the
++ * points in the same order as the days array.
++ *
++ * NOTE: tooltips only work when the SVG is opened directly in a browser;
++ * GitHub renders README images in a non-interactive <img> context.
++ */
++function injectPointTooltips(svg: string, days: ContributionDay[]): string {
++    let index = 0;
++    return svg.replace(
++        /<(line|circle)\b([^>]*class="ct-point"[^>]*?)(\/?)>/g,
++        (match, tag: string, attrs: string, selfClose: string) => {
++            const day = days[index++];
++            if (!day) return match;
++            const label = `${moment(day.date).format('MMM D')}: ${day.contributionCount} contribution${
++                day.contributionCount === 1 ? '' : 's'
++            }`;
++            // chartist emits paired tags (<line ...> ... </line>) — keep the
++            // opening tag's ">" and do NOT add a close (one already follows).
++            // For self-closing forms, emit a full closing tag instead.
++            return selfClose
++                ? `<${tag}${attrs}><title>${label}</title></${tag}>`
++                : `<${tag}${attrs}><title>${label}</title>`;
++        },
++    );
++}
++
+ export class Card {
+     constructor(
+         private readonly height: number,
+@@ -71,14 +100,24 @@ export class Card {
+             series: [{ value: days.map((day) => day.contributionCount) }],
+         });
+ 
++        //Per-day hover tooltips (work when the SVG is opened directly)
++        const annotatedLine = injectPointTooltips(await Promise.resolve(line), days);
++
++        //Total contributions appended to the title so the number is always
++        //visible on the GitHub profile (tooltips are not possible inside <img>)
++        const total = days.reduce((sum, day) => sum + (day.contributionCount || 0), 0);
++        const title = this.title
++            ? `${this.title} • Total: ${total} contribution${total === 1 ? '' : 's'}`
++            : this.title;
++
+         //Arguments to construct graphs with rect and other options
+         const args = {
+             height: this.height,
+             width: this.width,
+             colors: this.colors,
+-            title: this.title,
++            title: title,
+             radius: this.radius,
+-            line,
++            line: annotatedLine as unknown as Promise<string>,
+         };
+ 
+         return graphSvg(args);

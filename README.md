@@ -10,28 +10,28 @@
 
 <h2 align="center">
   <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
 </h2>
 
 <details>
 <summary>[ About Me ]</summary>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/about-glow.svg" alt="About Me" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg" alt="About Me" />
 </p>
 </details>
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake.svg" alt="Contribution Snake" />
 </p>
 
 ---
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
 </h2>
 
 <!--
@@ -61,7 +61,7 @@
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="40" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-projects-glow.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-glow.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
 </h2>
 
 <table>
@@ -253,7 +253,7 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-techstack-glow.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-glow.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
 </h2>
 
 #### Microcontrollers & Platforms
@@ -331,14 +331,14 @@ Learning Roadmap
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-tree-glow.svg" alt="$ tree . --dirsfirst" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-tree-glow.svg" alt="$ tree . --dirsfirst" style="vertical-align: middle;" />
 </h2>
 
 <details>
-<summary>[ asifahamed-ece Repository ]</summary>
+<summary>[ asifahamed-dev Repository ]</summary>
 
 ```bash
-asifahamed-ece/
+asifahamed-dev/
 ├── .github/
 │   └── workflows/
 │       └── snake.yml          # Contribution snake generator
@@ -366,7 +366,7 @@ asifahamed-ece/
 
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-trophies-glow.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-glow.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
 </h3>
 
 <!--
@@ -380,7 +380,7 @@ asifahamed-ece/
 
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-graph-glow.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-glow.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
 </h3>
 
 <!--
@@ -397,7 +397,7 @@ asifahamed-ece/
 
 <h2 align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-contact-glow.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-glow.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
 </h2>
 
 <p align="center">
@@ -417,7 +417,7 @@ asifahamed-ece/
 ---
 
 <h2 align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-exit-glow.svg" alt="$ exit 0" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-glow.svg" alt="$ exit 0" />
 </h2>
 
 ```diff

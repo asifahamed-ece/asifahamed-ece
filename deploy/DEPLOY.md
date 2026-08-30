@@ -45,6 +45,14 @@ The resulting base URL is used for the **stats card**, **top languages card** an
 `streak-stats.demolab.com`, so you can leave it).
 
 ## Deploy GitHub Readme Activity Graph
+> **Local patch:** the submodule carries a local commit ("Add per-day contribution
+> tooltips and total-count title") that appends `• Total: N contributions` to the
+> graph title and injects per-day `<title>` hover tooltips into each data point
+> (tooltips show when the SVG is opened directly; GitHub's `<img>` embed can't show
+> them). The patch is saved at `deploy/patches/activity-graph-contribution-counts.patch`
+> — after cloning fresh submodules, apply it with:
+> `git -C deploy/github-readme-activity-graph apply ../patches/activity-graph-contribution-counts.patch`
+
 ```bash
 cd deploy/github-readme-activity-graph
 
