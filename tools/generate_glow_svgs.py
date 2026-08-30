@@ -26,8 +26,8 @@ HEADINGS = [
     ("graph",     "$ git log --graph --oneline", "#FF7043", "small"),  # orange
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "small"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252", "small"),  # red
-    ("about",     "$ cat about.txt",             "#00FF9D", "small"),  # matrix green
-    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan
+    ("about",     "$ cat about.txt",             "#00FF9D", "large"),  # matrix green
+    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "large"),  # cyan
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
