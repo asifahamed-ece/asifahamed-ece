@@ -36,7 +36,7 @@ import sys
 
 CELL = 16.0          # distance between adjacent cell centers in the snk grid
 INITIAL_BLOCKS = 4   # snake length at loop start (head + body blocks)
-GROWTH_EVERY = 3     # grow +1 body block per this many dots eaten
+GROWTH_EVERY = 5     # grow +1 body block per this many dots eaten
 NEON_COLOR = "#C84BFF"  # bright neon violet for the glowing snake body
 SPRITE_CENTER = 8.0  # head sprite center offset from its translate origin
 EPS = 0.01           # near-instant transition ramp, in % of the loop
