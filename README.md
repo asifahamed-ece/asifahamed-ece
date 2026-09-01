@@ -1,17 +1,16 @@
 <!-- GitHub Profile README - Asif Ahamed -->
 <!-- Embedded Systems Developer | Bare-Metal C Programmer | IoT Engineer -->
 <!-- Hacker/Developer Theme | Matrix-Inspired Aesthetic -->
+<h2 align="left">
+  <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
+</h2>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
 </p>
 
 ---
-
-<h2 align="left">
-  <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
-</h2>
 
 <details>
 <summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg" alt="$ cat about.txt" style="vertical-align: middle;" /></summary>
