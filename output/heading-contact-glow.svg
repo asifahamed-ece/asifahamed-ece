@@ -14,11 +14,11 @@
     .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #40C4FF; opacity: 0.6; }
     .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #40C4FF; font-weight: 700; }
     .glow   { filter: url(#neon); }
-    .cursor { animation: blink 1.1s steps(1) infinite; }
+    .cursor { animation: blink 1.1s steps(2) infinite; }
     @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   </style>
 
   <text x="24" y="32" class="prompt">$</text>
   <text x="50" y="32" class="cmd glow">./contact.sh --connect</text>
-  <rect x="274" y="16" width="14" height="22" rx="2" fill="#40C4FF" class="cursor" />
+  <rect x="303" y="16" width="14" height="22" rx="2" fill="#40C4FF" class="cursor" />
 </svg>

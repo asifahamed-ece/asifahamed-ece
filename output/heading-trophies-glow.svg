@@ -14,11 +14,11 @@
     .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #FFC400; opacity: 0.6; }
     .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #FFC400; font-weight: 700; }
     .glow   { filter: url(#neon); }
-    .cursor { animation: blink 1.1s steps(1) infinite; }
+    .cursor { animation: blink 1.1s steps(2) infinite; }
     @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   </style>
 
   <text x="24" y="32" class="prompt">$</text>
   <text x="50" y="32" class="cmd glow">./trophies.sh</text>
-  <rect x="175" y="16" width="14" height="22" rx="2" fill="#FFC400" class="cursor" />
+  <rect x="204" y="16" width="14" height="22" rx="2" fill="#FFC400" class="cursor" />
 </svg>
