@@ -198,14 +198,8 @@ def enhance_keyframes_for_growth(svg_content):
         # Get the first percentage block (activation point)
         first_match = percent_matches[0]
         peak_pct = float(first_match.group(1))
-        # Extract just the variable name from "fill:var(--c3)" -> "var(--c3)"
-        fill_content = first_match.group(2).strip()
-        if fill_content.startswith('fill:'):
-            color_var = fill_content[5:]  # Remove "fill:" prefix
-        else:
-            color_var = fill_content
 
-        # Calculate transition point
+        # Calculate transition point (brief head duration)
         head_end = min(peak_pct + 0.1, 99.9)
 
         # Find where the last percentage block ends to preserve trailing content
@@ -213,11 +207,13 @@ def enhance_keyframes_for_growth(svg_content):
         last_end = last_match.end()
         trailing_content = content[last_end:]
 
-        # Build enhanced content
+        # Build enhanced content (removed invalid class: properties, use only valid CSS)
+        # Snake head: bright green with glow filter
+        # Snake body: semi-transparent green, persists until end of animation
         enhanced = (
-            '{:.2f}%{{fill:{};opacity:1;filter:url(#snakeGlow);class:snake-head}}'.format(peak_pct, color_var) +
-            '{:.2f}%{{fill:{};opacity:0.3;fill:#00FF9D;class:snake-body}}'.format(head_end, color_var) +
-            '100%{{fill:{};opacity:0.3;fill:#00FF9D;class:snake-body}}'.format(color_var) +
+            '{:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}'.format(peak_pct) +
+            '{:.2f}%{{fill:#00FF9D;opacity:0.3}}'.format(head_end) +
+            '100%{fill:#00FF9D;opacity:0.3}' +
             trailing_content
         )
 
