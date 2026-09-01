@@ -22,7 +22,7 @@ jobs:
         with:
           github_user_name: asifahamed-ece
           outputs: |
-            output/github-contribution-grid-snake-enhanced.svg
+            output/github-contribution-grid-snake.svg
 
       - name: Enhance snake SVG with space background and growing effect
         run: python3 tools/snake_enhancer.py output/github-contribution-grid-snake.svg output/github-contribution-grid-snake-enhanced.svg
