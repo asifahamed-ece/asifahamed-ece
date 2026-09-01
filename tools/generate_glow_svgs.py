@@ -28,15 +28,14 @@ HEADINGS = [
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "small"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252", "small"),  # red
 <<<<<<< HEAD
-    ("about",     "$ cat about.txt",             "#00FF9D", "xl"),     # matrix green - larger for dropdown
+    ("about",     "$ cat about.txt",             "#00FF9D", "small"),     # matrix green - larger for dropdown
     ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan - reduced to small
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
 SIZES = {
     "large": {"font_size": 30, "char_w": 18, "pad": 36, "height": 90, "blur": 4.5},
-    "small": {"font_size": 18, "char_w": 11, "pad": 24, "height": 54, "blur": 3},
-    "xl": {"font_size": 36, "char_w": 20, "pad": 42, "height": 105, "blur": 5.5},
+    "small": {"font_size": 18, "char_w": 11, "pad": 24, "height": 54, "blur": 3}
 }
 
 
