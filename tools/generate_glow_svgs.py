@@ -27,15 +27,15 @@ HEADINGS = [
     ("graph",     "$ git log --graph --oneline", "#FF7043", "small"),  # orange
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "small"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252", "small"),  # red
-<<<<<<< HEAD
-    ("about",     "$ cat about.txt",             "#00FF9D", "small"),     # matrix green - larger for dropdown
-    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan - reduced to small
+    ("about",     "$ cat about.txt",             "#00FF9D", "small"),  # matrix green
+    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
 SIZES = {
     "large": {"font_size": 30, "char_w": 18, "pad": 36, "height": 90, "blur": 4.5},
-    "small": {"font_size": 18, "char_w": 11, "pad": 24, "height": 54, "blur": 3}
+    "small": {"font_size": 18, "char_w": 11, "pad": 24, "height": 54, "blur": 3},
+    "xl": {"font_size": 36, "char_w": 22, "pad": 42, "height": 105, "blur": 5.5}
 }
 
 
@@ -44,7 +44,8 @@ def make_svg(text: str, color: str, size: str) -> str:
     fs, cw, pad, h, blur = cfg["font_size"], cfg["char_w"], cfg["pad"], cfg["height"], cfg["blur"]
     prompt, cmd = text.split(" ", 1)
     width = pad * 2 + int(len(text) * cw)
-    cursor_x = width - pad - 14
+    # Position cursor one character space after the end of the command text
+    cursor_x = pad + 26 + int(len(cmd) * cw) + cw
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {h}" width="{width}" height="{h}" style="background-color: #00000000;">
   <defs>
     <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
