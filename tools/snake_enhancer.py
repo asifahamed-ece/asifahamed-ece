@@ -207,9 +207,9 @@ def enhance_keyframes_for_growth(svg_content):
         last_end = last_match.end()
         trailing_content = content[last_end:]
 
-        # Build enhanced content (removed invalid class: properties, use only valid CSS)
-        # Snake head: bright green with glow filter
-        # Snake body: semi-transparent green, persists until end of animation
+        # Build enhanced content for ACCUMULATING snake growth
+        # The key change: Once a cell becomes body at head_end, it stays body FOREVER
+        # This creates an accumulating trail
         enhanced = (
             '{:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}'.format(peak_pct) +
             '{:.2f}%{{fill:#00FF9D;opacity:0.3}}'.format(head_end) +
