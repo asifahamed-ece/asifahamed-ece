@@ -71,7 +71,7 @@ def enhance_snake_styles(svg_content):
 
 
 def enhance_keyframes_for_growth(svg_content):
-    """Modify keyframes to make snake grow with persistent trail."""
+    """Modify keyframes to make snake grow with true growing effect."""
     # Find the style section
     style_match = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
     if not style_match:
@@ -79,153 +79,155 @@ def enhance_keyframes_for_growth(svg_content):
 
     style = style_match.group(1)
 
-    # Find all keyframe definitions and enhance them
-    # Pattern to capture the full keyframe including internal percentage blocks
-    def enhance_keyframe_match(match):
-        full_prefix = match.group(1)  # @keyframes c[ID]
-        keyframe_content = match.group(2)  # Everything inside the outer {}
+    # Find all keyframe definitions and extract info
+    keyframes = []  # list of tuples (keyframe_name, content, start_idx, end_idx)
+    i = 0
+    while i < len(style):
+        # Look for @keyframes c[ID]
+        keyframe_start = style.find('@keyframes c', i)
+        if keyframe_start == -1:
+            break
 
-        # We need to parse the internal structure carefully
-        # Look for patterns like: 76.74%{fill:var(--c3)}76.76%,100%{fill:var(--ce)}
-        # This means there can be percentage blocks followed by other percentages
+        # Find the keyframe name (until '{')
+        name_end = keyframe_start
+        while name_end < len(style) and style[name_end] not in '{':
+            name_end += 1
 
-        # Find all percentage blocks with their content
-        # Pattern: ([0-9.]+)%\{([^}]+)\}
-        percent_pattern = r'([\d.]+)%\{([^}]+)\}'
-        percent_matches = list(re.finditer(percent_pattern, keyframe_content))
+        if name_end >= len(style) or style[name_end] != '{':
+            # Malformed, skip this occurrence
+            i = keyframe_start + 1
+            continue
 
-        if not percent_matches:
-            # No percentage blocks found, return original
-            return match.group(0)
+        keyframe_name = style[keyframe_start:name_end]  # @keyframes c[ID]
 
-        # Get the first percentage block (where the snake head should be)
-        first_match = percent_matches[0]
-        peak_pct = float(first_match.group(1))
-        color_var = first_match.group(2)  # e.g., "var(--c3)"
+        # Find matching closing brace
+        brace_count = 0
+        j = name_end
+        while j < len(style):
+            if style[j] == '{':
+                brace_count += 1
+            elif style[j] == '}':
+                brace_count -= 1
+                if brace_count == 0:
+                    # Found the matching closing brace
+                    keyframe_content = style[name_end+1:j]  # Content between braces
+                    keyframes.append((keyframe_name, keyframe_content, keyframe_start, j+1))
+                    i = j + 1
+                    break
+            j += 1
+        else:
+            # No matching brace found, append rest and break
+            break
 
-        # Calculate transition point (brief head duration - 0.1% of cycle)
-        head_end = min(peak_pct + 0.1, 99.9)
+    # Now we have keyframes, extract activation percentage and color for each
+    cell_info = []  # list of dicts: {id, activation, color_var, is_green, original_name, original_content, start_idx, end_idx}
+    for keyframe_name, content, start_idx, end_idx in keyframes:
+        # Extract the ID from keyframe_name: @keyframes cID
+        match_id = re.search(r'@keyframes c(\d+|[a-z]+)$', keyframe_name)
+        if not match_id:
+            # Try to capture any non-{ characters after 'c'
+            match_id = re.search(r'@keyframes c([^{]+)', keyframe_name)
+            if not match_id:
+                continue
+        cell_id = match_id.group(1)
 
-        # Build enhanced keyframe content:
-        # At peak_pct: SNAKE HEAD (bright, glowing)
-        # From peak_pct to head_end: SNAKE HEAD (same as above for smooth transition)
-        # From head_end to 100%: SNAKE BODY (semi-transparent, persistent)
-        # At 100%: SNAKE BODY
+        # Find the first percentage block: [0-9.]+%{...}
+        first_percent_match = re.search(r'([\d.]+)%\{([^}]+)\}', content)
+        if not first_percent_match:
+            continue
+        activation = float(first_percent_match.group(1))
+        color_var = first_percent_match.group(2).strip()  # e.g., "var(--c3)"
 
-        # We need to preserve any content that comes after the last percentage block
-        # Find where the last percentage block ends
-        last_match = percent_matches[-1]
-        last_end = last_match.end()
-        trailing_content = keyframe_content[last_end:]  # Content after last %}
+        # Determine if this is a green contribution
+        # Green if color_var is one of: var(--c1), var(--c2), var(--c3), var(--c4)
+        # Extract the variable name inside var()
+        var_match = re.search(r'var\((--c[1-4])\)', color_var)
+        is_green = bool(var_match)
 
-        # Build the enhanced internal content
-        enhanced_internal = (
-            '{:.2f}%{{fill:{};opacity:1;filter:url(#snakeGlow);class:snake-head}}'.format(peak_pct, color_var) +
-            '{:.2f}%{{fill:{};opacity:0.3;fill:#00FF9D;class:snake-body}}'.format(head_end, color_var) +
-            '100%{{fill:{};opacity:0.3;fill:#00FF9D;class:snake-body}}'.format(color_var) +
-            trailing_content
+        cell_info.append({
+            'id': cell_id,
+            'activation': activation,
+            'color_var': color_var,
+            'is_green': is_green,
+            'original_name': keyframe_name,
+            'original_content': content,
+            'start_idx': start_idx,
+            'end_idx': end_idx
+        })
+
+    if not cell_info:
+        return svg_content
+
+    # Sort by activation percentage (the order the snake head visits)
+    cell_info.sort(key=lambda x: x['activation'])
+
+    # Compute prefix sum of green contributions
+    prefix_green = [0] * (len(cell_info) + 1)
+    for idx, info in enumerate(cell_info):
+        prefix_green[idx+1] = prefix_green[idx] + (1 if info['is_green'] else 0)
+
+    # Build a mapping from original keyframe to enhanced keyframe
+    enhancements = {}  # keyframe_name -> enhanced_content
+    for idx, info in enumerate(cell_info):
+        g_so_far = prefix_green[idx]   # green count before this cell
+        current_is_green = 1 if info['is_green'] else 0
+        L = 4 + (g_so_far + current_is_green) // 2  # snake length after this cell
+
+        # Look ahead L steps in the sorted list (by activation)
+        j = idx + L
+        if j < len(cell_info):
+            T_end = cell_info[j]['activation']
+        else:
+            T_end = 100.0  # stay visible until end if we run out of cells
+
+        T_start = info['activation']
+        head_end = min(T_start + 0.1, 99.9)
+
+        # Build enhanced keyframe content
+        enhanced_content = (
+            f'{T_start:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow);class:snake-head}}'
+            f'{head_end:.2f}%{{fill:#00FF9D;opacity:0.3;class:snake-body}}'
+            f'{T_end:.2f}%{{fill:#00FF9D;opacity:0.3;class:snake-body}}'
+            f'{(T_end+0.01):.2f}%{{fill:#00FF9D;opacity:0}}'
+            f'100%{{fill:#00FF9D;opacity:0}}'
         )
 
-        # Return the full keyframe with enhanced content
-        return '{}{}'.format(full_prefix, '{' + enhanced_internal + '}')
+        enhancements[info['original_name']] = enhanced_content
 
-    # Find all keyframe definitions - pattern that captures content between braces properly
-    # We need to handle nested braces, so we'll use a different approach
-    # Find @keyframes c[ID] and then find the matching closing brace
-    def find_keyframes_and_enhance(text):
-        result = []
-        i = 0
-        while i < len(text):
-            # Look for @keyframes c[ID]
-            keyframe_start = text.find('@keyframes c', i)
-            if keyframe_start == -1:
-                result.append(text[i:])
-                break
+    # Rebuild the style string by replacing the content of each keyframe we found
+    if not keyframes:
+        return svg_content
 
-            # Add text before this keyframe
-            result.append(text[i:keyframe_start])
+    # We'll build the new style by replacing the content of each keyframe
+    style_chunks = []
+    last_idx = 0
+    for keyframe_name, content, start_idx, end_idx in keyframes:
+        # Add everything before this keyframe
+        style_chunks.append(style[last_idx:start_idx])
 
-            # Find the keyframe name
-            name_end = keyframe_start
-            while name_end < len(text) and text[name_end] not in '{':
-                name_end += 1
+        if keyframe_name in enhancements:
+            enhanced_content = enhancements[keyframe_name]
+            # Add keyframe name + opening brace + enhanced content + closing brace
+            style_chunks.append(keyframe_name)
+            style_chunks.append('{')
+            style_chunks.append(enhanced_content)
+            style_chunks.append('}')
+        else:
+            # No enhancement, keep original keyframe as-is
+            style_chunks.append(style[start_idx:end_idx])
 
-            if name_end >= len(text) or text[name_end] != '{':
-                # Malformed, skip
-                result.append(text[keyframe_start:])
-                break
+        last_idx = end_idx
 
-            keyframe_name = text[keyframe_start:name_end]  # @keyframes c[ID]
+    # Add any remaining content after the last keyframe
+    if last_idx < len(style):
+        style_chunks.append(style[last_idx:])
 
-            # Find matching closing brace
-            brace_count = 0
-            j = name_end
-            while j < len(text):
-                if text[j] == '{':
-                    brace_count += 1
-                elif text[j] == '}':
-                    brace_count -= 1
-                    if brace_count == 0:
-                        # Found the matching closing brace
-                        keyframe_content = text[name_end+1:j]  # Content between braces
+    new_style = ''.join(style_chunks)
 
-                        # Enhance this keyframe content
-                        enhanced_content = enhance_keyframe_content(keyframe_content)
-
-                        # Add the enhanced keyframe
-                        result.append('{}{{{}}}'.format(keyframe_name, enhanced_content))
-
-                        # Continue after the closing brace
-                        i = j + 1
-                        break
-                j += 1
-            else:
-                # No matching brace found, append rest and break
-                result.append(text[keyframe_start:])
-                break
-
-        return ''.join(result)
-
-    def enhance_keyframe_content(content):
-        """Enhance the content inside a keyframe definition."""
-        # Find all percentage blocks: [0-9.]+%{...}
-        percent_pattern = r'([\d.]+)%\{([^}]+)\}'
-        percent_matches = list(re.finditer(percent_pattern, content))
-
-        if not percent_matches:
-            return content
-
-        # Get the first percentage block (activation point)
-        first_match = percent_matches[0]
-        peak_pct = float(first_match.group(1))
-
-        # Calculate transition point (brief head duration)
-        head_end = min(peak_pct + 0.1, 99.9)
-
-        # Find where the last percentage block ends to preserve trailing content
-        last_match = percent_matches[-1]
-        last_end = last_match.end()
-        trailing_content = content[last_end:]
-
-        # Build enhanced content for ACCUMULATING snake growth
-        # The key change: Once a cell becomes body at head_end, it stays body FOREVER
-        # This creates an accumulating trail
-        enhanced = (
-            '{:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}'.format(peak_pct) +
-            '{:.2f}%{{fill:#00FF9D;opacity:0.3}}'.format(head_end) +
-            '100%{fill:#00FF9D;opacity:0.3}' +
-            trailing_content
-        )
-
-        return enhanced
-
-    # Apply enhancement to all keyframes in the style
-    enhanced_style = find_keyframes_and_enhance(style)
-
-    # Replace the style section
+    # Replace the style section in the SVG
     svg_content = re.sub(
         r'<style>.*?</style>',
-        f'<style>{enhanced_style}</style>',
+        f'<style>{new_style}</style>',
         svg_content,
         flags=re.DOTALL,
         count=1

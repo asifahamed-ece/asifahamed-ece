@@ -62,104 +62,112 @@ def enhance_snake_styles(svg_content):
 
 
 def parse_snake_path(svg_content):
-    """Parse the snake animation path to find all cells and their activation times."""
-    # Find the style section
+    """Parse each contribution cell's animation: its cell id, the loop % when the
+    snake head reaches it, and its real contribution color variable.
+
+    Returns a list of (cell_id, activation_pct, color_var) sorted by activation
+    time (the moment the snake head passes that cell during the loop).
+    """
     style_match = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
     if not style_match:
         return []
 
     style = style_match.group(1)
 
-    # Extract all keyframe definitions with their activation percentages
-    # Matches: @keyframes c[ID]{[PCT]%{...}
-    keyframe_pattern = r'@keyframes (c[0-9a-f]+)\{([\d.]+)%'
+    # Matches: @keyframes c[ID]{[PCT]%{fill:var(--cN) ...}
+    # snk names cells with full alphanumeric ids (c0..c9, ca..cz, c10..c1z, ...).
+    keyframe_pattern = r'@keyframes (c[0-9a-zA-Z]+)\{([\d.]+)%\{fill:var\((--c\d+)\)'
     matches = re.findall(keyframe_pattern, style)
 
-    # Sort by activation time
+    # Sort by activation time (head arrival order)
     cells = sorted(matches, key=lambda x: float(x[1]))
     return cells
 
 
 def create_growing_snake_keyframes(svg_content, initial_length=4, growth_rate=2):
     """
-    Create keyframes where snake grows by 1 segment for every growth_rate contributions.
+    Rebuild each contribution cell's keyframe so that the graph behaves like the
+    Pac-Man contribution animation:
+
+      * Until the snake head arrives, the dot is shown in its REAL contribution
+        color (the contribution graph is visible at rest).
+      * When the head reaches it, the dot flashes green as the snake head.
+      * While the snake body passes, the dot is covered by the neon-green body.
+      * Once the snake TAIL passes, the dot is eaten -> fades to opaque 0, i.e.
+        it disappears into the space background for the rest of the loop.
+
+    The snake body grows over the loop: it starts at ``initial_length`` segments
+    and gains 1 segment every ``growth_rate`` dots eaten, so the tail lags further
+    and further behind the head as dots are consumed.
 
     Args:
-        initial_length: Starting snake length (default 4: head + 3 body)
-        growth_rate: Number of contributions needed to grow by 1 segment (default 2)
+        initial_length: Starting snake length (default 4: head + 3 body).
+        growth_rate: Number of contributions needed to grow by 1 segment (2).
     """
-    # Parse the snake path
     cells = parse_snake_path(svg_content)
     if not cells:
         return svg_content
 
-    # Find the style section
     style_match = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
     if not style_match:
         return svg_content
 
     style = style_match.group(1)
+    n = len(cells)
 
-    # Calculate snake length at each cell
-    snake_lengths = {}
-    for i, (cell_id, activation_pct) in enumerate(cells):
-        # Snake grows by 1 for every growth_rate contributions
-        current_length = initial_length + (i // growth_rate)
-        snake_lengths[cell_id] = (i, float(activation_pct), current_length)
+    # Snake body length at the moment the head reaches the i-th cell (time order).
+    lengths = [initial_length + (i // growth_rate) for i in range(n)]
 
-    # Generate new keyframes using string replacement
-    def create_keyframe_for_cell(cell_id, index, activation_pct, snake_length):
-        """Create a keyframe that shows head, then body, then fades when tail passes."""
-        # Head appears at activation time
-        head_end = min(activation_pct + 0.1, 99.9)
+    # Two-pass look-ahead: a dot eaten at time index i is consumed (tail passes)
+    # when the head reaches time index i + lengths[i]. Cells near the end of the
+    # loop are never consumed -> they stay as body until 100% and reset to their
+    # real color at 0% on the next loop.
+    fade_times = [100.0] * n
+    for i in range(n):
+        tail_idx = i + lengths[i]
+        if tail_idx < n:
+            fade_times[i] = float(cells[tail_idx][1])
 
-        # Calculate when this cell should fade (when it's beyond snake_length cells back)
-        fade_index = index + snake_length
+    def create_keyframe_for_cell(cell_id, index, activation_pct, color_var, fade_time):
+        """Build the full lifecycle keyframe for one contribution dot."""
+        activation = float(activation_pct)
+        g = 0.01  # near-instant transition gap (negligible ramp, discrete feel)
+        head_w = 0.15  # how long the bright snake head stays lit (% of loop)
 
-        if fade_index < len(cells):
-            # Cell fades when tail reaches it
-            fade_cell_id, fade_pct = cells[fade_index]
-            fade_pct = float(fade_pct)
-            fade_start = min(fade_pct - 0.05, 99.95)
-            fade_end = min(fade_pct + 0.05, 99.95)
+        head_end = min(activation + head_w, 99.9)
+        fade_start = max(min(fade_time - g, 99.99), activation + g)
 
-            keyframe = (
-                f'{activation_pct:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}' +
-                f'{head_end:.2f}%{{fill:#00FF9D;opacity:0.3}}' +
-                f'{fade_start:.2f}%{{fill:#00FF9D;opacity:0.3}}' +
-                f'{fade_end:.2f}%{{fill:#00FF9D;opacity:0}}' +
-                f'100%{{fill:#00FF9D;opacity:0}}'
-            )
-        else:
-            # Cell stays visible until end (part of final snake)
-            keyframe = (
-                f'{activation_pct:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}' +
-                f'{head_end:.2f}%{{fill:#00FF9D;opacity:0.3}}' +
-                f'100%{{fill:#00FF9D;opacity:0.3}}'
-            )
+        frames = []
+        # 1) Real contribution color until the head arrives (also the rest state).
+        frames.append(f'0%,{activation:.2f}%{{fill:var({color_var});opacity:1}}')
+        # 2) Snake head: bright neon with glow.
+        frames.append(f'{activation:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}')
+        # 3) Snake body covers the eaten dot.
+        frames.append(f'{head_end:.2f}%{{fill:#00FF9D;opacity:0.7}}')
+        frames.append(f'{fade_start:.2f}%{{fill:#00FF9D;opacity:0.7}}')
+        # 4) Tail passes -> dot consumed, gone into the space background.
+        frames.append(f'{min(fade_time, 100.0):.2f}%{{fill:#00FF9D;opacity:0}}')
+        frames.append('100%{fill:#00FF9D;opacity:0}')
 
-        return f'@keyframes {cell_id}{{{keyframe}}}'
+        return f'@keyframes {cell_id}{{{"".join(frames)}}}'
 
-    # Replace keyframes using a more robust pattern that handles the actual structure
-    # Pattern matches: @keyframes cXX{...}...} where the content can have nested {}
-    enhanced_style = style
+    # Rebuild the style by replacing each cell keyframe block (nested-brace safe).
+    keyframe_blocks = re.split(r'(@keyframes c[0-9a-zA-Z]+\{)', style)
+    result_parts = [keyframe_blocks[0]]  # Keep everything before the first keyframe
 
-    # Split by @keyframes and rebuild
-    keyframe_blocks = re.split(r'(@keyframes c[0-9a-f]+\{)', enhanced_style)
-    result_parts = [keyframe_blocks[0]]  # Keep everything before first keyframe
+    # index of each cell id in time order, for the construction loop below
+    time_index = {cid: idx for idx, (cid, _, _) in enumerate(cells)}
 
     i = 1
     while i < len(keyframe_blocks):
         if i + 1 < len(keyframe_blocks):
             keyframe_start = keyframe_blocks[i]  # "@keyframes cXX{"
-            # Extract cell_id from keyframe_start
-            cell_id_match = re.search(r'c[0-9a-f]+', keyframe_start)
+            cell_id_match = re.search(r'c[0-9a-zA-Z]+', keyframe_start)
             if cell_id_match:
                 cell_id = cell_id_match.group(0)
 
-                # Find the end of this keyframe block
                 remaining = keyframe_blocks[i + 1]
-                # Find the matching closing brace
+                # Find the matching closing brace for this keyframe block
                 brace_count = 1
                 pos = 0
                 while pos < len(remaining) and brace_count > 0:
@@ -169,16 +177,17 @@ def create_growing_snake_keyframes(svg_content, initial_length=4, growth_rate=2)
                         brace_count -= 1
                     pos += 1
 
-                # Get the content after the keyframe
                 after_keyframe = remaining[pos:]
 
-                # Check if this cell_id needs replacement
-                if cell_id in snake_lengths:
-                    index, activation_pct, snake_length = snake_lengths[cell_id]
-                    new_keyframe = create_keyframe_for_cell(cell_id, index, activation_pct, snake_length)
+                if cell_id in time_index:
+                    idx = time_index[cell_id]
+                    new_keyframe = create_keyframe_for_cell(
+                        cell_id, idx,
+                        cells[idx][1], cells[idx][2],
+                        fade_times[idx],
+                    )
                     result_parts.append(new_keyframe)
                 else:
-                    # Keep original
                     result_parts.append(keyframe_start + remaining[:pos])
 
                 result_parts.append(after_keyframe)
@@ -232,9 +241,9 @@ def main(input_path, output_path=None, growth_rate=2):
         print("Enhancements applied:")
         print("  ✓ Space nebula and starfield background")
         print(f"  ✓ Snake grows by 1 segment every {growth_rate} contributions")
+        print("  ✓ Contribution dots visible in their real colors until eaten")
         print("  ✓ Snake head glows brightly when active")
-        print("  ✓ Old segments fade out as snake grows")
-        print("  ✓ Uneaten cells remain transparent (showing space background)")
+        print("  ✓ Eaten dots disappear into the space background after the tail passes")
     except Exception as e:
         print(f"Error writing output: {e}", file=sys.stderr)
         sys.exit(1)
