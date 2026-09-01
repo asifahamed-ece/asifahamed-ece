@@ -28,6 +28,8 @@ jobs:
         run: python3 tools/snake_growth_enhancer.py output/github-contribution-grid-snake.svg output/github-contribution-grid-snake-enhanced.svg 2
       - name: Add eaten-dots counter
         run: python3 tools/add_snake_counter.py output/github-contribution-grid-snake-enhanced.svg
+      - name: Validate Pac-Man-style eating/snake-growth animation
+        run: python3 tools/snake_validator.py output/github-contribution-grid-snake-enhanced.svg
 
       - name: Commit and push snake
         run: |

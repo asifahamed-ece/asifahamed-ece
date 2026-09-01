@@ -21,9 +21,8 @@ Usage: python3 tools/snake_validator.py [path-to-enhanced-svg]
 import re
 import sys
 
-# Fill/opacity values the generator uses (keep in sync with snake_growth_enhancer).
+# Fill value the generator uses for the snake head (keep in sync with snake_growth_enhancer).
 HEAD_FILL = "#00FF9D"
-BODY_OPACITY = 0.7
 
 
 def load_cells(svg_content):
