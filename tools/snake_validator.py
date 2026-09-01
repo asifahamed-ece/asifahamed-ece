@@ -21,6 +21,7 @@ import sys
 
 CELL = 16.0
 INITIAL_BLOCKS = 4
+GROWTH_EVERY = 3  # grow +1 body block per this many dots eaten
 EPS = 0.01
 TOL = 1.0  # px tolerance for the rigid-follow check
 
@@ -162,7 +163,7 @@ def run(path):
 
     def length_at(t):
         n = sum(1 for a in acts if a <= t + 1e-9)
-        return (INITIAL_BLOCKS - 1 + n) * CELL
+        return (INITIAL_BLOCKS - 1 + n // GROWTH_EVERY) * CELL
 
     print(f'cells parsed: {len(cells)}   head waypoints: {len(wps)}   '
           f'route: {arcs[-1]:.0f}px')
@@ -217,20 +218,20 @@ def run(path):
         l0 = interp(arr, 0.0, 1)
         check('snake starts at 4 blocks (head + 3 body)',
               abs(l0 - (INITIAL_BLOCKS - 1) * CELL) < 0.5, f'{l0:.0f}px')
-        # 4) growth +1 block per dot
+                # 4) growth +1 block per GROWTH_EVERY dots
         steps_bad = []
         for k in range(len(acts)):
             lo = acts[k] + EPS + 0.005
             hi = acts[k + 1] - EPS - 0.005 if k + 1 < len(acts) else 99.99
             t = (lo + hi) / 2 if hi > lo else lo
-            l_exp = (INITIAL_BLOCKS - 1 + k + 1) * CELL
+            l_exp = (INITIAL_BLOCKS - 1 + (k + 1) // GROWTH_EVERY) * CELL
             if abs(interp(arr, t, 1) - l_exp) > 0.5:
                 steps_bad.append(k)
-        check(f'body grows +1 block per dot eaten ({len(acts)} dots)',
+        check(f'body grows +1 block per {GROWTH_EVERY} dots ({len(acts)} dots)',
               not steps_bad, str(steps_bad[:4]))
         l_end = interp(arr, 100.0, 1)
-        check('final length = 4 + all dots eaten',
-              abs(l_end - (INITIAL_BLOCKS - 1 + len(acts)) * CELL) < 0.5,
+        check('final length = 4 + dots/3',
+              abs(l_end - (INITIAL_BLOCKS - 1 + len(acts) // GROWTH_EVERY) * CELL) < 0.5,
               f'{l_end:.0f}px')
         # rigid follow
         samples = []

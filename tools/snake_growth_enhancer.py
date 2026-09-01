@@ -6,7 +6,8 @@ Transforms a Platane/snk SVG so that:
   * every contribution dot shows its real contribution color and vanishes the
     instant the snake head touches it;
   * a rigid purple snake body follows the head's exact route around the board;
-    it starts at 4 blocks (head + 3 body) and grows by one block for every dot
+    it starts at 4 blocks (head + 3 body) and grows by one block every
+    3 dots eaten;
     eaten;
   * the whole loop runs slower by a speed factor (default 1.5x).
 
@@ -35,6 +36,8 @@ import sys
 
 CELL = 16.0          # distance between adjacent cell centers in the snk grid
 INITIAL_BLOCKS = 4   # snake length at loop start (head + body blocks)
+GROWTH_EVERY = 3     # grow +1 body block per this many dots eaten
+NEON_COLOR = "#C84BFF"  # bright neon violet for the glowing snake body
 SPRITE_CENTER = 8.0  # head sprite center offset from its translate origin
 EPS = 0.01           # near-instant transition ramp, in % of the loop
 
@@ -196,7 +199,7 @@ def build_body(style, cells):
 
     def length_at(t):
         n = sum(1 for a in activations if a <= t + 1e-9)
-        return (INITIAL_BLOCKS - 1 + n) * CELL
+        return (INITIAL_BLOCKS - 1 + n // GROWTH_EVERY) * CELL
 
     growth_ts = []
     for a in activations:
@@ -277,7 +280,7 @@ def main(input_path, output_path=None, speed=1.5):
         f'width:12px;height:12px;opacity:0}}',
         style, count=1)
     snake_css = (
-        f'.snakeBody{{fill:none;stroke:var(--cs);stroke-width:12px;'
+        f'.snakeBody{{fill:none;stroke:{NEON_COLOR};stroke-width:12px;'
         f'stroke-linecap:round;stroke-linejoin:round;'
         f'animation:none {loop_dur}ms linear infinite;'
         f'animation-name:sb0;filter:url(#snakeGlow)}}')
@@ -286,11 +289,15 @@ def main(input_path, output_path=None, speed=1.5):
                    f'<style>{style}</style>' +
                    svg_content[style_m.end():])
 
-    # glow filter definition (used by the snake body)
-    filt = ('<defs><filter id="snakeGlow" x="-50%" y="-50%" width="200%" '
-            'height="200%"><feGaussianBlur stdDeviation="2" result="blur"/>'
-            '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/>'
-            '</feMerge></filter></defs>')
+    # glow filter definition (vivid neon halo used by the snake body)
+    filt = (
+        '<defs><filter id="snakeGlow" x="-50%" y="-50%" width="200%" height="200%">'
+        '<feGaussianBlur in="SourceAlpha" stdDeviation="7" result="blur"/>'
+        f'<feFlood flood-color="{NEON_COLOR}" flood-opacity="0.9" result="color"/>'
+        '<feComposite in="color" in2="blur" operator="in" result="glow"/>'
+        '<feMerge><feMergeNode in="glow"/><feMergeNode in="glow"/>'
+        '<feMergeNode in="SourceGraphic"/></feMerge></filter></defs>'
+    )
     svg_content = svg_content.replace('</svg>', filt + '</svg>', 1)
 
     # the rigid body path, drawn under the head sprite
@@ -308,8 +315,9 @@ def main(input_path, output_path=None, speed=1.5):
     print(f'Enhanced SVG saved to {output_path} ({len(svg_content)} chars)')
     print('Enhancements applied:')
     print('  - Space nebula and starfield background')
-    print(f'  - Rigid purple snake body: starts at {INITIAL_BLOCKS} blocks, '
-          f'+1 block per dot eaten (final {INITIAL_BLOCKS + eaten} blocks)')
+    print(f'  - Glowing snake body: starts at {INITIAL_BLOCKS} blocks, '
+          f'+1 block per {GROWTH_EVERY} dots eaten '
+          f'(final {INITIAL_BLOCKS + eaten // GROWTH_EVERY} blocks)')
     print(f'  - Body route follows the head exactly '
           f'({total:.0f}px closed path)')
     print('  - Dots vanish the instant the head touches them')

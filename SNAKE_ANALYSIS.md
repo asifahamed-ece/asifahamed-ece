@@ -4,7 +4,7 @@
 
 `tools/snake_growth_enhancer.py` turns a Platane/snk contribution grid into a
 Pac-Man-style animation. The head slithers through the contribution dots and a
-solid purple body follows it exactly while growing one block per dot eaten.
+solid neon-violet body follows it exactly while growing one block per 3 dots eaten.
 
 ## Design Overview
 
@@ -13,7 +13,7 @@ solid purple body follows it exactly while growing one block per dot eaten.
 snk moves the head sprite (`.s`) through waypoints with CSS `translate`
 keyframes. We build **ONE closed `<path>` through those waypoints** (offset to
 the cell centers, closing back to the start so the loop wraps seamlessly) and
-render it as a purple stroke onto the grid, under the head sprite.
+render it as a neon-violet stroke onto the grid, under the head sprite.
 
 A single CSS `stroke-dasharray` / `stroke-dashoffset` animation limits the
 visible part of the stroke to exactly the `length` cells of route behind the
@@ -41,8 +41,8 @@ cell. At every dot-eat instant the visible dash length grows by exactly one cell
 body_length(t) = (INITIAL_BLOCKS - 1 + dots_eaten(t)) * CELL
 ```
 
-The snake starts at 4 blocks (head + 3 body) and ends at `4 + total_dots`
-blocks (79 with the current 75-dot grid).
+The snake starts at 4 blocks (head + 3 body) and ends at `4 + total_dots / 3`
+blocks (29 with the current 75-dot grid).
 
 ### Dots vanish instantly
 
@@ -73,7 +73,7 @@ with the slowed loop.
 - every dot shows its real color at rest, vanishes right after the head
   touches it, and never re-appears;
 - a rigid `.snakeBody` path with an `sb0` dash animation exists;
-- the body starts at 4 blocks and grows exactly +1 block (16px) per dot;
+  - the body starts at 4 blocks and grows exactly +1 block (16px) per 3 dots;
 - the body's visible window equals `[head_arc - length, head_arc]` at every
   sampled loop time (rigid follow, in sync with the head sprite);
 - all loop durations are identical and slower than the stock 49900ms;
@@ -82,7 +82,7 @@ with the slowed loop.
 
 It is wired into `.github/workflows/snake.yml` so every daily regeneration is
 verified. For the current grid the simulation shows the body going
-**4 -> 7 -> 32 -> 49 -> 60 -> 73 -> 79 blocks** while the head glides across
+**4 -> 5 -> 13 -> 19 -> 22 -> 27 -> 29 blocks** while the head glides across
 the whole board and the tail follows rigidly behind.
 
 ## Files Related
