@@ -328,10 +328,10 @@ Learning Roadmap
 
 -->
 
-<h2 align="left">
+<!-- <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" style="vertical-align: middle;" />
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-tree-glow.svg" alt="$ tree . --dirsfirst" style="vertical-align: middle;" />
-</h2>
+</h2> -->
 
 <details>
 <summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg" alt="$ ls -la asifahamed-dev/" style="vertical-align: middle;" /></summary>
