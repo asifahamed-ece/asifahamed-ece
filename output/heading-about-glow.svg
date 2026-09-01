@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342 90" width="342" height="90" style="background-color: #00000000;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 105" width="384" height="105" style="background-color: #00000000;">
   <defs>
     <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feGaussianBlur stdDeviation="5.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="blur" />
@@ -11,14 +11,14 @@
   </defs>
 
   <style>
-    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 30px; fill: #00FF9D; opacity: 0.6; }
-    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 30px; fill: #00FF9D; font-weight: 700; }
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 36px; fill: #00FF9D; opacity: 0.6; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 36px; fill: #00FF9D; font-weight: 700; }
     .glow   { filter: url(#neon); }
     .cursor { animation: blink 1.1s steps(1) infinite; }
     @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   </style>
 
-  <text x="36" y="56" class="prompt">$</text>
-  <text x="62" y="56" class="cmd glow">cat about.txt</text>
-  <rect x="292" y="28" width="14" height="34" rx="2" fill="#00FF9D" class="cursor" />
+  <text x="42" y="66" class="prompt">$</text>
+  <text x="68" y="66" class="cmd glow">cat about.txt</text>
+  <rect x="328" y="32" width="14" height="40" rx="2" fill="#00FF9D" class="cursor" />
 </svg>
