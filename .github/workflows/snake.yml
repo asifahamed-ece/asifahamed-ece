@@ -24,8 +24,8 @@ jobs:
           outputs: |
             output/github-contribution-grid-snake.svg
 
-      - name: Enhance snake SVG with space background and growing effect
-        run: python3 tools/snake_growth_enhancer.py output/github-contribution-grid-snake.svg output/github-contribution-grid-snake-enhanced.svg 2
+      - name: Enhance snake SVG (rigid growing body + instant eat + slower loop)
+        run: python3 tools/snake_growth_enhancer.py output/github-contribution-grid-snake.svg output/github-contribution-grid-snake-enhanced.svg 1.5
       - name: Add eaten-dots counter
         run: python3 tools/add_snake_counter.py output/github-contribution-grid-snake-enhanced.svg
       - name: Validate Pac-Man-style eating/snake-growth animation

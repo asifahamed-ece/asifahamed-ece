@@ -342,7 +342,8 @@ asifahamed-dev/
 │   └── workflows/
 │       └── snake.yml          # Contribution snake generator
 ├── output/
-│   └── github-contribution-grid-snake.svg  # Auto-generated
+│   └── github-contribution-grid-snake.svg  # Auto-generated (intermediate)
+│   └── github-contribution-grid-snake-enhanced.svg  # Rigid-body animated snake (rendered)
 ├── [REC-Quiz-Buzzer-System]/  # ESP32 wireless quiz system
 ├── [BareMetal_I2C_Driver]/    # STM32F411 I2C driver (no HAL)
 ├── [ciopt]/                   # C code complexity analyzer

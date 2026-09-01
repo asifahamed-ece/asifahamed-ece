@@ -23,7 +23,10 @@ def main(path: str) -> None:
 
     # Each cell keyframe looks like: @keyframes cXX{<pct>%{fill:...}...}
     pcts = sorted(
-        float(m) for m in re.findall(r"@keyframes c[a-z0-9]+\{([\d.]+)%\{fill", svg)
+        max(float(p.rstrip("%")) for p in g.split(","))
+        for g in re.findall(
+            r"@keyframes c[a-z0-9]+\{((?:[\d.]+%,)*[\d.]+)%\{fill", svg
+        )
     )
     total = len(pcts)
     if total == 0:
@@ -42,9 +45,12 @@ def main(path: str) -> None:
         )
         text_parts.append(f'<text class="snkcnt snkcnt{i}">{i}</text>')
 
+    # keep the counter in sync with the (possibly speed-scaled) loop duration
+    m = re.search(r"\.s\{[^}]*?(\d+)ms", svg)
+    loop_ms = m.group(1) if m else "49900"
     overlay_css = (
         ".snkcnt{font:700 12px 'Fira Code',Consolas,monospace;"
-        "text-anchor:end;opacity:0;animation:none 48700ms linear infinite;"
+        f"text-anchor:end;opacity:0;animation:none {loop_ms}ms linear infinite;"
         "fill:#00FF9D;filter:url(#snkcntglow)}"
         + "".join(
             f".snkcnt.snkcnt{i}{{animation-name:snkcnt{i}}}" for i in range(total + 1)

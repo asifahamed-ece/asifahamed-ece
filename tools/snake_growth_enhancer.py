@@ -1,8 +1,42 @@
 #!/usr/bin/env python3
-"""Enhance contribution snake to grow progressively as it eats contributions."""
+"""Rigid-body contribution snake (Pac-Man style, no trails).
+
+Transforms a Platane/snk SVG so that:
+
+  * every contribution dot shows its real contribution color and vanishes the
+    instant the snake head touches it;
+  * a rigid purple snake body follows the head's exact route around the board;
+    it starts at 4 blocks (head + 3 body) and grows by one block for every dot
+    eaten;
+  * the whole loop runs slower by a speed factor (default 1.5x).
+
+How the rigid body works
+------------------------
+snk moves the head sprite (.s) through waypoints with CSS translate keyframes.
+We build ONE closed <path> through those waypoints (offset to the cell
+centers) and render it as a purple stroke. A CSS stroke-dasharray /
+stroke-dashoffset animation limits the visible part of the stroke to exactly
+the last `length` cells of the route behind the moving head:
+
+    visible window = [head_arc - body_length, head_arc]
+    stroke-dashoffset = body_length - head_arc
+    stroke-dasharray  = body_length, route_total - body_length
+
+Because dashoffset keyframes are emitted at every head waypoint (plus every
+growth instant), the window tracks the head exactly - pauses, corner turns
+and the glide back to the start included - and each eaten dot slides the tail
+one block backward.
+
+Usage: python3 snake_growth_enhancer.py <input_svg> [output_svg] [speed_factor]
+"""
 
 import re
 import sys
+
+CELL = 16.0          # distance between adjacent cell centers in the snk grid
+INITIAL_BLOCKS = 4   # snake length at loop start (head + body blocks)
+SPRITE_CENTER = 8.0  # head sprite center offset from its translate origin
+EPS = 0.01           # near-instant transition ramp, in % of the loop
 
 
 def add_space_background(svg_content):
@@ -18,7 +52,6 @@ def add_space_background(svg_content):
 </g>
 <!-- Stars -->
 <g id="stars" fill-opacity="0.6">
-    <!-- Background stars -->
     <circle cx="100" cy="50" r="0.5" fill="#FFFFFF"/>
     <circle cx="200" cy="100" r="0.3" fill="#FFFFFF"/>
     <circle cx="300" cy="30" r="0.4" fill="#FFFFFF"/>
@@ -38,187 +71,173 @@ def add_space_background(svg_content):
     return re.sub(r'(<svg[^>]*>)', r'\1\n    ' + background, svg_content, count=1)
 
 
-def enhance_snake_styles(svg_content):
-    """Enhance CSS styles for snake appearance."""
-    # Make base cells transparent
-    svg_content = re.sub(
-        r'\.c\{[^}]+\}',
-        '.c{shape-rendering:geometricPrecision;fill:var(--ce);stroke-width:1px;stroke:var(--cb);animation:none 49900ms linear infinite;width:12px;height:12px;opacity:0}',
-        svg_content
-    )
-
-    # Add snake styles with glow effects
-    snake_styles = '''
-/* Glow filter for snake head */
-<filter id="snakeGlow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="2" result="blur"/>
-    <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-</filter>'''
-
-    return re.sub(r'(</style>)', snake_styles + r'\n\1', svg_content, count=1)
-
-
-def parse_snake_path(svg_content):
-    """Parse each contribution cell's animation: its cell id, the loop % when the
-    snake head reaches it, and its real contribution color variable.
-
-    Returns a list of (cell_id, activation_pct, color_var) sorted by activation
-    time (the moment the snake head passes that cell during the loop).
-    """
-    style_match = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
-    if not style_match:
-        return []
-
-    style = style_match.group(1)
-
-    # Matches: @keyframes c[ID]{[PCT]%{fill:var(--cN) ...}
-    # snk names cells with full alphanumeric ids (c0..c9, ca..cz, c10..c1z, ...).
-    keyframe_pattern = r'@keyframes (c[0-9a-zA-Z]+)\{([\d.]+)%\{fill:var\((--c\d+)\)'
-    matches = re.findall(keyframe_pattern, style)
-
-    # Sort by activation time (head arrival order)
-    cells = sorted(matches, key=lambda x: float(x[1]))
-    return cells
-
-
-def create_growing_snake_keyframes(svg_content, initial_length=4, growth_rate=2):
-    """
-    Rebuild each contribution cell's keyframe so that the graph behaves like the
-    Pac-Man contribution animation:
-
-      * Until the snake head arrives, the dot is shown in its REAL contribution
-        color (the contribution graph is visible at rest).
-      * When the head reaches it, the dot flashes green as the snake head.
-      * While the snake body passes, the dot is covered by the neon-green body.
-      * Once the snake TAIL passes, the dot is eaten -> fades to opaque 0, i.e.
-        it disappears into the space background for the rest of the loop.
-
-    The snake body grows over the loop: it starts at ``initial_length`` segments
-    and gains 1 segment every ``growth_rate`` dots eaten, so the tail lags further
-    and further behind the head as dots are consumed.
-
-    Args:
-        initial_length: Starting snake length (default 4: head + 3 body).
-        growth_rate: Number of contributions needed to grow by 1 segment (2).
-    """
-    cells = parse_snake_path(svg_content)
-    if not cells:
-        return svg_content
-
-    style_match = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
-    if not style_match:
-        return svg_content
-
-    style = style_match.group(1)
-    n = len(cells)
-
-    # Snake body length at the moment the head reaches the i-th cell (time order).
-    lengths = [initial_length + (i // growth_rate) for i in range(n)]
-
-    # Two-pass look-ahead: a dot eaten at time index i is consumed (tail passes)
-    # when the head reaches time index i + lengths[i]. Cells near the end of the
-    # loop are never consumed -> they stay as body until 100% and reset to their
-    # real color at 0% on the next loop.
-    fade_times = [100.0] * n
-    for i in range(n):
-        tail_idx = i + lengths[i]
-        if tail_idx < n:
-            fade_times[i] = float(cells[tail_idx][1])
-
-    def create_keyframe_for_cell(cell_id, index, activation_pct, color_var, fade_time):
-        """Build the full lifecycle keyframe for one contribution dot."""
-        activation = float(activation_pct)
-        g = 0.01  # near-instant transition gap (negligible ramp, discrete feel)
-        head_w = 0.15  # how long the bright snake head stays lit (% of loop)
-
-        head_end = min(activation + head_w, 99.9)
-        fade_start = max(min(fade_time - g, 99.99), activation + g)
-
-        frames = []
-        # 1) Real contribution color until the head arrives (also the rest state).
-        frames.append(f'0%,{activation:.2f}%{{fill:var({color_var});opacity:1}}')
-        # 2) Snake head: bright neon with glow.
-        frames.append(f'{activation:.2f}%{{fill:#00FF9D;opacity:1.0;filter:url(#snakeGlow)}}')
-        # 3) Snake body covers the eaten dot.
-        frames.append(f'{head_end:.2f}%{{fill:#00FF9D;opacity:0.7}}')
-        frames.append(f'{fade_start:.2f}%{{fill:#00FF9D;opacity:0.7}}')
-        # 4) Tail passes -> dot consumed, gone into the space background.
-        frames.append(f'{min(fade_time, 100.0):.2f}%{{fill:#00FF9D;opacity:0}}')
-        frames.append('100%{fill:#00FF9D;opacity:0}')
-
-        return f'@keyframes {cell_id}{{{"".join(frames)}}}'
-
-    # Rebuild the style by replacing each cell keyframe block (nested-brace safe).
-    keyframe_blocks = re.split(r'(@keyframes c[0-9a-zA-Z]+\{)', style)
-    result_parts = [keyframe_blocks[0]]  # Keep everything before the first keyframe
-
-    # index of each cell id in time order, for the construction loop below
-    time_index = {cid: idx for idx, (cid, _, _) in enumerate(cells)}
-
-    i = 1
-    while i < len(keyframe_blocks):
-        if i + 1 < len(keyframe_blocks):
-            keyframe_start = keyframe_blocks[i]  # "@keyframes cXX{"
-            cell_id_match = re.search(r'c[0-9a-zA-Z]+', keyframe_start)
-            if cell_id_match:
-                cell_id = cell_id_match.group(0)
-
-                remaining = keyframe_blocks[i + 1]
-                # Find the matching closing brace for this keyframe block
-                brace_count = 1
-                pos = 0
-                while pos < len(remaining) and brace_count > 0:
-                    if remaining[pos] == '{':
-                        brace_count += 1
-                    elif remaining[pos] == '}':
-                        brace_count -= 1
-                    pos += 1
-
-                after_keyframe = remaining[pos:]
-
-                if cell_id in time_index:
-                    idx = time_index[cell_id]
-                    new_keyframe = create_keyframe_for_cell(
-                        cell_id, idx,
-                        cells[idx][1], cells[idx][2],
-                        fade_times[idx],
-                    )
-                    result_parts.append(new_keyframe)
-                else:
-                    result_parts.append(keyframe_start + remaining[:pos])
-
-                result_parts.append(after_keyframe)
-                i += 2
-            else:
-                result_parts.append(keyframe_start)
-                i += 1
-        else:
-            result_parts.append(keyframe_blocks[i])
-            i += 1
-
-    enhanced_style = ''.join(result_parts)
-
-    # Replace the style section
-    svg_content = re.sub(
-        r'<style>.*?</style>',
-        f'<style>{enhanced_style}</style>',
-        svg_content,
-        flags=re.DOTALL,
-        count=1
-    )
-
+def strip_counter(svg_content):
+    """Remove a previously injected dots-eaten counter (defensive no-op)."""
+    svg_content = re.sub(r'\.snkcnt\{.*?(?=</style>)', '', svg_content,
+                         flags=re.DOTALL)
+    svg_content = re.sub(r'<defs><filter id="snkcntglow".*?</g>\s*(?=</svg>)',
+                         '', svg_content, flags=re.DOTALL)
     return svg_content
 
 
-def main(input_path, output_path=None, growth_rate=2):
-    """Main enhancement function."""
+def parse_head_waypoints(style):
+    """[(pct, x, y)] of the head sprite's translate keyframes, time-sorted."""
+    m = re.search(r'@keyframes s0\{(.*?)\}\.s\.s0', style, re.DOTALL)
+    if not m:
+        raise SystemExit('head sprite keyframes (s0) not found')
+    entries = []
+    seg = re.compile(
+        r'((?:\d+(?:\.\d+)?%,)*(?:\d+(?:\.\d+)?))%'
+        r'\{transform:translate\((-?[\d.]+)px,(-?[\d.]+)px\)\}')
+    for sm in seg.finditer(m.group(1)):
+        x, y = float(sm.group(2)), float(sm.group(3))
+        for p in sm.group(1).split(','):
+            entries.append((float(p.rstrip('%')), x, y))
+    entries.sort(key=lambda e: e[0])
+    wps = []
+    for e in entries:
+        if wps and abs(e[0] - wps[-1][0]) < 1e-6:
+            wps[-1] = e
+        else:
+            wps.append(e)
+    return wps
+
+
+def parse_cells(style):
+    """Sorted [(activation_pct, cell_id, color_var)] for every dot."""
+    name_re = re.compile(r'@keyframes (c[0-9a-zA-Z]+)\{')
+    seg_re = re.compile(
+        r'((?:\d+(?:\.\d+)?%,)*(?:\d+(?:\.\d+)?))%\{fill:var\((--c\d+)\)')
+    cells = []
+    i = 0
+    while True:
+        m = name_re.search(style, i)
+        if not m:
+            break
+        open_b = m.end() - 1  # the regex consumed the keyframes' opening brace
+        j = open_b + 1
+        depth = 1
+        while j < len(style) and depth > 0:
+            if style[j] == '{':
+                depth += 1
+            elif style[j] == '}':
+                depth -= 1
+            j += 1
+        sm = seg_re.search(style[open_b + 1:j - 1])
+        if sm:
+            pct = max(float(p.rstrip('%')) for p in sm.group(1).split(','))
+            cells.append((pct, m.group(1), sm.group(2)))
+        i = j
+    cells.sort()
+    return cells
+
+
+def cell_keyframe(pct, cid, color_var):
+    """Real color at rest, gone the instant the head touches the dot."""
+    gone = min(pct + EPS, 99.99)
+    return (
+        f'@keyframes {cid}{{0%,{pct:.2f}%{{fill:var({color_var});opacity:1}}'
+        f'{gone:.2f}%{{fill:var(--ce);opacity:0}}'
+        f'100%{{fill:var(--ce);opacity:0}}}}'
+    )
+
+
+def rebuild_cell_keyframes(style, cells):
+    mapping = {cid: cell_keyframe(pct, cid, var) for pct, cid, var in cells}
+    name_re = re.compile(r'@keyframes (c[0-9a-zA-Z]+)\{')
+    out = []
+    i = 0
+    while True:
+        m = name_re.search(style, i)
+        if not m:
+            out.append(style[i:])
+            break
+        out.append(style[i:m.start()])
+        open_b = m.end() - 1  # the regex consumed the keyframes' opening brace
+        j = open_b + 1
+        depth = 1
+        while j < len(style) and depth > 0:
+            if style[j] == '{':
+                depth += 1
+            elif style[j] == '}':
+                depth -= 1
+            j += 1
+        out.append(mapping.get(m.group(1), style[m.start():j]))
+        i = j
+    return ''.join(out)
+
+
+def build_body(style, cells):
+    """Return (sb0_keyframes, path_d, route_total_px)."""
+    wps = parse_head_waypoints(style)
+    pts = [(x + SPRITE_CENTER, y + SPRITE_CENTER) for _, x, y in wps]
+    arcs = [0.0]
+    for a, b in zip(pts, pts[1:]):
+        arcs.append(arcs[-1] + ((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** 0.5)
+    # close the route if the last waypoint is not the first one
+    gap = ((pts[0][0] - pts[-1][0]) ** 2 +
+           (pts[0][1] - pts[-1][1]) ** 2) ** 0.5
+    if gap >= 0.5:
+        pts.append(pts[0])
+        arcs.append(arcs[-1] + gap)
+        wps.append((100.0, wps[0][1], wps[0][2]))
+    total = arcs[-1]
+    times = [w[0] for w in wps]
+    activations = [pct for pct, _, _ in cells]
+
+    def arc_at(t):
+        if t <= times[0]:
+            return arcs[0]
+        for k in range(1, len(times)):
+            if t <= times[k]:
+                f = (t - times[k - 1]) / (times[k] - times[k - 1])
+                return arcs[k - 1] + f * (arcs[k] - arcs[k - 1])
+        return arcs[-1]
+
+    def length_at(t):
+        n = sum(1 for a in activations if a <= t + 1e-9)
+        return (INITIAL_BLOCKS - 1 + n) * CELL
+
+    growth_ts = []
+    for a in activations:
+        growth_ts += [a - EPS, a, a + EPS]
+
+    offset_props = {}
+    for t in sorted(set([0.0, 100.0] + times + growth_ts)):
+        if t < 0.0 or t > 100.0:
+            continue
+        key = f'{t:.3f}'
+        offset_props.setdefault(key, []).append(
+            f'stroke-dashoffset:{length_at(t) - arc_at(t):.2f}')
+
+    arr_props = {}
+    for t in sorted(set([0.0, 100.0] + growth_ts)):
+        if t < 0.0 or t > 100.0:
+            continue
+        length = length_at(t)
+        arr_props[f'{t:.3f}'] = \
+            f'stroke-dasharray:{length:.0f},{total - length:.0f}'
+
+    frames = []
+    for key in sorted(set(offset_props) | set(arr_props), key=float):
+        props = list(offset_props.get(key, []))
+        if key in arr_props:
+            props.append(arr_props[key])
+        frames.append(f'{key}%{{{";".join(props)}}}')
+    body_kf = '@keyframes sb0{' + ''.join(frames) + '}'
+    path_d = 'M ' + ' L '.join(f'{x:.1f} {y:.1f}' for x, y in pts) + ' Z'
+    return body_kf, path_d, total
+
+
+def scale_durations(svg_content, factor):
+    def repl(m):
+        return f'{int(round(int(m.group(1)) * factor))}ms'
+    return re.sub(r'(\d+)ms', repl, svg_content)
+
+
+def main(input_path, output_path=None, speed=1.5):
     if output_path is None:
         output_path = input_path
-
-    # Read input SVG
     try:
         with open(input_path, 'r', encoding='utf-8') as f:
             svg_content = f.read()
@@ -226,36 +245,85 @@ def main(input_path, output_path=None, growth_rate=2):
         print(f"Error: Input file '{input_path}' not found", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Processing {input_path} ({len(svg_content)} chars)...")
+    if 'snakeBody' in svg_content or '@keyframes sb0' in svg_content:
+        print('Input already contains the rigid-body enhancement - '
+              'regenerate from a fresh snk SVG instead.', file=sys.stderr)
+        sys.exit(1)
 
-    # Apply enhancements
+    print(f'Processing {input_path} ({len(svg_content)} chars)...')
+    svg_content = strip_counter(svg_content)
     svg_content = add_space_background(svg_content)
-    svg_content = enhance_snake_styles(svg_content)
-    svg_content = create_growing_snake_keyframes(svg_content, initial_length=4, growth_rate=growth_rate)
 
-    # Write output SVG
-    try:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(svg_content)
-        print(f"Enhanced SVG saved to {output_path} ({len(svg_content)} chars)")
-        print("Enhancements applied:")
-        print("  ✓ Space nebula and starfield background")
-        print(f"  ✓ Snake grows by 1 segment every {growth_rate} contributions")
-        print("  ✓ Contribution dots visible in their real colors until eaten")
-        print("  ✓ Snake head glows brightly when active")
-        print("  ✓ Eaten dots disappear into the space background after the tail passes")
-    except Exception as e:
-        print(f"Error writing output: {e}", file=sys.stderr)
-        sys.exit(1)
+    style_m = re.search(r'<style>(.*?)</style>', svg_content, re.DOTALL)
+    if not style_m:
+        raise SystemExit('no <style> section found - not a snk SVG?')
+    style = style_m.group(1)
+
+    sm = re.search(r'\.s\{[^}]*?(\d+)ms', style)
+    loop_dur = int(sm.group(1)) if sm else 49900
+
+    cells = parse_cells(style)
+    if not cells:
+        raise SystemExit('no contribution cells found - not a snk SVG?')
+    body_kf, path_d, total = build_body(style, cells)
+
+    # hide the empty grid cells, keep the per-cell animations running
+    style = rebuild_cell_keyframes(style, cells)
+    style = re.sub(
+        r'\.c\{[^}]*\}',
+        f'.c{{shape-rendering:geometricPrecision;fill:var(--ce);'
+        f'stroke-width:1px;stroke:var(--cb);'
+        f'animation:none {loop_dur}ms linear infinite;'
+        f'width:12px;height:12px;opacity:0}}',
+        style, count=1)
+    snake_css = (
+        f'.snakeBody{{fill:none;stroke:var(--cs);stroke-width:12px;'
+        f'stroke-linecap:round;stroke-linejoin:round;'
+        f'animation:none {loop_dur}ms linear infinite;'
+        f'animation-name:sb0;filter:url(#snakeGlow)}}')
+    style = style + '\n' + snake_css + '\n' + body_kf + '\n'
+    svg_content = (svg_content[:style_m.start()] +
+                   f'<style>{style}</style>' +
+                   svg_content[style_m.end():])
+
+    # glow filter definition (used by the snake body)
+    filt = ('<defs><filter id="snakeGlow" x="-50%" y="-50%" width="200%" '
+            'height="200%"><feGaussianBlur stdDeviation="2" result="blur"/>'
+            '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/>'
+            '</feMerge></filter></defs>')
+    svg_content = svg_content.replace('</svg>', filt + '</svg>', 1)
+
+    # the rigid body path, drawn under the head sprite
+    svg_content = re.sub(
+        r'(<rect class="s )',
+        lambda m: f'<path class="snakeBody" d="{path_d}"/>' + m.group(1),
+        svg_content, count=1)
+
+    svg_content = scale_durations(svg_content, speed)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(svg_content)
+
+    eaten = len(cells)
+    print(f'Enhanced SVG saved to {output_path} ({len(svg_content)} chars)')
+    print('Enhancements applied:')
+    print('  - Space nebula and starfield background')
+    print(f'  - Rigid purple snake body: starts at {INITIAL_BLOCKS} blocks, '
+          f'+1 block per dot eaten (final {INITIAL_BLOCKS + eaten} blocks)')
+    print(f'  - Body route follows the head exactly '
+          f'({total:.0f}px closed path)')
+    print('  - Dots vanish the instant the head touches them')
+    print(f'  - Loop slowed by x{speed} ({loop_dur}ms -> '
+          f'{int(round(loop_dur * speed))}ms)')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python3 snake_growth_enhancer.py <input_svg> [output_svg] [growth_rate]")
-        print("  input_svg:   Path to Platane/snk output SVG")
-        print("  output_svg:  Path for enhanced SVG (optional)")
-        print("  growth_rate: Contributions per growth segment (default: 2)")
+        print('Usage: python3 snake_growth_enhancer.py <input_svg> '
+              '[output_svg] [speed_factor]')
+        print('  input_svg:   Path to Platane/snk output SVG')
+        print('  output_svg:  Path for enhanced SVG (optional)')
+        print('  speed_factor: Loop duration multiplier (default 1.5 = slower)')
         sys.exit(1)
-
-    growth_rate = int(sys.argv[3]) if len(sys.argv) > 3 else 2
-    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None, growth_rate)
+    _speed = float(sys.argv[3]) if len(sys.argv) > 3 else 1.5
+    main(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None, _speed)
