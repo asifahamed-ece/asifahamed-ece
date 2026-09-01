@@ -26,8 +26,8 @@ HEADINGS = [
     ("graph",     "$ git log --graph --oneline", "#FF7043", "small"),  # orange
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "small"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252", "small"),  # red
-    ("about",     "$ cat about.txt",             "#00FF9D", "large"),  # matrix green
-    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "large"),  # cyan
+    ("about",     "$ cat about.txt",             "#00FF9D", "small"),  # matrix green
+    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
@@ -59,7 +59,7 @@ def make_svg(text: str, color: str, size: str) -> str:
     .prompt {{ font-family: {FONT}; font-size: {fs}px; fill: {color}; opacity: 0.6; }}
     .cmd    {{ font-family: {FONT}; font-size: {fs}px; fill: {color}; font-weight: 700; }}
     .glow   {{ filter: url(#neon); }}
-    .cursor {{ animation: blink 1.1s steps(1) infinite; }}
+    .cursor {{ animation: blink 1.1s steps(2) infinite; }}
     @keyframes blink {{ 0%, 49% {{ opacity: 1; }} 50%, 100% {{ opacity: 0; }} }}
   </style>
 
