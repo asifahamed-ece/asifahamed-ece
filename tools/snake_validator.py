@@ -21,7 +21,7 @@ import sys
 
 CELL = 16.0
 INITIAL_BLOCKS = 4
-GROWTH_EVERY = 3  # grow +1 body block per this many dots eaten
+GROWTH_EVERY = 5  # grow +1 body block per this many dots eaten
 EPS = 0.01
 TOL = 1.0  # px tolerance for the rigid-follow check
 
