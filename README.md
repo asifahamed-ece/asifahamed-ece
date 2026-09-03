@@ -50,7 +50,7 @@
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D" alt="Commit Streak" />
+        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata" alt="Commit Streak" />
       </td>
     </tr>
   </table>
