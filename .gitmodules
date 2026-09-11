@@ -7,3 +7,6 @@
 [submodule "deploy/github-profile-trophy"]
 	path = deploy/github-profile-trophy
 	url = https://github.com/ryo-ma/github-profile-trophy.git
+[submodule "deploy/github-readme-streak-stats"]
+	path = deploy/github-readme-streak-stats
+	url = https://github.com/DenverCoder1/github-readme-streak-stats.git

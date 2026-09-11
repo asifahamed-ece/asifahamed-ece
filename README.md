@@ -33,24 +33,20 @@
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
 </h2>
 
-<!--
-  SELFHOST-STATS: github-readme-stats.vercel.app is currently DOWN (HTTP 503 DEPLOYMENT_PAUSED for everyone).
-  To self-host, deploy deploy/github-readme-stats to Vercel (see deploy/DEPLOY.md), then replace the
-  placeholder domain "github-readme-stats-asif.vercel.app" below with your real deployment URL.
--->
+<!-- SELFHOST-STATS: Self-hosted on Vercel at github-readme-stats-eight-zeta-33.vercel.app -->
 <p align="center">
   <table>
     <tr>
       <td>
-        <img src="https://github-readme-stats-asif.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
       </td>
       <td>
-        <img src="https://github-readme-stats-asif.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
       </td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://streak-stats.demolab.com?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata" alt="Commit Streak" />
+        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata" alt="Commit Streak" />
       </td>
     </tr>
   </table>
@@ -369,13 +365,9 @@ asifahamed-dev/
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-glow.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
 </h3>
 
-<!--
-  SELFHOST-TROPHIES: The canonical github-profile-trophy.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED).
-  Using a currently-working public mirror (github-profile-trophy-orcin-eta.vercel.app) as a temporary stopgap below.
-  DURABLE FIX: deploy your own instance (deploy/github-profile-trophy, see deploy/DEPLOY.md) and replace the mirror URL.
--->
+<!-- SELFHOST-TROPHIES: Self-hosted on Vercel at github-profile-trophy-mauve-nine.vercel.app -->
 <p align="center">
-  <img src="https://github-profile-trophy-orcin-eta.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
 <h3 align="left">
@@ -384,13 +376,11 @@ asifahamed-dev/
 </h3>
 
 <!--
-  SELFHOST-GRAPH: The canonical github-readme-activity-graph.vercel.app is down for everyone (HTTP 402 DEPLOYMENT_DISABLED).
-  Currently using the verified-working public instance activity-graph.vercel.app (tested 200 + renders the graph).
-  DURABLE FIX: run "vercel deploy --prod --env TOKEN=<pat>" inside deploy/github-readme-activity-graph (see deploy/DEPLOY.md),
-  then replace the domain below with your real URL if this public instance ever goes down.
+  SELFHOST-GRAPH: Self-hosted on Vercel at github-readme-activity-graph-drab-nu.vercel.app
+  with local patch for contribution count tooltips (deploy/patches/activity-graph-contribution-counts.patch).
 -->
 <p align="center">
-   <img src="https://activity-graph.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
+   <img src="https://github-readme-activity-graph-drab-nu.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
 </p>
 
 ---
