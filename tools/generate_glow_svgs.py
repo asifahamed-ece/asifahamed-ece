@@ -29,6 +29,7 @@ HEADINGS = [
     ("exit",      "$ exit 0",                    "#FF5252", "small"),  # red
     ("about",     "$ cat about.txt",             "#00FF9D", "small"),  # matrix green
     ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "small"),  # cyan
+    ("domains",   "$ ./domains.sh --scan",       "#00FF9D", "small"),  # matrix green
 ]
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"

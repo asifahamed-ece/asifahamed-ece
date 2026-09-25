@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Hand-authored profile README asset: embedded-domain constellation with restrained SMIL motion. -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="868" height="515" viewBox="16 5 868 515" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="728" viewBox="0 0 1700 728" role="img" aria-labelledby="title desc">
   <title id="title">Embedded engineering domain constellation</title>
-  <desc id="desc">A Matrix-style system map showing Asif's embedded systems hub connected to six grounded domains. Data packets travel outward along the traces while the domain indicators and hub breathe slowly.</desc>
+  <desc id="desc">A widely spaced network map in which a central Asif embedded-systems hub is linked by six long colour-coded signal traces to six green domain cards arranged in an airy ring, with Bare-Metal C above the hub, ESP32 and ESP-IDF and FreeRTOS to the right, Systems and Linux below, and Edge AI and Wireless to the left. Three packets per colour stream continuously outward from the hub to each card while the card borders, status dots and hub outline pulse slowly in step with them.</desc>
 
   <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#00ff9d" stroke-width="1" opacity="0.08"/>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="#00FF9D" stroke-width="1" opacity="0.07"/>
     </pattern>
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
@@ -17,235 +17,148 @@
     </filter>
   </defs>
 
-  <rect width="900" height="525" fill="#000000"/>
-  <rect width="900" height="525" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1700" height="728" fill="#000000"/>
+  <rect x="0" y="0" width="1700" height="728" fill="url(#grid)"/>
 
-  <g transform="scale(0.75)" fill="#00ff9d" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
-    <text x="48" y="28" font-size="18" font-weight="700" letter-spacing="2">$ domains --scan</text>
-    <text x="48" y="50" font-size="11" opacity="0.62">6 domains / 1 connected systems practice / matrix map</text>
-    <text x="1152" y="28" font-size="11" text-anchor="end" opacity="0.62">ASIF // PROFILE HERO</text>
-    <path d="M48 60H1152" fill="none" stroke="#00ff9d" stroke-width="1" opacity="0.32"/>
+  <g transform="translate(850 364)" fill="#00FF9D" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
 
-    <g fill="none" stroke-width="2" stroke-linecap="round" opacity="0.48" stroke-dasharray="2 9">
-      <path id="trace-top" d="M600 260V134" stroke="#FFB000"/>
-      <path id="trace-ur" d="M740 300L769.8 200" stroke="#00D9FF"/>
-      <path id="trace-lr" d="M740 400L769.8 500" stroke="#B388FF"/>
-      <path id="trace-bottom" d="M600 440V566" stroke="#FF4FD8"/>
-      <path id="trace-ll" d="M460 400L430.2 500" stroke="#FF6B35"/>
-      <path id="trace-ul" d="M460 300L430.2 200" stroke="#4D7CFF"/>
+    <!-- Six colour-coded signal traces across the open ring. Decorative geometry is dimmer than text. -->
+    <g fill="none" stroke-width="3" stroke-linecap="round" opacity="0.55" stroke-dasharray="4 14">
+      <path d="M0 -154V-234" stroke="#FFB000"/>
+      <path d="M290 -118H370" stroke="#00D9FF"/>
+      <path d="M290 118H370" stroke="#B388FF"/>
+      <path d="M0 154V234" stroke="#FF4FD8"/>
+      <path d="M-290 118H-370" stroke="#FF6B35"/>
+      <path d="M-290 -118H-370" stroke="#4D7CFF"/>
     </g>
 
+    <!-- Bare-Metal C -->
     <g>
-      <rect x="510" y="66" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;0.52;1;1;0.52;1;1" keyTimes="0;0.10;0.20;0.44;0.54;0.64;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="530" cy="100" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;9;8;8;9;8;8" keyTimes="0;0.10;0.20;0.44;0.54;0.64;1" dur="8s" repeatCount="indefinite"/>
-      <text x="548" y="83" font-size="14" font-weight="700">Bare-Metal C</text>
-      <text x="548" y="101" font-size="9.5" opacity="0.72">STM32 / no HAL</text>
-      <text x="548" y="115" font-size="8.2" opacity="0.48">Cortex-M reference</text>
+      <rect x="-229" y="-342" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;0.7;1;1;0.7;1;1" keyTimes="0;0.10;0.20;0.44;0.54;0.64;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="-211" cy="-314" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;8.5;6;6;8.5;6;6" keyTimes="0;0.10;0.20;0.44;0.54;0.64;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-199" y="-299" font-size="42" font-weight="700" opacity="1">Bare-Metal C</text>
+      <text x="-207" y="-253" font-size="30" opacity="0.9">STM32 / no HAL</text>
     </g>
 
+    <!-- ESP32 / ESP-IDF -->
     <g>
-      <rect x="769.8" y="166" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;1;0.52;1;1;0.52;1" keyTimes="0;0.12;0.22;0.32;0.56;0.66;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="789.8" cy="200" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;8;9;8;8;9;8" keyTimes="0;0.12;0.22;0.32;0.56;0.66;1" dur="8s" repeatCount="indefinite"/>
-      <text x="807.8" y="183" font-size="14" font-weight="700">ESP32 / ESP-IDF</text>
-      <text x="807.8" y="201" font-size="9.5" opacity="0.72">IoT / Wi-Fi / SoftAP</text>
-      <text x="807.8" y="215" font-size="9" opacity="0.48">AsyncWebServer</text>
+      <rect x="370" y="-172" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;1;0.7;1;1;0.7;1" keyTimes="0;0.12;0.22;0.32;0.56;0.66;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="388" cy="-144" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;6;8.5;6;6;8.5;6" keyTimes="0;0.12;0.22;0.32;0.56;0.66;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="400" y="-129" font-size="42" font-weight="700" opacity="1">ESP32 / ESP-IDF</text>
+      <text x="392" y="-83" font-size="30" opacity="0.9">IoT / Wi-Fi / SoftAP</text>
     </g>
 
+    <!-- FreeRTOS -->
     <g>
-      <rect x="769.8" y="466" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;1;0.52;1;1;0.52;1" keyTimes="0;0.20;0.30;0.40;0.64;0.74;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="789.8" cy="500" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;8;9;8;8;9;8" keyTimes="0;0.20;0.30;0.40;0.64;0.74;1" dur="8s" repeatCount="indefinite"/>
-      <text x="807.8" y="483" font-size="14" font-weight="700">FreeRTOS</text>
-      <text x="807.8" y="501" font-size="9.5" opacity="0.72">task scheduling / IPC</text>
-      <text x="807.8" y="515" font-size="9" opacity="0.48">ESP-IDF</text>
+      <rect x="370" y="64" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;1;0.7;1;1;0.7;1" keyTimes="0;0.20;0.30;0.40;0.64;0.74;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="388" cy="92" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;6;8.5;6;6;8.5;6" keyTimes="0;0.20;0.30;0.40;0.64;0.74;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="400" y="107" font-size="42" font-weight="700" opacity="1">FreeRTOS</text>
+      <text x="392" y="153" font-size="30" opacity="0.9">task scheduling / IPC</text>
     </g>
 
+    <!-- Systems / Linux -->
     <g>
-      <rect x="510" y="566" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;1;0.52;1;1;0.52;1" keyTimes="0;0.28;0.38;0.48;0.72;0.82;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="530" cy="600" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;8;9;8;8;9;8" keyTimes="0;0.28;0.38;0.48;0.72;0.82;1" dur="8s" repeatCount="indefinite"/>
-      <text x="548" y="583" font-size="14" font-weight="700">Systems / Linux</text>
-      <text x="548" y="601" font-size="9.5" opacity="0.72">processes / threading</text>
-      <text x="548" y="615" font-size="9" opacity="0.48">file I/O / IPC</text>
+      <rect x="-229" y="234" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;1;0.7;1;1;0.7;1" keyTimes="0;0.28;0.38;0.48;0.72;0.82;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="-211" cy="262" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;6;8.5;6;6;8.5;6" keyTimes="0;0.28;0.38;0.48;0.72;0.82;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-199" y="277" font-size="42" font-weight="700" opacity="1">Systems / Linux</text>
+      <text x="-207" y="323" font-size="30" opacity="0.9">processes / threading</text>
     </g>
 
+    <!-- Edge AI -->
     <g>
-      <rect x="250.2" y="466" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;1;0.52;1;1;0.52;1" keyTimes="0;0.36;0.46;0.56;0.80;0.90;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="270.2" cy="500" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;8;9;8;8;9;8" keyTimes="0;0.36;0.46;0.56;0.80;0.90;1" dur="8s" repeatCount="indefinite"/>
-      <text x="288.2" y="483" font-size="14" font-weight="700">Edge AI</text>
-      <text x="288.2" y="501" font-size="9.5" opacity="0.72">on-device inference</text>
-      <text x="288.2" y="515" font-size="9" opacity="0.48">C complexity analysis</text>
+      <rect x="-828" y="64" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;1;0.7;1;1;0.7;1" keyTimes="0;0.36;0.46;0.56;0.80;0.90;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="-810" cy="92" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;6;8.5;6;6;8.5;6" keyTimes="0;0.36;0.46;0.56;0.80;0.90;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-798" y="107" font-size="42" font-weight="700" opacity="1">Edge AI</text>
+      <text x="-806" y="153" font-size="30" opacity="0.9">on-device inference</text>
     </g>
 
+    <!-- Wireless -->
     <g>
-      <rect x="250.2" y="166" width="180" height="68" rx="8" fill="#00140d" stroke="#00ff9d" stroke-width="1.5"/>
-      <animate attributeName="stroke-opacity" values="1;1;0.52;1;1;0.52;1" keyTimes="0;0.44;0.54;0.64;0.88;0.98;1" dur="8s" repeatCount="indefinite"/>
-      <circle cx="270.2" cy="200" r="8" fill="#000000" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="r" values="8;8;9;8;8;9;8" keyTimes="0;0.44;0.54;0.64;0.88;0.98;1" dur="8s" repeatCount="indefinite"/>
-      <text x="288.2" y="183" font-size="14" font-weight="700">Wireless</text>
-      <text x="288.2" y="201" font-size="9.5" opacity="0.72">ESP-NOW / LoRa / BLE</text>
-      <text x="288.2" y="215" font-size="9" opacity="0.48">low-power FSM</text>
+      <rect x="-828" y="-172" width="458" height="108" rx="11" fill="#00140D" stroke="#00FF9D" stroke-width="2.2" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;1;0.7;1;1;0.7;1" keyTimes="0;0.44;0.54;0.64;0.88;0.98;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="-810" cy="-144" r="6" fill="#000000" stroke="#00FF9D" stroke-width="2.6">
+        <animate attributeName="r" values="6;6;8.5;6;6;8.5;6" keyTimes="0;0.44;0.54;0.64;0.88;0.98;1" dur="4.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="-798" y="-129" font-size="42" font-weight="700" opacity="1">Wireless</text>
+      <text x="-806" y="-83" font-size="30" opacity="0.9">ESP-NOW / LoRa / BLE</text>
     </g>
 
+    <!-- Central systems hub -->
     <g filter="url(#softGlow)">
-      <rect x="460" y="260" width="280" height="180" rx="12" fill="#001a10" stroke="#00ff9d" stroke-width="2"/>
-      <animate attributeName="stroke-opacity" values="1;0.78;1;1;0.78;1;1" keyTimes="0;0.20;0.40;0.60;0.72;0.84;1" dur="8s" repeatCount="indefinite"/>
-      <rect x="474" y="274" width="252" height="152" rx="8" fill="#000000" stroke="#00ff9d" stroke-width="1" opacity="0.75"/>
+      <rect x="-290" y="-154" width="580" height="308" rx="16" fill="#001A10" stroke="#00FF9D" stroke-width="3" stroke-opacity="1">
+        <animate attributeName="stroke-opacity" values="1;0.78;1;1;0.78;1;1" keyTimes="0;0.20;0.40;0.60;0.72;0.84;1" dur="4.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="-278" y="-146" width="556" height="292" rx="10" fill="#000000" stroke="#00FF9D" stroke-width="1.5" opacity="0.92"/>
     </g>
     <g text-anchor="middle">
-      <text x="600" y="304" font-size="12" letter-spacing="3" opacity="0.7">ASIF // EMBEDDED</text>
-      <text x="600" y="340" font-size="25" font-weight="700" letter-spacing="1">SYSTEMS</text>
-      <text x="600" y="366" font-size="13" opacity="0.82">connect the constrained world</text>
-      <text x="600" y="389" font-size="10" letter-spacing="2" opacity="0.55">HUB: LOW-LEVEL → REAL-TIME</text>
+      <text x="0" y="-83" font-size="30" letter-spacing="1.6" opacity="0.9">ASIF // EMBEDDED</text>
+      <text x="0" y="-15" font-size="54" font-weight="700" letter-spacing="1" opacity="1">SYSTEMS</text>
+      <text x="0" y="45" font-size="30" opacity="0.9">connect the constrained world</text>
+      <text x="0" y="97" font-size="30" letter-spacing="0.6" opacity="0.9">HUB: LOW-LEVEL -&gt; REAL-TIME</text>
     </g>
 
-    <g fill="#00ff9d" opacity="0.45">
-      <circle cx="600" cy="222.67" r="2.5" fill="#FFB000"/>
-      <circle cx="600" cy="197" r="2.5" fill="#FFB000"/>
-      <circle cx="600" cy="171.33" r="2.5" fill="#FFB000"/>
-      <circle cx="746.13" cy="283.33" r="2.5" fill="#00D9FF"/>
-      <circle cx="754.9" cy="250" r="2.5" fill="#00D9FF"/>
-      <circle cx="763.67" cy="216.67" r="2.5" fill="#00D9FF"/>
-      <circle cx="746.13" cy="316.67" r="2.5" fill="#B388FF"/>
-      <circle cx="754.9" cy="350" r="2.5" fill="#B388FF"/>
-      <circle cx="763.67" cy="383.33" r="2.5" fill="#B388FF"/>
-      <circle cx="600" cy="462.67" r="2.5" fill="#FF4FD8"/>
-      <circle cx="600" cy="503" r="2.5" fill="#FF4FD8"/>
-      <circle cx="600" cy="543.33" r="2.5" fill="#FF4FD8"/>
-      <circle cx="453.87" cy="416.67" r="2.5" fill="#FF6B35"/>
-      <circle cx="445.1" cy="450" r="2.5" fill="#FF6B35"/>
-      <circle cx="436.33" cy="483.33" r="2.5" fill="#FF6B35"/>
-      <circle cx="453.87" cy="283.33" r="2.5" fill="#4D7CFF"/>
-      <circle cx="445.1" cy="250" r="2.5" fill="#4D7CFF"/>
-      <circle cx="436.33" cy="216.67" r="2.5" fill="#4D7CFF"/>
+    <!-- Static trace markers preserve a complete diagram when SMIL is unavailable. -->
+    <g>
+      <circle cx="0" cy="-180.67" r="4.5" fill="#FFB000"/><circle cx="0" cy="-194" r="4.5" fill="#FFB000"/><circle cx="0" cy="-207.33" r="4.5" fill="#FFB000"/>
+      <circle cx="316.67" cy="-118" r="4.5" fill="#00D9FF"/><circle cx="330" cy="-118" r="4.5" fill="#00D9FF"/><circle cx="343.33" cy="-118" r="4.5" fill="#00D9FF"/>
+      <circle cx="316.67" cy="118" r="4.5" fill="#B388FF"/><circle cx="330" cy="118" r="4.5" fill="#B388FF"/><circle cx="343.33" cy="118" r="4.5" fill="#B388FF"/>
+      <circle cx="0" cy="180.67" r="4.5" fill="#FF4FD8"/><circle cx="0" cy="194" r="4.5" fill="#FF4FD8"/><circle cx="0" cy="207.33" r="4.5" fill="#FF4FD8"/>
+      <circle cx="-316.67" cy="118" r="4.5" fill="#FF6B35"/><circle cx="-330" cy="118" r="4.5" fill="#FF6B35"/><circle cx="-343.33" cy="118" r="4.5" fill="#FF6B35"/>
+      <circle cx="-316.67" cy="-118" r="4.5" fill="#4D7CFF"/><circle cx="-330" cy="-118" r="4.5" fill="#4D7CFF"/><circle cx="-343.33" cy="-118" r="4.5" fill="#4D7CFF"/>
     </g>
 
-    <g fill="#00ff9d">
-      <circle cx="0" cy="0" r="4" fill="#FFB000" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-top"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FFB000" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-top"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FFB000" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-top"/>
-        </animateMotion>
-      </circle>
+    <!-- 18 travelling packets: three per trace, staggered by exactly dur/3 of the 1.6s trip
+         (begins 0s / -0.533333s / -1.066667s = 0 / -dur/3 / -2*dur/3), so the three sit an even
+         third of the trace apart and the stream never gaps or bunches. 3 x 1.6s = 4.8s, which
+         is also the master loop, so the whole diagram repeats seamlessly.
+         NOTE: the begins must be dur/3 steps, NOT whole multiples of dur. begin="-1.6s" and
+         begin="-3.2s" are exact multiples of dur, so all three packets resolve to phase 0 and
+         travel as one clump instead of a stream. -->
+    <g>
+      <circle cx="0" cy="-154" r="6.5" fill="#FFB000"><animateMotion path="M0 0 L0 -80" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="0" cy="-154" r="6.5" fill="#FFB000"><animateMotion path="M0 0 L0 -80" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="0" cy="-154" r="6.5" fill="#FFB000"><animateMotion path="M0 0 L0 -80" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
 
-      <circle cx="0" cy="0" r="4" fill="#00D9FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ur"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#00D9FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ur"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#00D9FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ur"/>
-        </animateMotion>
-      </circle>
+      <circle cx="290" cy="-118" r="6.5" fill="#00D9FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="290" cy="-118" r="6.5" fill="#00D9FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="290" cy="-118" r="6.5" fill="#00D9FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
 
-      <circle cx="0" cy="0" r="4" fill="#B388FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-lr"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#B388FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-lr"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#B388FF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-lr"/>
-        </animateMotion>
-      </circle>
+      <circle cx="290" cy="118" r="6.5" fill="#B388FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="290" cy="118" r="6.5" fill="#B388FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="290" cy="118" r="6.5" fill="#B388FF"><animateMotion path="M0 0 L80 0" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
 
-      <circle cx="0" cy="0" r="4" fill="#FF4FD8" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-bottom"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FF4FD8" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-bottom"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FF4FD8" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-bottom"/>
-        </animateMotion>
-      </circle>
+      <circle cx="0" cy="154" r="6.5" fill="#FF4FD8"><animateMotion path="M0 0 L0 80" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="0" cy="154" r="6.5" fill="#FF4FD8"><animateMotion path="M0 0 L0 80" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="0" cy="154" r="6.5" fill="#FF4FD8"><animateMotion path="M0 0 L0 80" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
 
-      <circle cx="0" cy="0" r="4" fill="#FF6B35" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ll"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FF6B35" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ll"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#FF6B35" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ll"/>
-        </animateMotion>
-      </circle>
+      <circle cx="-290" cy="118" r="6.5" fill="#FF6B35"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="-290" cy="118" r="6.5" fill="#FF6B35"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="-290" cy="118" r="6.5" fill="#FF6B35"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
 
-      <circle cx="0" cy="0" r="4" fill="#4D7CFF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="0s"/>
-        <animateMotion dur="2.666667s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ul"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#4D7CFF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-2.666667s"/>
-        <animateMotion dur="2.666667s" begin="-2.666667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ul"/>
-        </animateMotion>
-      </circle>
-      <circle cx="0" cy="0" r="4" fill="#4D7CFF" opacity="0">
-        <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.01;1" dur="8s" fill="freeze" begin="-5.333333s"/>
-        <animateMotion dur="2.666667s" begin="-5.333333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite">
-          <mpath xlink:href="#trace-ul"/>
-        </animateMotion>
-      </circle>
-    </g>
-
-    <g font-size="10" opacity="0.55">
-      <text x="48" y="668">TRACE / 06</text>
+      <circle cx="-290" cy="-118" r="6.5" fill="#4D7CFF"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="0s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="-290" cy="-118" r="6.5" fill="#4D7CFF"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="-0.533333s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
+      <circle cx="-290" cy="-118" r="6.5" fill="#4D7CFF"><animateMotion path="M0 0 L-80 0" dur="1.6s" begin="-1.066667s" keyPoints="0;1" keyTimes="0;1" calcMode="linear" repeatCount="indefinite"/></circle>
     </g>
   </g>
 </svg>

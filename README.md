@@ -28,8 +28,13 @@
 
 ---
 
+<h2 align="left">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" alt="Domains" width="32" height="32" style="vertical-align: middle;" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-glow.svg" alt="$ ./domains.sh --scan" style="vertical-align: middle;" />
+</h2>
+
 <p align="left">
-  <img src="assets/domain-constellation.svg" alt="A Matrix-style embedded systems constellation centred on Asif's systems hub, with six green terminal domain cards for Bare-Metal C, ESP32 / ESP-IDF, FreeRTOS, Wireless, Edge AI and Systems / Linux, each linked to the hub by a differently coloured signal path; matching coloured packets travel outward along the links while the cards and hub breathe slowly." width="700" />
+  <img src="assets/domain-constellation.svg" alt="A widely spaced network map in which a central panel labelled Asif Embedded Systems is linked by six long colour-coded signal traces to six green domain cards arranged in an airy ring, with Bare-Metal C above the hub, ESP32 and FreeRTOS to the right, Systems and Linux below, and Edge AI and Wireless to the left; three packets per colour stream continuously outward along each trace while the card borders, status dots and hub outline pulse slowly in step with them." width="700" />
 </p>
 
 <h2 align="left">
