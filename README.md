@@ -28,6 +28,10 @@
 
 ---
 
+<p align="left">
+  <img src="assets/domain-constellation.svg" alt="A Matrix-style embedded systems constellation centred on Asif's systems hub, with six green terminal domain cards for Bare-Metal C, ESP32 / ESP-IDF, FreeRTOS, Wireless, Edge AI and Systems / Linux, each linked to the hub by a differently coloured signal path; matching coloured packets travel outward along the links while the cards and hub breathe slowly." width="700" />
+</p>
+
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
