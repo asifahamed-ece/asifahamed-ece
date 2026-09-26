@@ -21,14 +21,18 @@
 
 ---
 
-<!-- About is the glowing SVG inside a disclosure.
-     The summary is deliberately text, not the heading SVG: GitHub renders an
-     <img> inside <summary> as a block, so the marker drops onto its own line
-     and the heading shrinks to an illegible smudge. A <code> label keeps the
-     marker and the label on one line while the body stays a real terminal
-     panel, with the neon prompt line and the pulsing cursor. -->
-<details>
-<summary><code>$ cat about.txt</code></summary>
+<!-- About is the glowing SVG inside a disclosure, open by default.
+     Two constraints shape the summary. An <img> inside <summary> renders as a
+     block, so the marker drops onto its own line and the label smudges,
+     which is why the summary is text and not the heading SVG. And a summary
+     cannot hold a <picture>, so the label cannot use the dark/light asset
+     swap the headings do. Inline style is the only theme-independent lever
+     left, so the chip carries its own #0d1117 background: neon #00FF9D on it
+     is 14.23:1 in both themes, where a bare hardcoded colour would be 1.33:1
+     on white. GitHub already styles the chip's radius and padding, so only
+     the two colours are set. -->
+<details open>
+<summary><code style="background-color:#0d1117;color:#00FF9D">$ cat about.txt</code></summary>
 
 <p align="center">
   <picture>
