@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 54" width="290" height="54" style="background-color: #00000000;">
+  <defs>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #7CFF3F; opacity: 0.6; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #7CFF3F; font-weight: 700; }
+    .glow   { filter: url(#neon); }
+    .cursor { animation: blink 1.1s steps(2) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  </style>
+
+  <text x="24" y="32" class="prompt">$</text>
+  <text x="50" y="32" class="cmd glow">./contrib.sh --graph</text>
+  <rect x="281" y="16" width="14" height="22" rx="2" fill="#7CFF3F" class="cursor" />
+</svg>

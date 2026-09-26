@@ -34,6 +34,14 @@
 
 ---
 
+<h2 align="left">
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Video%20Game.png" alt="Contributions" width="32" height="32" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-snake-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-snake-light.svg" alt="$ ./contrib.sh --graph" style="vertical-align: middle;" />
+  </picture>
+</h2>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake-enhanced.svg" alt="Contribution Snake" />
 </p>
@@ -405,10 +413,11 @@ asifahamed-dev/
 </h3>
 
 <!-- SELFHOST-TROPHIES: Self-hosted on Vercel at github-profile-trophy-mauve-nine.vercel.app
-     No <picture> needed: theme=radical paints its own #141321 card per trophy,
-     so the pale text stays legible on both light and dark pages. -->
+     no-bg must stay off: the service implements it as fill-opacity="0" on the
+     card rect rather than removing it, so the #141321 card disappears, the
+     white page shows through, and the #a9fef7 captions go invisible. -->
 <p align="center">
-  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
 <h3 align="left">

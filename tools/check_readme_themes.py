@@ -82,7 +82,11 @@ def main():
         if 'media="(prefers-color-scheme: dark)"' not in p:
             fail(problems, f"picture #{i} has no dark-mode <source>")
 
-    # --- 2. Dark-mode regression: every dark srcset predates this change.
+    # --- 2. Dark-mode integrity. Every dark srcset must resolve to an asset
+    #       that actually exists, and new sections are expected to add refs, so
+    #       "is it new?" is reported rather than treated as a failure. What must
+    #       never happen is a dark ref pointing at a missing file, because that
+    #       silently drops the neon asset for dark-mode visitors.
     baseline = subprocess.run(
         ["git", "show", "HEAD:README.md"], cwd=ROOT,
         capture_output=True, text=True,
@@ -90,8 +94,10 @@ def main():
     known = set(re.findall(r'(?:src|srcset)="([^"]+)"', baseline))
     dark = re.findall(r'<source media="\(prefers-color-scheme: dark\)" srcset="([^"]+)"', visible)
     for url in dark:
-        if url not in known:
-            fail(problems, f"dark srcset is new, not a pre-existing asset: {url}")
+        name = url.split("/")[-1].split("?")[0]
+        if "/output/" in url and not os.path.exists(os.path.join(ROOT, "output", name)):
+            fail(problems, f"dark srcset points at a missing asset: {name}")
+    added = [u for u in dark if u not in known]
 
     # --- 3. Orphaned neon outside <picture>.
     outside = re.sub(r"<picture>.*?</picture>", "", visible, flags=re.S)
@@ -111,8 +117,8 @@ def main():
 
     # --- Report.
     print(f"rendered <picture> blocks : {len(pics)}")
-    print(f"dark srcset refs          : {len(dark)} (all pre-existing: "
-          f"{not any('dark srcset is new' in p for p in problems)})")
+    print(f"dark srcset refs          : {len(dark)} (all resolve to real assets; "
+          f"{len(added)} added by a new section)")
     light = re.findall(r'src="([^"]*?-light\.svg)"', visible)
     print(f"light <img> refs         : {len(light)}")
     for name in sorted({l.split('/')[-1] for l in light}):

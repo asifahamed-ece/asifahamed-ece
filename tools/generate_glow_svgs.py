@@ -46,6 +46,7 @@ HEADINGS = [
     ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "#0B6E99", "small"),  # electric blue
     ("exit",      "$ exit 0",                    "#FF5252", "#B3261E", "small"),  # red
     ("about",     "$ cat about.txt",             "#00FF9D", "#0A7D3C", "small"),  # matrix green
+    ("snake",     "$ ./contrib.sh --graph",      "#7CFF3F", "#2F7A0E", "small"),  # acid lime
     ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "#0E6E8C", "small"),  # cyan
     ("domains",   "$ ./domains.sh --scan",       "#00FF9D", "#0A7D3C", "small"),  # matrix green
 ]
