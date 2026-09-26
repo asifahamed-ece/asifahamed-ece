@@ -21,8 +21,14 @@
 
 ---
 
-<details>
-<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-light.svg" alt="$ cat about.txt" style="vertical-align: middle;" /></picture></summary>
+<!-- The summary is text, not the heading SVG: GitHub renders an image inside
+     <summary> as a block, so the disclosure marker drops onto its own line and
+     the heading shrinks to an illegible smudge. A <code> chip keeps the marker
+     and the label on one line. Open by default, since the location and
+     education lines are the point of a profile README and should not be
+     behind a click. -->
+<details open>
+<summary><code>$ cat about.txt</code></summary>
 
 <p align="center">
   <picture>
