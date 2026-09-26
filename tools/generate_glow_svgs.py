@@ -29,25 +29,33 @@ import os
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "output")
 
-# (slug, terminal command text, dark glow color, light color, size)
+# (slug, terminal command text, dark glow color, light fill, light rim, size)
 # size: "large" = original 30px (used for dropdown summaries),
 #       "small" = compact 18px (used for section headings),
 #       "xl" = extra large 36px (for prominent dropdowns)
-# Light colors are contrast-checked against #FFFFFF by check_contrast() below.
+#
+# light fill  carries the text, so it is contrast-checked against #FFFFFF by
+#             check_contrast() and must clear 4.5:1.
+# light rim   is the neon outline painted around each glyph in the light theme.
+#             It only has to be perceptible against white, not accessible,
+#             because the fill underneath still carries the contrast. A rim
+#             that is the same colour as the fill would be invisible, so each
+#             one is a brighter, more chromatic version of its own hue. Pale
+#             neon cannot be used: #00FF9D is 1.33:1 on white.
 HEADINGS = [
-    ("whoami",    "$ whoami",                    "#00FF9D", "#0A7D3C", "small"),  # matrix green
-    ("stats",     "$ ./stats.sh --live",         "#00E5FF", "#0E6E8C", "small"),  # cyan
-    ("projects",  "$ ls ./projects/",            "#FF2ED1", "#B31B8C", "small"),  # magenta
-    ("techstack", "$ cat /etc/tech-stack.conf",  "#B388FF", "#6D3BC7", "small"),  # violet
-    ("tree",      "$ tree . --dirsfirst",        "#FFB300", "#8A5A00", "small"),  # gold
-    ("trophies",  "$ ./trophies.sh",             "#FFC400", "#8A5A00", "small"),  # amber
-    ("graph",     "$ git log --graph --oneline", "#FF7043", "#B23A0C", "small"),  # orange
-    ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "#0B6E99", "small"),  # electric blue
-    ("exit",      "$ exit 0",                    "#FF5252", "#B3261E", "small"),  # red
-    ("about",     "$ cat about.txt",             "#00FF9D", "#0A7D3C", "small"),  # matrix green
-    ("snake",     "$ ./contrib.sh --graph",      "#00FF9D", "#0A7D3C", "small"),  # matrix green
-    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "#0E6E8C", "small"),  # cyan
-    ("domains",   "$ ./domains.sh --scan",       "#00FF9D", "#0A7D3C", "small"),  # matrix green
+    ("whoami",    "$ whoami",                    "#00FF9D", "#0A7D3C", "#00A86B", "small"),  # matrix green
+    ("stats",     "$ ./stats.sh --live",         "#00E5FF", "#0E6E8C", "#0090C8", "small"),  # cyan
+    ("projects",  "$ ls ./projects/",            "#FF2ED1", "#B31B8C", "#D42BB0", "small"),  # magenta
+    ("techstack", "$ cat /etc/tech-stack.conf",  "#B388FF", "#6D3BC7", "#8B5CF6", "small"),  # violet
+    ("tree",      "$ tree . --dirsfirst",        "#FFB300", "#8A5A00", "#C99700", "small"),  # gold
+    ("trophies",  "$ ./trophies.sh",             "#FFC400", "#8A5A00", "#C99700", "small"),  # amber
+    ("graph",     "$ git log --graph --oneline", "#FF7043", "#B23A0C", "#E0620D", "small"),  # orange
+    ("contact",   "$ ./contact.sh --connect",    "#40C4FF", "#0B6E99", "#1195C9", "small"),  # electric blue
+    ("exit",      "$ exit 0",                    "#FF5252", "#B3261E", "#E03A24", "small"),  # red
+    ("about",     "$ cat about.txt",             "#00FF9D", "#0A7D3C", "#00A86B", "small"),  # matrix green
+    ("snake",     "$ ./contrib.sh --graph",      "#00FF9D", "#0A7D3C", "#00A86B", "small"),  # matrix green
+    ("repo",      "$ ls -la asifahamed-dev/",    "#00E5FF", "#0E6E8C", "#0090C8", "small"),  # cyan
+    ("domains",   "$ ./domains.sh --scan",       "#00FF9D", "#0A7D3C", "#00A86B", "small"),  # matrix green
 ]
 
 # GitHub's light-mode foreground / muted-foreground / border tokens.
@@ -56,6 +64,22 @@ LIGHT_MUTED = "#57606A"
 
 # WCAG 2.1 minimum contrast for body text against a white page.
 MIN_CONTRAST = 4.5
+
+# The rim is decoration on top of an already-accessible fill, so it only has to
+# be visible against white. Below this it disappears into the page.
+MIN_RIM_CONTRAST = 2.5
+
+# A rim also has to be brighter than the fill it surrounds, or it does not read
+# as a lit edge. Measured as a luminance ratio; the shipped palette sits between
+# 1.5x and 2.7x.
+MIN_RIM_LIFT = 1.25
+
+# Rim weights. The "$" prompt is a smaller glyph than the command text, so it
+# gets a lighter touch; past about 1.4px the outline starts eating the
+# letterforms at 18px.
+RIM_WIDTH_CMD = 1.2
+RIM_WIDTH_PROMPT = 0.9
+
 
 FONT = "'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace"
 SIZES = {
@@ -86,18 +110,37 @@ def check_contrast() -> None:
 
     This is the whole point of the light theme, so it is enforced at generation
     time rather than measured once and forgotten.
+
+    Two different bars apply. The fill is the text, so it must clear 4.5:1. The
+    rim is decoration painted around a glyph whose fill is still doing the
+    accessibility work, so it only has to stay visible against white, and must
+    not be the same colour as its own fill or the outline disappears.
     """
     offenders = []
-    for slug, _text, dark, light, _size in HEADINGS:
-        for label, color in ((f"{slug} light", light), (f"{slug} prompt", LIGHT_MUTED)):
+    for slug, _text, dark, light, rim, _size in HEADINGS:
+        for label, color, floor in (
+            (f"{slug} fill", light, MIN_CONTRAST),
+            (f"{slug} rim", rim, MIN_RIM_CONTRAST),
+        ):
             ratio = contrast_ratio(color)
-            if ratio < MIN_CONTRAST:
-                offenders.append(f"  {label}: {color} is {ratio:.2f}:1 (needs {MIN_CONTRAST}:1)")
+            if ratio < floor:
+                offenders.append(f"  {label}: {color} is {ratio:.2f}:1 (needs {floor}:1)")
+        if rim.lower() == light.lower():
+            offenders.append(f"  {slug} rim {rim} is identical to its fill, so the outline is invisible")
+        # A rim only reads as a lit edge if it is brighter than the fill it
+        # sits around. Measured as a luminance ratio rather than a contrast
+        # ratio, because a rim and its fill are the same hue by design and are
+        # meant to be hard to tell apart apart from brightness.
+        lf, lr = relative_luminance(light), relative_luminance(rim)
+        if lf and lr / lf < MIN_RIM_LIFT:
+            offenders.append(
+                f"  {slug} rim {rim} is only {lr / lf:.2f}x the luminance of its fill "
+                f"{light} (needs {MIN_RIM_LIFT}x) so the outline will not read as lit")
     if offenders:
         raise SystemExit("light theme contrast check failed:\n" + "\n".join(offenders))
 
 
-def make_svg(text: str, color: str, size: str, theme: str = "dark") -> str:
+def make_svg(text: str, color: str, size: str, theme: str = "dark", rim: str | None = None) -> str:
     cfg = SIZES[size]
     fs, cw, pad, h, blur = cfg["font_size"], cfg["char_w"], cfg["pad"], cfg["height"], cfg["blur"]
     prompt, cmd = text.split(" ", 1)
@@ -124,11 +167,16 @@ def make_svg(text: str, color: str, size: str, theme: str = "dark") -> str:
         cmd_class = "cmd glow"
     else:
         # No filter: on white, a neon halo bleeds into the page and destroys the
-        # glyph stems. The prompt drops its 0.6 opacity because a translucent
-        # dark color over white would not clear 4.5:1 either.
+        # glyph stems. Instead of a glow, the light theme gets a rim, a stroke
+        # around each glyph. paint-order puts the stroke behind the fill so only
+        # its outer half shows and the letterform is not eaten. The fill still
+        # carries the contrast, so the rim is free to be a brighter, more
+        # chromatic version of the same hue. The prompt drops its 0.6 opacity
+        # because a translucent dark color over white would not clear 4.5:1.
+        rim = rim or color
         defs = ""
-        style = f'''    .prompt {{ font-family: {FONT}; font-size: {fs}px; fill: {LIGHT_MUTED}; }}
-    .cmd    {{ font-family: {FONT}; font-size: {fs}px; fill: {color}; font-weight: 700; }}
+        style = f'''    .prompt {{ font-family: {FONT}; font-size: {fs}px; fill: {LIGHT_MUTED}; stroke: {rim}; stroke-width: {RIM_WIDTH_PROMPT}px; paint-order: stroke fill; }}
+    .cmd    {{ font-family: {FONT}; font-size: {fs}px; fill: {color}; font-weight: 700; stroke: {rim}; stroke-width: {RIM_WIDTH_CMD}px; paint-order: stroke fill; }}
     .cursor {{ animation: blink 1.1s steps(2) infinite; }}
     @keyframes blink {{ 0%, 49% {{ opacity: 1; }} 50%, 100% {{ opacity: 0; }} }}'''
         cmd_class = "cmd"
@@ -149,12 +197,13 @@ def make_svg(text: str, color: str, size: str, theme: str = "dark") -> str:
 def main() -> None:
     check_contrast()
     os.makedirs(OUT_DIR, exist_ok=True)
-    for slug, text, dark, light, size in HEADINGS:
+    for slug, text, dark, light, rim, size in HEADINGS:
         for theme, color, suffix in (("dark", dark, "glow"), ("light", light, "light")):
             path = os.path.normpath(os.path.join(OUT_DIR, f"heading-{slug}-{suffix}.svg"))
             with open(path, "w", encoding="utf-8") as f:
-                f.write(make_svg(text, color, size, theme))
-            print(f"wrote {path} ({theme}, {size}, {contrast_ratio(color):.2f}:1 on white)")
+                f.write(make_svg(text, color, size, theme, rim))
+            note = contrast_ratio(color) if theme == "dark" else f"fill {contrast_ratio(color):.2f}:1, rim {contrast_ratio(rim):.2f}:1"
+            print(f"wrote {path} ({theme}, {size}, {note})")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 54" width="224" height="54" style="background-color: #00000000;">
   <style>
-    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #57606A; }
-    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #B31B8C; font-weight: 700; }
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #57606A; stroke: #D42BB0; stroke-width: 0.9px; paint-order: stroke fill; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #B31B8C; font-weight: 700; stroke: #D42BB0; stroke-width: 1.2px; paint-order: stroke fill; }
     .cursor { animation: blink 1.1s steps(2) infinite; }
     @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   </style>
