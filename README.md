@@ -125,14 +125,14 @@
 <tr>
 <td width="50%" valign="top" style="padding: 12px;">
 
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" style="vertical-align: middle;" /> <code>[REC-Quiz-Buzzer-System]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" height="20" style="vertical-align: middle;" /> <code>[wireless-quiz-buzzer]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>ESP32</code> <code>ESP-NOW</code> <code>WebSockets</code> <code>C++</code>
 </p>
 <p style="font-size: 13px; margin: 4px 0;">
 A wireless, real-time quiz buzzer system with <strong>microsecond precision</strong> timing and a live web dashboard. Professional features for academic competitions.
 </p>
-<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/REC-Quiz-Buzzer-System">Repository →</a></p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/wireless-quiz-buzzer">Repository →</a></p>
 
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
@@ -304,6 +304,22 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top" style="padding: 12px;">
+
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Headphone.png" width="20" height="20" style="vertical-align: middle;" /> <code>[UsbAudioDac]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>STM32F411</code> <code>USB Audio Class 1.0</code> <code>I2S/DMA</code> <code>FreeRTOS</code> <code>C</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
+A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1.0</strong> device, so it is plug-and-play on Linux, Windows and macOS with no drivers. I2S + DMA into a MAX98357A DAC and Class D amplifier, with a lock-free SPSC ring buffer between the USB and I2S stages.
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/UsbAudioDac">Repository →</a></p>
+
+</td>
+<td width="50%" valign="top" style="padding: 12px;">
+</td>
+</tr>
 </table>
 
 ---
@@ -408,7 +424,7 @@ asifahamed-dev/
 ├── output/
 │   └── github-contribution-grid-snake.svg  # Auto-generated (intermediate)
 │   └── github-contribution-grid-snake-enhanced.svg  # Rigid-body animated snake (rendered)
-├── [REC-Quiz-Buzzer-System]/  # ESP32 wireless quiz system
+├── [wireless-quiz-buzzer]/  # ESP32 wireless quiz system
 ├── [BareMetal_I2C_Driver]/    # STM32F411 I2C driver (no HAL)
 ├── [ciopt]/                   # C code complexity analyzer
 ├── [SilvaLink]/               # LoRa/BLE mesh emergency node
