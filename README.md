@@ -2,21 +2,33 @@
 <!-- Embedded Systems Developer | Bare-Metal C Programmer | IoT Engineer -->
 <!-- Hacker/Developer Theme | Matrix-Inspired Aesthetic -->
 <h2 align="left">
-  <img src="https://cdn.simpleicons.org/archlinux/00FF9D" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg" alt="$ whoami" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/archlinux/00FF9D">
+    <img src="https://cdn.simpleicons.org/archlinux/0A7D3C" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-light.svg" alt="$ whoami" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=0A7D3C&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
+  </picture>
 </p>
 
 ---
 
 <details>
-<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg" alt="$ cat about.txt" style="vertical-align: middle;" /></summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-light.svg" alt="$ cat about.txt" style="vertical-align: middle;" /></picture></summary>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg" alt="About Me" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-light.svg" alt="About Me" />
+  </picture>
 </p>
 </details>
 
@@ -30,16 +42,25 @@
 
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" alt="Domains" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-glow.svg" alt="$ ./domains.sh --scan" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-light.svg" alt="$ ./domains.sh --scan" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 <p align="left">
-  <img src="assets/domain-constellation.svg" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." width="700" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/domain-constellation.svg">
+    <img src="assets/domain-constellation-light.svg" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." width="700" />
+  </picture>
 </p>
 
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-light.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 <!-- SELFHOST-STATS: Self-hosted on Vercel at github-readme-stats-eight-zeta-33.vercel.app -->
@@ -65,7 +86,10 @@
 
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="40" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-glow.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-light.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 <table>
@@ -257,7 +281,10 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-glow.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-light.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 #### Microcontrollers & Platforms
@@ -290,7 +317,10 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
   &nbsp;
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" height="48" alt="Git" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/platformio/FF7B00" width="48" height="48" alt="PlatformIO" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/platformio/FF7B00">
+    <img src="https://cdn.simpleicons.org/platformio/C25700" width="48" height="48" alt="PlatformIO" />
+  </picture>
 </p>
 
 ---
@@ -339,7 +369,7 @@ Learning Roadmap
 </h2> -->
 
 <details>
-<summary><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg" alt="$ ls -la asifahamed-dev/" style="vertical-align: middle;" /></summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-light.svg" alt="$ ls -la asifahamed-dev/" style="vertical-align: middle;" /></picture></summary>
 
 ```bash
 asifahamed-dev/
@@ -371,17 +401,25 @@ asifahamed-dev/
 
 <h3 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-glow.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-light.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
+  </picture>
 </h3>
 
-<!-- SELFHOST-TROPHIES: Self-hosted on Vercel at github-profile-trophy-mauve-nine.vercel.app -->
+<!-- SELFHOST-TROPHIES: Self-hosted on Vercel at github-profile-trophy-mauve-nine.vercel.app
+     No <picture> needed: theme=radical paints its own #141321 card per trophy,
+     so the pale text stays legible on both light and dark pages. -->
 <p align="center">
   <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&no-bg=true&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
 </p>
 
 <h3 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-glow.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-light.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
+  </picture>
 </h3>
 
 <!--
@@ -396,7 +434,10 @@ asifahamed-dev/
 
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-glow.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-light.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 <p align="center">
@@ -416,7 +457,10 @@ asifahamed-dev/
 ---
 
 <h2 align="left">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-glow.svg" alt="$ exit 0" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-light.svg" alt="$ exit 0" style="vertical-align: middle;" />
+  </picture>
 </h2>
 
 ```diff

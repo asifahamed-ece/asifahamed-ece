@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345 54" width="345" height="54" style="background-color: #00000000;">
+  <style>
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #57606A; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #B23A0C; font-weight: 700; }
+    .cursor { animation: blink 1.1s steps(2) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  </style>
+
+  <text x="24" y="32" class="prompt">$</text>
+  <text x="50" y="32" class="cmd">git log --graph --oneline</text>
+  <rect x="336" y="16" width="14" height="22" rx="2" fill="#B23A0C" class="cursor" />
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 54" width="268" height="54" style="background-color: #00000000;">
+  <style>
+    .prompt { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #57606A; }
+    .cmd    { font-family: 'Fira Code', 'JetBrains Mono', Consolas, 'Courier New', monospace; font-size: 18px; fill: #8A5A00; font-weight: 700; }
+    .cursor { animation: blink 1.1s steps(2) infinite; }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  </style>
+
+  <text x="24" y="32" class="prompt">$</text>
+  <text x="50" y="32" class="cmd">tree . --dirsfirst</text>
+  <rect x="259" y="16" width="14" height="22" rx="2" fill="#8A5A00" class="cursor" />
+</svg>
