@@ -19,6 +19,10 @@ Four classes of bug are checked, all of which have bitten this README before:
    allow-listed, as are blocks inside HTML comments.
 4. Local asset resolution. Every relative path in the rendered HTML must exist
    on disk, so a typo cannot ship a broken image.
+5. Colour-via-CSS. GitHub strips author-supplied style attributes from rendered
+   markdown, so a style="color:..." silently does nothing. Colour has to come
+   from a themed <picture> asset, and this fails the build if someone reaches
+   for CSS instead.
 """
 
 import os
@@ -114,6 +118,23 @@ def main():
     for url in set(re.findall(r'(?:src|srcset)="((?!https?:)[^"]+)"', visible)):
         if not os.path.exists(os.path.join(ROOT, url)):
             fail(problems, f"local asset does not exist: {url}")
+
+    # --- 5. Colour via style attributes does not work on GitHub. Warn about
+    #       color/background-color specifically, since those are the ones people
+    #       reach for when a theme-aware asset swap is not available.
+    #
+    #       Verified on the live profile: of the style attributes that survive
+    #       GitHub's sanitizer, every single one is GitHub's own responsive
+    #       image injection. Authored style attributes are dropped, including
+    #       vertical-align on <img>, which is why the emoji in the section
+    #       headings sits on the text baseline rather than centred.
+    for m in re.finditer(r'style="([^"]*)"', source):
+        for prop in ("color", "background-color", "background"):
+            if re.search(rf'(^|;)\s*{prop}\s*:', m.group(1)):
+                fail(problems,
+                     f"style attribute sets {prop}, which GitHub strips from rendered "
+                     f"markdown: style=\"{m.group(1)}\" — use a themed <picture> asset instead")
+                break
 
     # --- Report.
     print(f"rendered <picture> blocks : {len(pics)}")

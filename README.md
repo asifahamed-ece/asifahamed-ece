@@ -21,18 +21,25 @@
 
 ---
 
-<!-- About is the glowing SVG inside a disclosure, open by default.
-     Two constraints shape the summary. An <img> inside <summary> renders as a
-     block, so the marker drops onto its own line and the label smudges,
-     which is why the summary is text and not the heading SVG. And a summary
-     cannot hold a <picture>, so the label cannot use the dark/light asset
-     swap the headings do. Inline style is the only theme-independent lever
-     left, so the chip carries its own #0d1117 background: neon #00FF9D on it
-     is 14.23:1 in both themes, where a bare hardcoded colour would be 1.33:1
-     on white. GitHub already styles the chip's radius and padding, so only
-     the two colours are set. -->
-<details open>
-<summary><code style="background-color:#0d1117;color:#00FF9D">$ cat about.txt</code></summary>
+<!-- About is a plain section rather than a disclosure.
+     A <details> was tried three ways. An <img> in <summary> renders as a
+     block, so the disclosure marker drops onto its own line and the label
+     smudges. A <code> chip fixed the alignment but is grey. Colouring that
+     chip was the obvious next step and it does not work: GitHub strips every
+     author-supplied style attribute from rendered markdown, verified on the
+     live page where all 74 surviving style attributes are GitHub's own
+     responsive-image injection. A summary also cannot hold a <picture>, so
+     the label cannot do the dark/light asset swap the headings do.
+     So the only way to get the neon label is to not use a summary at all,
+     which is what this is now: the same neon heading as the other sections,
+     with the SVG panel below it. Nothing is lost by it, since the block was
+     wanted open on load anyway. -->
+<h2 align="left">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-light.svg" alt="$ cat about.txt" />
+  </picture>
+</h2>
 
 <p align="center">
   <picture>
@@ -40,7 +47,6 @@
     <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-light.svg" alt="About Me" />
   </picture>
 </p>
-</details>
 
 ---
 
