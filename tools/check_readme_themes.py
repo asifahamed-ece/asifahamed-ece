@@ -105,7 +105,7 @@ def main():
         url = m.group(1)
         if any(token in url for token in ALLOWED_TRANSPARENT):
             continue
-        if "output/" in url and ("-glow.svg" in url or "about-glow.svg" in url):
+        if "output/" in url and url.endswith("-glow.svg"):
             fail(problems, f"neon asset outside <picture> (invisible in light mode): {url}")
         if re.search(r"simpleicons\.org/[^/]+/(00FF9D|FF7B00)$", url):
             fail(problems, f"low-contrast icon outside <picture>: {url}")

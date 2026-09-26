@@ -2,9 +2,8 @@
 """Generate glowing terminal-style heading SVGs for the GitHub profile README.
 
 GitHub strips CSS/style attributes from READMEs, so glow effects must be baked
-into SVG images (see output/about-glow.svg for the original example). This
-script writes one SVG per heading into output/ using the neon glow filter
-(feGaussianBlur + feMerge) with a distinct color per section.
+into SVG images. This script writes one SVG per heading into output/ using the
+neon glow filter (feGaussianBlur + feMerge) with a distinct color per section.
 
 Two themes are emitted per heading:
 

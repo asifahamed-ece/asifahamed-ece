@@ -21,22 +21,31 @@
 
 ---
 
-<!-- The summary is text, not the heading SVG: GitHub renders an image inside
-     <summary> as a block, so the disclosure marker drops onto its own line and
-     the heading shrinks to an illegible smudge. A <code> chip keeps the marker
-     and the label on one line. Open by default, since the location and
-     education lines are the point of a profile README and should not be
-     behind a click. -->
-<details open>
-<summary><code>$ cat about.txt</code></summary>
-
-<p align="center">
+<!-- About is a fenced block, not a dropdown and not an SVG.
+     The <details> was tried first because an image in <summary> renders as a
+     block, which drops the disclosure marker onto its own line; replacing the
+     image with a <code> chip fixed the alignment but read as plain text on a
+     terminal-themed page. A real code block is styled by GitHub per light/dark
+     on its own, so it needs no light twin and no <picture>, and it matches the
+     repo-tree block below. It is also selectable and searchable, which an
+     image is not. -->
+<h2 align="left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-light.svg" alt="About Me" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-light.svg" alt="$ cat about.txt" style="vertical-align: middle;" />
   </picture>
-</p>
-</details>
+</h2>
+
+```text
+$ ./about.sh --human
+──────────────────────────────────────────────
+> Location : Tamil Nadu, India
+> Education: B.E. ECE @ Rajalakshmi Engineering College
+> Focus    : Bare-metal firmware | Device drivers | FreeRTOS
+> Wireless : ESP-NOW | LoRa | BLE | WiFi
+> Status   : Building low-power embedded systems
+> Motto    : "Debugging is just aggressive learning."
+```
 
 ---
 
