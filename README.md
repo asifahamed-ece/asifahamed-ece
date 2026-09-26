@@ -49,10 +49,7 @@
 </h2>
 
 <p align="left">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/domain-constellation.svg">
-    <img src="assets/domain-constellation-light.svg" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." width="700" />
-  </picture>
+  <img src="assets/domain-constellation.svg" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." width="700" />
 </p>
 
 <h2 align="left">
