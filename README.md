@@ -81,7 +81,7 @@
      Declaring height alongside width lets GitHub reserve the space and stops
      the page reflowing once the image loads. -->
 <p align="left">
-  <img src="assets/domain-constellation.svg" width="600" height="600" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." />
+  <img src="assets/domain-constellation.svg" width="600" height="542" alt="A hexagonal star network map in which a green hexagonal Asif embedded-systems hub at the centre is joined by six short colour-coded signal traces to six green domain cards set at the six points of an even hexagon, with Bare-Metal C at the top, ESP32 and FreeRTOS down the right, Systems and Linux at the bottom, and Edge AI and Wireless up the left, while three packets of each colour stream continuously outward from the hub to its card and the card borders, status dots and hub outline breathe slowly in a staggered ripple." />
 </p>
 
 <h2 align="left">
