@@ -7,8 +7,8 @@
     <img src="https://cdn.simpleicons.org/archlinux/0A7D3C" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-whoami-light.svg" alt="$ whoami" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-whoami-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-whoami-light.svg" alt="$ whoami" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -36,15 +36,15 @@
      wanted open on load anyway. -->
 <h2 align="left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-about-light.svg" alt="$ cat about.txt" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-about-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-about-light.svg" alt="$ cat about.txt" />
   </picture>
 </h2>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/about-light.svg" alt="About Me" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/about-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/about-light.svg" alt="About Me" />
   </picture>
 </p>
 
@@ -53,13 +53,13 @@
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Video%20Game.png" alt="Contributions" width="32" height="32" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-snake-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-snake-light.svg" alt="$ ./contrib.sh --graph" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-snake-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-snake-light.svg" alt="$ ./contrib.sh --graph" style="vertical-align: middle;" />
   </picture>
 </h2>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/github-contribution-grid-snake-enhanced.svg" alt="Contribution Snake" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/github-contribution-grid-snake-enhanced.svg" alt="Contribution Snake" />
 </p>
 
 ---
@@ -67,8 +67,8 @@
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" alt="Domains" width="32" height="32" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-domains-light.svg" alt="$ ./domains.sh --scan" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-domains-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-domains-light.svg" alt="$ ./domains.sh --scan" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -87,8 +87,8 @@
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" alt="Stats" width="32" height="32" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-stats-light.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-stats-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-stats-light.svg" alt="$ ./stats.sh --live" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -116,8 +116,8 @@
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/File%20Folder.png" alt="Projects" width="32" height="40" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-projects-light.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-projects-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-projects-light.svg" alt="$ ls ./projects/" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -327,8 +327,8 @@ A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" alt="Tech Stack" width="32" height="32" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-techstack-light.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-techstack-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-techstack-light.svg" alt="$ cat /etc/tech-stack.conf" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -370,54 +370,11 @@ A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1
 
 ---
 
-<!--
-<h2 align="left">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Progress" width="32" height="32" style="vertical-align: middle;" />
-  <code>$ ./progress.sh --status</code>
-</h2>
-
-<p align="center">
-
-```text
-Currently Working On
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
-| Project | Status | Description |
-|:--------|:------:|:------------|
-| `ciopt` | 🔨 Building | AI-Powered C Code Complexity Analyzer |
-| `FreeRTOS_Esp32` | 📚 Learning | Mastering FreeRTOS task scheduling |
-| `dotfiles` | ✅ Maintained | Arch Linux rice & terminal config |
-
-```text
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Learning Roadmap
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
-| Phase | Goal | Status |
-|:-----:|:-----|:------:|
-| Phase 1 | C & Bare-Metal | ✅ Complete |
-| Phase 2 | FreeRTOS & ESP-IDF | 🔄 In Progress |
-| Phase 3 | Linux Kernel Drivers | 📋 Planned |
-| Phase 4 | RTOS Internals (Zephyr/RTOS) | 📋 Planned |
-
-</p>
-
----
-
--->
-
-<!-- <h2 align="left">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Card%20File%20Box.png" alt="Repo Structure" width="32" height="32" style="vertical-align: middle;" />
-  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-tree-glow.svg" alt="$ tree . --dirsfirst" style="vertical-align: middle;" />
-</h2> -->
-
 <details>
-<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-repo-light.svg" alt="$ ls -la asifahamed-dev/" style="vertical-align: middle;" /></picture></summary>
+<summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-repo-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-repo-light.svg" alt="$ ls -la asifahamed-ece/" style="vertical-align: middle;" /></picture></summary>
 
 ```bash
-asifahamed-dev/
+asifahamed-ece/
 ├── .github/
 │   └── workflows/
 │       └── snake.yml          # Contribution snake generator
@@ -447,8 +404,8 @@ asifahamed-dev/
 <h3 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-trophies-light.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-trophies-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-trophies-light.svg" alt="$ ./trophies.sh" style="vertical-align: middle;" />
   </picture>
 </h3>
 
@@ -463,8 +420,8 @@ asifahamed-dev/
 <h3 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Fire.png" alt="Commit Consistency" width="28" height="28" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-graph-light.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-graph-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-graph-light.svg" alt="$ git log --graph --oneline" style="vertical-align: middle;" />
   </picture>
 </h3>
 
@@ -481,8 +438,8 @@ asifahamed-dev/
 <h2 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Contact" width="32" height="32" style="vertical-align: middle;" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-contact-light.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-contact-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-contact-light.svg" alt="$ ./contact.sh --connect" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -504,8 +461,8 @@ asifahamed-dev/
 
 <h2 align="left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-glow.svg">
-    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-dev/main/output/heading-exit-light.svg" alt="$ exit 0" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-exit-glow.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-exit-light.svg" alt="$ exit 0" style="vertical-align: middle;" />
   </picture>
 </h2>
 
@@ -518,10 +475,3 @@ asifahamed-dev/
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=asifahamed-ece&label=Profile+Views&color=00FF9D&style=flat-square" alt="Profile Views" />
 </p>
-
-<!--
-To enable the snake animation:
-1. Go to repository Settings > Actions > General > Allow all actions
-2. The .github/workflows/snake.yml will automatically run daily at midnight UTC
-3. First run may take 2-3 minutes to generate the initial snake.svg
--->
