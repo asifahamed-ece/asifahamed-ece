@@ -105,7 +105,7 @@
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=2" alt="Commit Streak" />
+        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=3" alt="Commit Streak" />
       </td>
     </tr>
   </table>
