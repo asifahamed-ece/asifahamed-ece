@@ -1,8 +1,25 @@
+diff --git a/__test__/__snapshots__/svgs.test.ts.snap b/__test__/__snapshots__/svgs.test.ts.snap
+index 720ad07..d4be4ca 100644
+--- a/__test__/__snapshots__/svgs.test.ts.snap
++++ b/__test__/__snapshots__/svgs.test.ts.snap
+@@ -351,10 +351,10 @@ exports[`SVG Testing chart SVGs 1`] = `
+ 
+             <foreignObject x="0" y="0" width="1200" height="50">
+                 <h1 xmlns="http://www.w3.org/1999/xhtml" class="header">
+-                    xyz's Contribution Graph
++                    xyz's Contribution Graph • Total: 41 contributions
+                 </h1>
+             </foreignObject>
+-            <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="1200" height="420" class="ct-chart-line"><g class="ct-grids"><line x1="90" x2="90" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="355" x2="355" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="620" x2="620" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="885" x2="885" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="1150" x2="1150" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line y1="350" y2="350" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="311.42857142857144" y2="311.42857142857144" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="272.8571428571429" y2="272.8571428571429" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="234.28571428571428" y2="234.28571428571428" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="195.71428571428572" y2="195.71428571428572" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="157.14285714285714" y2="157.14285714285714" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="118.57142857142858" y2="118.57142857142858" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="80" y2="80" x1="90" x2="1150" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M90,311.429C178.333,305,266.667,303.393,355,292.143C443.333,280.893,531.667,177.143,620,157.143C708.333,137.143,796.667,131.429,885,118.571C973.333,105.714,1061.667,92.857,1150,80" class="ct-line"></path><line x1="90" y1="311.42857142857144" x2="90.01" y2="311.42857142857144" class="ct-point" ct:value="2"></line><line x1="355" y1="292.14285714285717" x2="355.01" y2="292.14285714285717" class="ct-point" ct:value="3"></line><line x1="620" y1="157.14285714285714" x2="620.01" y2="157.14285714285714" class="ct-point" ct:value="10"></line><line x1="885" y1="118.57142857142858" x2="885.01" y2="118.57142857142858" class="ct-point" ct:value="12"></line><line x1="1150" y1="80" x2="1150.01" y2="80" class="ct-point" ct:value="14"></line></g></g><g class="ct-labels"><text x="85.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="350.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">2</text><text x="615.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="880.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="1145.5" y="370" width="30" height="40" class="ct-label ct-horizontal ct-end">1</text><text y="354.5" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">0</text><text y="315.92857142857144" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">2</text><text y="277.3571428571429" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">4</text><text y="238.78571428571428" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">6</text><text y="200.21428571428572" x="80" height="38.571428571428584" width="60" class="ct-label ct-vertical ct-start">8</text><text y="161.64285714285714" x="80" height="38.571428571428555" width="60" class="ct-label ct-vertical ct-start">10</text><text y="123.07142857142858" x="80" height="38.571428571428584" width="60" class="ct-label ct-vertical ct-start">12</text><text y="84.5" x="80" height="30" width="60" class="ct-label ct-vertical ct-start">14</text></g><text class="ct-axis-title ct-label" x="620" y="400" dominant-baseline="text-after-edge" text-anchor="middle">Days</text><text class="ct-axis-title ct-label" x="20" y="215" transform="rotate(-90, 20, 215)" dominant-baseline="hanging" text-anchor="middle">Contributions</text></svg>
++            <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="1200" height="420" class="ct-chart-line"><g class="ct-grids"><line x1="90" x2="90" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="355" x2="355" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="620" x2="620" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="885" x2="885" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line x1="1150" x2="1150" y1="80" y2="350" class="ct-grid ct-horizontal"></line><line y1="350" y2="350" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="311.42857142857144" y2="311.42857142857144" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="272.8571428571429" y2="272.8571428571429" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="234.28571428571428" y2="234.28571428571428" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="195.71428571428572" y2="195.71428571428572" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="157.14285714285714" y2="157.14285714285714" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="118.57142857142858" y2="118.57142857142858" x1="90" x2="1150" class="ct-grid ct-vertical"></line><line y1="80" y2="80" x1="90" x2="1150" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M90,311.429C178.333,305,266.667,303.393,355,292.143C443.333,280.893,531.667,177.143,620,157.143C708.333,137.143,796.667,131.429,885,118.571C973.333,105.714,1061.667,92.857,1150,80" class="ct-line"></path><line x1="90" y1="311.42857142857144" x2="90.01" y2="311.42857142857144" class="ct-point" ct:value="2"><title>day 1: 2 contributions</title></line><line x1="355" y1="292.14285714285717" x2="355.01" y2="292.14285714285717" class="ct-point" ct:value="3"><title>day 2: 3 contributions</title></line><line x1="620" y1="157.14285714285714" x2="620.01" y2="157.14285714285714" class="ct-point" ct:value="10"><title>day 1: 10 contributions</title></line><line x1="885" y1="118.57142857142858" x2="885.01" y2="118.57142857142858" class="ct-point" ct:value="12"><title>day 1: 12 contributions</title></line><line x1="1150" y1="80" x2="1150.01" y2="80" class="ct-point" ct:value="14"><title>day 1: 14 contributions</title></line></g></g><g class="ct-labels"><text x="85.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="350.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">2</text><text x="615.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="880.5" y="370" width="265" height="40" class="ct-label ct-horizontal ct-end">1</text><text x="1145.5" y="370" width="30" height="40" class="ct-label ct-horizontal ct-end">1</text><text y="354.5" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">0</text><text y="315.92857142857144" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">2</text><text y="277.3571428571429" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">4</text><text y="238.78571428571428" x="80" height="38.57142857142857" width="60" class="ct-label ct-vertical ct-start">6</text><text y="200.21428571428572" x="80" height="38.571428571428584" width="60" class="ct-label ct-vertical ct-start">8</text><text y="161.64285714285714" x="80" height="38.571428571428555" width="60" class="ct-label ct-vertical ct-start">10</text><text y="123.07142857142858" x="80" height="38.571428571428584" width="60" class="ct-label ct-vertical ct-start">12</text><text y="84.5" x="80" height="30" width="60" class="ct-label ct-vertical ct-start">14</text></g><text class="ct-axis-title ct-label" x="620" y="400" dominant-baseline="text-after-edge" text-anchor="middle">Days</text><text class="ct-axis-title ct-label" x="20" y="215" transform="rotate(-90, 20, 215)" dominant-baseline="hanging" text-anchor="middle">Contributions</text></svg>
+     </svg>
+ "
+ `;
 diff --git a/src/GraphCards.ts b/src/GraphCards.ts
-index da04477..6b8ad59 100644
+index da04477..dff0cd2 100644
 --- a/src/GraphCards.ts
 +++ b/src/GraphCards.ts
-@@ -1,7 +1,36 @@
+@@ -1,7 +1,42 @@
 +import moment from 'moment';
  import { createGraph } from './createChart';
  import { graphSvg } from './svgs';
@@ -12,6 +29,9 @@ index da04477..6b8ad59 100644
 + * Inject a <title> tooltip into every .ct-point element of a chartist SVG so
 + * that hovering a point shows "<date>: <n> contributions". Chartist emits the
 + * points in the same order as the days array.
++ *
++ * The date has to come from `isoDate`, not `date`: fetcher.ts reduces `date`
++ * to the bare day-of-month for the axis labels, and moment("27") is not a date.
 + *
 + * NOTE: tooltips only work when the SVG is opened directly in a browser;
 + * GitHub renders README images in a non-interactive <img> context.
@@ -23,7 +43,10 @@ index da04477..6b8ad59 100644
 +        (match, tag: string, attrs: string, selfClose: string) => {
 +            const day = days[index++];
 +            if (!day) return match;
-+            const label = `${moment(day.date).format('MMM D')}: ${day.contributionCount} contribution${
++            const when = day.isoDate
++                ? moment(day.isoDate, moment.ISO_8601).format('MMM D')
++                : `day ${day.date}`;
++            const label = `${when}: ${day.contributionCount} contribution${
 +                day.contributionCount === 1 ? '' : 's'
 +            }`;
 +            // chartist emits paired tags (<line ...> ... </line>) — keep the
@@ -39,7 +62,7 @@ index da04477..6b8ad59 100644
  export class Card {
      constructor(
          private readonly height: number,
-@@ -71,14 +100,24 @@ export class Card {
+@@ -71,14 +106,24 @@ export class Card {
              series: [{ value: days.map((day) => day.contributionCount) }],
          });
  
@@ -66,3 +89,34 @@ index da04477..6b8ad59 100644
          };
  
          return graphSvg(args);
+diff --git a/src/fetcher.ts b/src/fetcher.ts
+index 2561177..6f19494 100644
+--- a/src/fetcher.ts
++++ b/src/fetcher.ts
+@@ -92,6 +92,9 @@ export class Fetcher {
+                     // get day-contribution data
+                     weeks.map((week: Week) =>
+                         week.contributionDays.map((contributionDay: ContributionDay) => {
++                            // Keep the full date before `date` is reduced to the
++                            // bare day-of-month for the x-axis labels.
++                            contributionDay.isoDate = contributionDay.date;
+                             contributionDay.date = moment(contributionDay.date, moment.ISO_8601)
+                                 .date()
+                                 .toString();
+diff --git a/src/interfaces/interface.ts b/src/interfaces/interface.ts
+index d0dbece..751c325 100644
+--- a/src/interfaces/interface.ts
++++ b/src/interfaces/interface.ts
+@@ -68,6 +68,12 @@ export class UserDetails {
+ export class ContributionDay {
+     contributionCount: number;
+     date: string;
++    /**
++     * The original ISO-8601 day from the API. `date` is overwritten downstream
++     * with the bare day-of-month for the chart axis, so anything that needs a
++     * real calendar date (tooltips, labels) has to read this field instead.
++     */
++    isoDate?: string;
+ }
+ 
+ export class Week {

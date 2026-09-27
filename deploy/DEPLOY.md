@@ -58,13 +58,25 @@ The resulting base URL is used for the **stats card** and the **top languages ca
 **streak card** is a different deployment — see [Deploy Commit Streak](#deploy-commit-streak).
 
 ## Deploy GitHub Readme Activity Graph
-> **Local patch:** the submodule carries a local commit ("Add per-day contribution
-> tooltips and total-count title") that appends `• Total: N contributions` to the
-> graph title and injects per-day `<title>` hover tooltips into each data point
-> (tooltips show when the SVG is opened directly; GitHub's `<img>` embed can't show
-> them). The patch is saved at `deploy/patches/activity-graph-contribution-counts.patch`
-> — after cloning fresh submodules, apply it with:
+> **Local patch:** the submodule carries a local commit ("Fix Invalid date tooltips and add
+> the total to the graph title") across four files. It appends `• Total: N contributions` to
+> the graph title — the number has to live in the title because GitHub renders README images
+> in a non-interactive `<img>` context where the per-day `<title>` tooltips cannot appear.
+> Those tooltips only show when the SVG is opened directly in a browser.
+>
+> The tooltips read from a new `isoDate` field rather than `date`. `fetcher.ts` overwrites
+> `date` with the bare day-of-month to label the x-axis, so the obvious
+> `moment(day.date)` fed it `"27"` and every point rendered as `Invalid date` — the bug this
+> commit fixes. `interface.ts` declares the field and `fetcher.ts` sets it before the
+> overwrite. The SVG snapshot in `__test__/__snapshots__/` is updated to match.
+>
+> The patch is saved at `deploy/patches/activity-graph-contribution-counts.patch` and applies
+> cleanly to the pinned commit — after cloning fresh submodules, apply it with:
 > `git -C deploy/github-readme-activity-graph apply ../patches/activity-graph-contribution-counts.patch`
+>
+> Upstream's test suite has one pre-existing failure unrelated to this patch
+> (`utils.test.ts` expects `Cache-Control: public, max-age=1800`); verify against that
+> baseline rather than expecting a fully green run.
 
 ```bash
 cd deploy/github-readme-activity-graph
