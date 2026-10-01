@@ -19,6 +19,11 @@
   </picture>
 </p>
 
+<p align="center">
+  Final-year Electronics &amp; Communication student building Embedded systems with C, STM32 and ESP32.<br/>
+  I learn by building, debugging and documenting.
+</p>
+
 ---
 
 <!-- About is a plain section rather than a disclosure.
