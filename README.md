@@ -374,7 +374,7 @@ A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1
 </p>
 
 ---
-
+<!--
 <details>
 <summary><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-repo-glow.svg"><img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-repo-light.svg" alt="$ ls -la asifahamed-ece/" style="vertical-align: middle;" /></picture></summary>
 
@@ -406,6 +406,8 @@ asifahamed-ece/
 
 ---
 
+-->
+ 
 <h3 align="left">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Trophy.png" alt="Trophies" width="28" height="28" style="vertical-align: middle;" />
   <picture>
