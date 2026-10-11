@@ -113,15 +113,15 @@
   <table>
     <tr>
       <td>
-        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true&v=1" alt="GitHub Stats" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true&v=2" alt="GitHub Stats" />
       </td>
       <td>
-        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6&v=1" alt="Top Languages" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6&v=2" alt="Top Languages" />
       </td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=4" alt="Commit Streak" />
+        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=5" alt="Commit Streak" />
       </td>
     </tr>
   </table>
@@ -432,7 +432,7 @@ asifahamed-ece/
      card rect rather than removing it, so the #141321 card disappears, the
      white page shows through, and the #a9fef7 captions go invisible. -->
 <p align="center">
-  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&margin-w=4&column=7&rank=S,AAA,AA,A,B,C&v=1" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&margin-w=4&column=7&rank=S,AAA,AA,A,B,C&v=2" alt="GitHub Trophies" />
 </p>
 
 <h3 align="left">
@@ -448,7 +448,7 @@ asifahamed-ece/
   with local patch for contribution count tooltips (deploy/patches/activity-graph-contribution-counts.patch).
 -->
 <p align="center">
-   <img src="https://github-readme-activity-graph-drab-nu.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year&v=1" alt="Activity Graph" />
+   <img src="https://github-readme-activity-graph-drab-nu.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year&v=2" alt="Activity Graph" />
 </p>
 
 ---
