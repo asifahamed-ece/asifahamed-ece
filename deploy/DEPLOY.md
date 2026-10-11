@@ -331,6 +331,38 @@ See `assets/README.md` for provenance and licensing. The `--skip-emojis` flag is
 deliberate: the emoji CDN's repository carries a personal-use-only licence, so
 its artwork is left upstream rather than redistributed here.
 
+## Profile views counter — deliberately NOT self-hosted
+
+The profile-views badge still points at `komarev.com`. It was trialled as a sixth
+self-hosted service (`ghpvc-eta.vercel.app`) and **reverted**, for a reason worth
+recording before anyone tries it again.
+
+The service works, but it does not survive on Vercel's Hobby plan:
+
+- The counter is a plain integer in a directory. With `REPOSITORY=file` the data
+  lives on the lambda's filesystem; `/tmp` is per-instance, so the count is reset
+  to `0` on every cold start or redeploy. Verified: 6 increments, then a redeploy,
+  then the badge read `0` again.
+- The alternative backend is `REPOSITORY=pdo`, which needs a hosted Postgres.
+  There is no database in the `asif-286d` scope, and Vercel's Postgres offering is
+  not on Hobby.
+
+So a self-hosted copy would show a permanently wrong number, which is worse than a
+third-party one that is merely a dependency. It needs a platform with a durable
+filesystem or a database (Fly.io, Railway, Render) to be worth doing.
+
+Two PHP-specific traps, if it is ever revisited:
+
+1. `CounterRepositoryFactory` calls `Dotenv::load()`, which **throws** when no
+   `.env` file exists — it does not fall back to real environment variables. And
+   `.env` is in the project's `.gitignore`, so Vercel's upload filter drops it by
+   default; deploying this app needs a `.vercelignore` that does not exclude it.
+   Without it every response is a badge reading "Application environment file is
+   missing".
+2. The app targets PHP 8.1 while Vercel's `vercel-php` ships 8.5, so dependency
+   deprecations (EasySVG) are printed into the body ahead of the SVG unless
+   `display_errors` is turned off — same fix as [Readme Typing SVG](#deploy-readme-typing-svg-header-card).
+
 ## Notes
 - The repos ship their own `vercel.json`, so no extra build config is needed.
 - The Commit Streak card is self-hosted and does **not** depend on the public
