@@ -3,8 +3,8 @@
 <!-- Hacker/Developer Theme | Matrix-Inspired Aesthetic -->
 <h2 align="left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/archlinux/00FF9D">
-    <img src="https://cdn.simpleicons.org/archlinux/0A7D3C" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-archlinux-00ff9d.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-archlinux-0a7d3c.svg" alt="Arch Linux" width="32" height="32" style="vertical-align: middle;" />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/output/heading-whoami-glow.svg">
@@ -97,20 +97,25 @@
   </picture>
 </h2>
 
-<!-- SELFHOST-STATS: Self-hosted on Vercel at github-readme-stats-eight-zeta-33.vercel.app -->
+<!-- SELFHOST-STATS: Self-hosted on Vercel at github-readme-stats-eight-zeta-33.vercel.app
+     The trailing &v=N on each card is a camo cache-buster. GitHub proxies
+     README images through camo, which keys its cache on an HMAC of the whole
+     URL and will otherwise keep serving a broken card long after the origin is
+     fixed. Bump N after any change that must appear immediately rather than at
+     the next TTL expiry. -->
 <p align="center">
   <table>
     <tr>
       <td>
-        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true" alt="GitHub Stats" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api?username=asifahamed-ece&show_icons=true&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&icon_color=00FF9D&text_color=CCCCCC&count_private=true&v=1" alt="GitHub Stats" />
       </td>
       <td>
-        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6" alt="Top Languages" />
+        <img src="https://github-readme-stats-eight-zeta-33.vercel.app/api/top-langs/?username=asifahamed-ece&layout=compact&theme=radical&hide_border=true&bg_color=000000&title_color=00FF9D&text_color=CCCCCC&langs_count=6&v=1" alt="Top Languages" />
       </td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=3" alt="Commit Streak" />
+        <img src="https://github-readme-streak-stats-ashy-three.vercel.app?user=asifahamed-ece&theme=radical&hide_border=true&background=000000&stroke=00FF9D&ring=00FF9D&fire=00FF9D&currStreakLabel=00FF9D&timezone=Asia/Kolkata&v=4" alt="Commit Streak" />
       </td>
     </tr>
   </table>
@@ -339,37 +344,37 @@ A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1
 
 #### Microcontrollers & Platforms
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" width="48" height="48" alt="Arduino" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/arduino-original.svg" width="48" height="48" alt="Arduino" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/stmicroelectronics/03234B/FFFFFF" width="48" height="48" alt="STM32" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-stmicroelectronics-03234b-ffffff.svg" width="48" height="48" alt="STM32" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/nxp/000000/FFFFFF" width="48" height="48" alt="NXP" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-nxp-000000-ffffff.svg" width="48" height="48" alt="NXP" />
   &nbsp;
-  <img src="https://cdn.simpleicons.org/espressif/E7352C" width="48" height="48" alt="ESP32" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-espressif-e7352c.svg" width="48" height="48" alt="ESP32" />
 </p>
 
 #### Languages
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="48" height="48" alt="C" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/c-original.svg" width="48" height="48" alt="C" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="48" height="48" alt="C++" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/cplusplus-original.svg" width="48" height="48" alt="C++" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48" height="48" alt="Python" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/python-original.svg" width="48" height="48" alt="Python" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" width="48" height="48" alt="Bash" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/bash-original.svg" width="48" height="48" alt="Bash" />
 </p>
 
 #### Development Tools
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="48" height="48" alt="VS Code" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/vscode-original.svg" width="48" height="48" alt="VS Code" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="48" height="48" alt="Linux" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/linux-original.svg" width="48" height="48" alt="Linux" />
   &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" height="48" alt="Git" />
+  <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/git-original.svg" width="48" height="48" alt="Git" />
   &nbsp;
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/platformio/FF7B00">
-    <img src="https://cdn.simpleicons.org/platformio/C25700" width="48" height="48" alt="PlatformIO" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-platformio-ff7b00.svg">
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/icons/simple-platformio-c25700.svg" width="48" height="48" alt="PlatformIO" />
   </picture>
 </p>
 
@@ -421,7 +426,7 @@ asifahamed-ece/
      card rect rather than removing it, so the #141321 card disappears, the
      white page shows through, and the #a9fef7 captions go invisible. -->
 <p align="center">
-  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&margin-w=4&column=7&rank=S,AAA,AA,A,B,C" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy-mauve-nine.vercel.app/?username=asifahamed-ece&theme=radical&no-frame=false&margin-w=4&column=7&rank=S,AAA,AA,A,B,C&v=1" alt="GitHub Trophies" />
 </p>
 
 <h3 align="left">
@@ -437,7 +442,7 @@ asifahamed-ece/
   with local patch for contribution count tooltips (deploy/patches/activity-graph-contribution-counts.patch).
 -->
 <p align="center">
-   <img src="https://github-readme-activity-graph-drab-nu.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year" alt="Activity Graph" />
+   <img src="https://github-readme-activity-graph-drab-nu.vercel.app/graph?username=asifahamed-ece&theme=react-dark&bg_color=000000&color=00FF9D&line=00FF9D&point=FFFFFF&area=true&hide_border=true&custom_title=My+Commit+Consistency+Over+the+Year&v=1" alt="Activity Graph" />
 </p>
 
 ---
@@ -452,15 +457,15 @@ asifahamed-ece/
 
 <p align="center">
   <a href="mailto:asifahamed670@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-asifahamed670%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/badges/gmail.svg" alt="Gmail" />
   </a>
   &nbsp;
   <a href="https://linkedin.com/in/asif-ahamed-s-ece">
-    <img src="https://img.shields.io/badge/LinkedIn-asif--ahamed--s--ece-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/badges/linkedin.svg" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://github.com/asifahamed-ece">
-    <img src="https://img.shields.io/badge/GitHub-asifahamed--ece-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://raw.githubusercontent.com/asifahamed-ece/asifahamed-ece/main/assets/badges/github.svg" alt="GitHub" />
   </a>
 </p>
 

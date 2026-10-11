@@ -1,0 +1,109 @@
+name: Check README Cards
+
+# Every card in the profile README is self-hosted, which removes third-party
+# outages but introduces a new failure mode: a card breaks silently when its
+# GitHub token expires, and GitHub's camo proxy can keep serving the broken
+# image long after the origin is fixed. Neither is visible from the profile page
+# alone.
+#
+# This job calls each card origin directly (bypassing camo), asserts the
+# response is a real card rather than one of the known error strings, and
+# opens a single tracking issue when something regresses. It re-uses and closes
+# that issue on recovery, so a long outage produces one thread rather than a
+# flood of duplicates.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'  # daily, off the hour to avoid the Actions rush
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: check-readme-cards
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # The checker always exits 0 so that a broken card does not abort the job
+      # before the reporting steps run; it signals failure via job outputs.
+      - name: Check card endpoints
+        id: check
+        run: |
+          python3 tools/check_cards.py --github-output "$GITHUB_OUTPUT"
+
+      - name: Open or update tracking issue
+        if: steps.check.outputs.failed == 'true'
+        uses: actions/github-script@v7
+        env:
+          REPORT: ${{ steps.check.outputs.report }}
+        with:
+          script: |
+            const report = process.env.REPORT || '(no report captured)';
+            const body = [
+              'One or more self-hosted README cards stopped rendering.',
+              '',
+              '```',
+              report,
+              '```',
+              '',
+              'Most likely cause: the GitHub token on the affected Vercel project',
+              'expired or was revoked. Each card reports a generic error that does',
+              'not name the real cause, so check the deployment logs for',
+              '`Bad credentials` / `Authorization: "bearer "` rather than trusting',
+              'the message printed on the card.',
+              '',
+              'See `deploy/DEPLOY.md` -> "Token rotation" for the fix.',
+              '',
+              '_Opened automatically by `.github/workflows/check-cards.yml`._',
+            ].join('\n');
+
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'readme-cards',
+            });
+
+            if (existing.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: 'README cards are broken',
+                body,
+                labels: ['readme-cards'],
+              });
+            }
+
+      - name: Close tracking issue on recovery
+        if: steps.check.outputs.failed == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'readme-cards',
+            });
+            for (const issue of existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+            }

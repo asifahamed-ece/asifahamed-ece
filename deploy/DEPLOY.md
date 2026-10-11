@@ -182,6 +182,123 @@ If you ever re-alias a deployment to a different name, update the URL in `README
 bump the streak card's `&v=N` in the same commit — otherwise camo keeps serving the old
 image under the old URL's cache key.
 
+## Token rotation
+
+**This is the single most common reason the cards break.** All four dynamic cards
+authenticate to GitHub with one token; when it expires or is revoked, every card
+fails at once — while still returning **HTTP 200** with a small error image, so
+nothing on the profile looks obviously broken.
+
+The messages the cards display do **not** name the real cause. Each app catches
+the underlying `401` and substitutes generic text:
+
+| Card | What it displays | What actually happened |
+|---|---|---|
+| Stats / Top-Langs | "Something went wrong! Downtime due to GitHub API rate limiting" | `retryer.js` exhausted its token list and threw `MAX_RETRY` on a 401 |
+| Activity Graph | "Can't fetch any contribution. Please check your username 😬" | its `catch` returns that string for *any* exception, including a 401 |
+| Commit Streak | "Failed to retrieve contributions. This is likely a GitHub API issue." | GraphQL rejected the token |
+| Trophies | HTTP 404, image doesn't load | the Deno function threw, so Vercel served `index.html` |
+
+So "rate limiting" here means "the token died", and "check your username" means
+"the token died". Confirm with the logs before assuming anything else:
+
+```bash
+vercel logs github-readme-stats-eight-zeta-33.vercel.app --scope asif-286d | grep -i 'PAT_1 Failed'
+vercel logs github-profile-trophy-mauve-nine.vercel.app  --scope asif-286d | grep -o 'Authorization: "[^"]*"'
+```
+
+`Bad credentials` from GitHub, or an empty `Authorization: "bearer "`, is the
+signature of an expired/revoked token. `Authorization: "bearer "` with nothing
+after it means the env var is set but its value is blank.
+
+### Rotating
+
+Create a **fine-grained** token with no expiry so this cannot silently recur:
+
+1. GitHub → Settings → Developer settings → Personal access tokens →
+   **Fine-grained tokens** → Generate new token.
+2. Resource owner: `asifahamed-ece`. Repository access: **Public repositories
+   (read-only)** — the cards only read public data, so no private repo access and
+   no write scopes are needed.
+3. Permissions: **Account permissions → Metadata: Read-only** (mandatory) and
+   **Public Repositories: Read-only**.
+4. Expiration: **No expiration**.
+
+Then set it on all four projects. Keep the existing variable names — the apps
+read these specifically, and `github-readme-stats` counts tokens by the regex
+`/PAT_\d*$/`, so a second token must be named `PAT_2`, `PAT_3`, and so on:
+
+```bash
+# stats
+vercel env rm PAT_1 --project github-readme-stats --scope asif-286d --yes
+vercel env add PAT_1 production --project github-readme-stats --scope asif-286d
+
+# activity graph
+vercel env rm TOKEN --project github-readme-activity-graph --scope asif-286d --yes
+vercel env add TOKEN production --project github-readme-activity-graph --scope asif-286d
+
+# commit streak
+vercel env rm TOKEN --project github-readme-streak-stats --scope asif-286d --yes
+vercel env add TOKEN production --project github-readme-streak-stats --scope asif-286d
+
+# trophies (optional for this service, but set it anyway)
+vercel env rm GITHUB_TOKEN1 --project github-profile-trophy --scope asif-286d --yes
+vercel env add GITHUB_TOKEN1 production --project github-profile-trophy --scope asif-286d
+```
+
+(`--yes` skips the interactive confirm on `env rm`; `env add` prompts for the
+value, so run it once per variable and paste the token at the prompt.)
+
+> **Redeploy after rotating.** Changing an environment variable does not affect
+> the already-running deployment. Without a redeploy the old (broken) token stays
+> baked in and the cards keep failing.
+>
+> `vercel redeploy` takes a **deployment URL or ID**, not a project name, and it
+> re-promotes to production automatically (it has no `--prod` / `--scope`):
+
+```bash
+vercel redeploy github-readme-stats-eight-zeta-33.vercel.app
+vercel redeploy github-readme-activity-graph-drab-nu.vercel.app
+vercel redeploy github-readme-streak-stats-ashy-three.vercel.app
+vercel redeploy github-profile-trophy-mauve-nine.vercel.app
+```
+
+Then verify against the **origins**, not the profile page, and bump the
+cache-busters in `README.md` so camo re-fetches (see next section):
+
+```bash
+python3 tools/check_cards.py     # 5/5 healthy
+```
+
+## Detecting a broken card
+
+`.github/workflows/check-cards.yml` runs daily and calls every card origin
+directly, bypassing camo. It asserts on *content* rather than status code —
+because a broken card is a legitimate HTTP 200 SVG containing an error message —
+and opens a single `readme-cards` issue when something regresses, closing it
+again on recovery.
+
+Run the same check locally:
+
+```bash
+python3 tools/check_cards.py                    # exits 1 if any card is broken
+python3 tools/check_cards.py --report out.txt   # capture the report
+```
+
+## Self-hosted static assets
+
+Brand icons, language icons and contact badges are committed under `assets/`
+and served from `raw.githubusercontent.com`, so they no longer depend on
+`cdn.simpleicons.org`, `cdn.jsdelivr.net` or `img.shields.io`. Refresh them with:
+
+```bash
+python3 tools/vendor_assets.py --skip-emojis
+```
+
+See `assets/README.md` for provenance and licensing. The `--skip-emojis` flag is
+deliberate: the emoji CDN's repository carries a personal-use-only licence, so
+its artwork is left upstream rather than redistributed here.
+
 ## Notes
 - The repos ship their own `vercel.json`, so no extra build config is needed.
 - The Commit Streak card is self-hosted and does **not** depend on the public
@@ -193,3 +310,5 @@ image under the old URL's cache key.
 - Before trusting a redeploy, check the card actually changed — see
   [Caching](#caching-why-the-streak-card-lags). A correct deploy can still look broken
   because camo is serving a pre-deploy snapshot.
+- The `github-readme-stats-asif` project is unused; the README points at
+  `github-readme-stats-eight-zeta-33.vercel.app`. Safe to delete.
