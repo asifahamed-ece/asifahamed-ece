@@ -12,10 +12,16 @@
   </picture>
 </h2>
 
+<!-- SELFHOST-HEADER: Self-hosted readme-typing-svg at
+     readme-typing-svg-sandy.vercel.app (see deploy/DEPLOY.md). The dark
+     <source> and the light <img> below are the same card rendered in a
+     different colour, so both must be repointed together when the host
+     changes. This card needs no GitHub token, so it cannot fail the way the
+     stats / streak / graph cards do. -->
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=0A7D3C&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg-sandy.vercel.app?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010">
+    <img src="https://readme-typing-svg-sandy.vercel.app?font=Fira+Code&size=28&duration=4000&pause=1000&color=0A7D3C&background=00000000&center=true&vCenter=true&width=800&lines=asifahamed-ece;Embedded+Systems+Developer;Bare-Metal+C+Programmer;ESP32+%26+STM32+Engineer;IoT+%26+Wireless+Networks;Building+Reliable+Firmware;01001000+01100001+01100011+01101011+01100101+01100110+01100001+01100110+01100001+01100101+01110010" alt="Typing SVG" />
   </picture>
 </p>
 

@@ -21,6 +21,7 @@ git submodule update --init --recursive
 | Contribution Activity Graph | `deploy/github-readme-activity-graph` | Activity Graph | `github-readme-activity-graph-drab-nu.vercel.app` | `TOKEN` |
 | GitHub Profile Trophies | `deploy/github-profile-trophy` | Trophies | `github-profile-trophy-mauve-nine.vercel.app` | `GITHUB_TOKEN1` (optional) |
 | Commit Streak | `deploy/github-readme-streak-stats` | Commit Streak | `github-readme-streak-stats-ashy-three.vercel.app` | `TOKEN` (required) |
+| Readme Typing SVG (header) | deployed from a local clone | Header typing animation | `readme-typing-svg-sandy.vercel.app` | none |
 
 All four Vercel projects live in the **`asif-286d`** scope. The streak card is a **separate
 deployment**, not the `github-readme-stats` streak endpoint — it is its own PHP app with
@@ -127,6 +128,37 @@ vercel deploy --prod
 
 `vercel link` writes a `.env.local` holding a Vercel OIDC token. The submodule's `.gitignore`
 ignores `.env*`, so it must never be committed.
+
+## Deploy Readme Typing SVG (header card)
+> Production URL: `readme-typing-svg-sandy.vercel.app` — self-hosted, no GitHub token needed.
+
+Source is [DenverCoder1/readme-typing-svg](https://github.com/DenverCoder1/readme-typing-svg),
+a PHP app that ships **no `vercel.json`** and documents only a Heroku deployment. Self-hosting
+it needs two additions, both of which exist in the deployed copy:
+
+1. **`api/index.php`** — Vercel only treats files under `api/` as Serverless Functions, so
+   upstream's `src/index.php` is unreachable on its own. The shim mirrors upstream's
+   entrypoint but requires the autoloader via an **absolute `__DIR__` path**. Upstream uses
+   the relative `require "../vendor/autoload.php"`, which PHP resolves against the working
+   directory and `include_path` — not the including file — so from `api/` it misses the
+   project-root `vendor/` and the request dies with a fatal error.
+2. **`vercel.json`** — routes every path to that function on the `vercel-php@0.9.0` runtime.
+
+There is also a version-skew trap. The app targets PHP 8.1, but Vercel's `vercel-php` runtime
+ships **8.5**, where `curl_close()` is deprecated. With `display_errors` on, those notices
+print *before* the controller sets its headers, so the response comes back as `text/html`
+with a wall of warnings in front of the SVG. The shim sets `display_errors=0` and drops
+`E_DEPRECATED`, which keeps the response a clean SVG. Verify this actually held after any
+redeploy — the card looks plausible even while broken:
+
+```bash
+curl -s -o /dev/null -w '%{http_type} %{size_download}\n' \
+  'https://readme-typing-svg-sandy.vercel.app?lines=hello'
+# expect: image/svg|xml 8267
+```
+
+Both README variants must be repointed together: the dark `<source>` (`color=00FF9D`) and the
+light `<img>` (`color=0A7D3C`) are the same card in two colours.
 
 ## Caching: why the streak card lags
 This card is generated live per request, but **three caches sit in front of it**, and the

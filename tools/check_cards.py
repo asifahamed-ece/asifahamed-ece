@@ -82,6 +82,16 @@ CARDS = [
         "?username=asifahamed-ece&theme=radical&column=7",
         [],  # any HTML at all means the Deno function threw and index.html leaked
     ),
+    (
+        "typing-header",
+        "https://readme-typing-svg-sandy.vercel.app"
+        "?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF9D"
+        "&background=00000000&center=true&vCenter=true&width=800"
+        "&lines=asifahamed-ece;Embedded+Systems+Developer",
+        # This app renders PHP notices into the body when the runtime is newer
+        # than the PHP it targets, so a leading "<br />" is the failure mode.
+        ["<br />", "Fatal error", "Deprecated:"],
+    ),
 ]
 
 
