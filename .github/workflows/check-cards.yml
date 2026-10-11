@@ -30,6 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # tools/check_cards.py lives in this repo, so the runner needs the source
+      # checked out before it can be executed.
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
       # The checker always exits 0 so that a broken card does not abort the job
       # before the reporting steps run; it signals failure via job outputs.
       - name: Check card endpoints
