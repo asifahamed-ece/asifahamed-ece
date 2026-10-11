@@ -23,7 +23,7 @@ git submodule update --init --recursive
 | Commit Streak | `deploy/github-readme-streak-stats` | Commit Streak | `github-readme-streak-stats-ashy-three.vercel.app` | `TOKEN` (required) |
 | Readme Typing SVG (header) | deployed from a local clone | Header typing animation | `readme-typing-svg-sandy.vercel.app` | none |
 
-All four Vercel projects live in the **`asif-286d`** scope. The streak card is a **separate
+All five Vercel projects live in the **`asif-286d`** scope. The streak card is a **separate
 deployment**, not the `github-readme-stats` streak endpoint — it is its own PHP app with
 its own project and its own `TOKEN`.
 
@@ -256,55 +256,54 @@ Create a **fine-grained** token with no expiry so this cannot silently recur:
    **Public Repositories: Read-only**.
 4. Expiration: **No expiration**.
 
-Then set it on all four projects. Keep the existing variable names — the apps
-read these specifically, and `github-readme-stats` counts tokens by the regex
-`/PAT_\d*$/`, so a second token must be named `PAT_2`, `PAT_3`, and so on:
+Then put the token in a file and run the rotation tool, which sets it on all four
+projects and redeploys each one:
 
 ```bash
-# stats
-vercel env rm PAT_1 --project github-readme-stats --scope asif-286d --yes
-vercel env add PAT_1 production --project github-readme-stats --scope asif-286d
-
-# activity graph
-vercel env rm TOKEN --project github-readme-activity-graph --scope asif-286d --yes
-vercel env add TOKEN production --project github-readme-activity-graph --scope asif-286d
-
-# commit streak
-vercel env rm TOKEN --project github-readme-streak-stats --scope asif-286d --yes
-vercel env add TOKEN production --project github-readme-streak-stats --scope asif-286d
-
-# trophies (optional for this service, but set it anyway)
-vercel env rm GITHUB_TOKEN1 --project github-profile-trophy --scope asif-286d --yes
-vercel env add GITHUB_TOKEN1 production --project github-profile-trophy --scope asif-286d
+printf '%s' 'THE_TOKEN' > ~/.gh-token && chmod 600 ~/.gh-token
+python3 tools/rotate_token.py ~/.gh-token
+python3 tools/check_cards.py          # expect 6/6 cards healthy
 ```
 
-(`--yes` skips the interactive confirm on `env rm`; `env add` prompts for the
-value, so run it once per variable and paste the token at the prompt.)
+The tool reads the token from the **file** and passes it to `vercel env add` on
+**stdin**. Do not pass it as `--value` or in an environment variable: argv is
+world-readable through `ps`, and this token has to end up in Vercel's project
+settings, not in a process table or shell history. Delete the file afterwards
+(`shred -u ~/.gh-token` if you like).
 
-> **Redeploy after rotating.** Changing an environment variable does not affect
-> the already-running deployment. Without a redeploy the old (broken) token stays
-> baked in and the cards keep failing.
->
-> `vercel redeploy` takes a **deployment URL or ID**, not a project name, and it
-> re-promotes to production automatically (it has no `--prod` / `--scope`):
+It uses `--force` to overwrite each variable in place rather than
+`env rm` followed by `env add`. Removing first opens a window in which the
+variable does not exist at all, and `github-readme-stats` treats "no PAT found"
+as a hard error rather than a retry — so the gap could cache a fresh error image
+into camo.
+
+It also **redeploys automatically**, which is not optional: changing an
+environment variable does not affect an already-running deployment. Without a
+redeploy the old token stays baked into the function and the cards keep failing,
+which is the most likely reason a previous rotation appeared to do nothing.
+`vercel redeploy` takes a deployment URL or ID (not a project name) and has no
+`--scope`/`--prod` flags.
+
+Finally, bump the cache-busters so camo re-fetches:
 
 ```bash
-vercel redeploy github-readme-stats-eight-zeta-33.vercel.app
-vercel redeploy github-readme-activity-graph-drab-nu.vercel.app
-vercel redeploy github-readme-streak-stats-ashy-three.vercel.app
-vercel redeploy github-profile-trophy-mauve-nine.vercel.app
+# rewrites every &v=N in README.md to N+1
+python3 - <<'PY'
+import re, pathlib
+p = pathlib.Path("README.md"); t = p.read_text()
+p.write_text(re.sub(r"&v=(\d+)", lambda m: f"&v={int(m.group(1)) + 1}", t))
+PY
 ```
 
-Then verify against the **origins**, not the profile page, and bump the
-cache-busters in `README.md` so camo re-fetches (see next section):
-
-```bash
-python3 tools/check_cards.py     # 5/5 healthy
-```
+> **The token in use right now is a classic PAT with `repo` scope.** That is far
+> wider than these cards need — `repo` means full read/write on every repository
+> on the account, including private ones. It works, but if it ever leaks it is a
+> much bigger problem than the cards being broken. Replace it with a fine-grained
+> read-only token as described above; nothing else has to change.
 
 ## Detecting a broken card
 
-`.github/workflows/check-cards.yml` runs daily and calls every card origin
+`.github/workflows/check-cards.yml` runs daily and calls all six card origins
 directly, bypassing camo. It asserts on *content* rather than status code —
 because a broken card is a legitimate HTTP 200 SVG containing an error message —
 and opens a single `readme-cards` issue when something regresses, closing it
