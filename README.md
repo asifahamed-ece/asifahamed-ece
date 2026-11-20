@@ -299,10 +299,10 @@ My first Arch Linux Rice — curated configuration files and dotfiles for a term
 
 <h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Shield.png" width="20" height="20" style="vertical-align: middle;" /> <code>[sentinel]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
-<strong>Stack:</strong> <code>C++</code> <code>Security</code> <code>Embedded</code>
+<strong>Stack:</strong> <code>C++</code> <code>ESP32</code> <code>ESP-NOW</code> <code>IoT</code>
 </p>
 <p style="font-size: 13px; margin: 4px 0;">
-A lightweight security-focused embedded framework for IoT devices featuring secure boot, encrypted communications, and intrusion detection.
+Real-time wearable IoT safety monitor for industrial workers. Offline-ready ESP-NOW telemetry with 4-stage fall detection, environmental hazard monitoring, and a live WebSocket dashboard.
 </p>
 <p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/sentinel">Repository →</a></p>
 
@@ -409,7 +409,7 @@ asifahamed-ece/
 ├── [Linux_Kernel_and_Driver_Development]/ # LKM development
 ├── [system_programming]/      # Linux systems programming guide
 ├── [dotfiles]/                # Arch Linux rice & configs
-├── [sentinel]/                # IoT security framework
+├── [sentinel]/                # Real-time worker safety monitor (ESP32 / ESP-NOW)
 ├── [Deep-Learning--Neural-Networks]/ # CSIR internship work
 └── README.md                  # This profile
 ```
