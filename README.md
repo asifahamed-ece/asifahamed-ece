@@ -331,9 +331,17 @@ Work done during my Internship at CSIR, Chennai. Neural network experiments and 
 A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1.0</strong> device, so it is plug-and-play on Linux, Windows and macOS with no drivers. I2S + DMA into a MAX98357A DAC and Class D amplifier, with a lock-free SPSC ring buffer between the USB and I2S stages.
 </p>
 <p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/UsbAudioDac">Repository →</a></p>
-
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
+  
+<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Brain.png" width="20" height="20" style="vertical-align: middle;" /> <code>[A+ Connect]</code></h4>
+<p style="font-size: 14px; margin: 4px 0;">
+<strong>Stack:</strong> <code>Electron</code> <code>Android</code> <code>D-Bus</code> <code>TLS 1.3</code> <code>ADB</code> <code>scrcpy</code> <code>Agentic Coding</code>
+</p>
+<p style="font-size: 13px; margin: 4px 0;">
+An open-source Android companion for seamless OPPO-to-Linux clipboard, file, notification, and screen-mirroring connectivity.
+</p>
+<p style="font-size: 13px;"><a href="https://github.com/asifahamed-ece/Aplus_Connect">Repository →</a></p>
 </td>
 </tr>
 </table>
