@@ -334,7 +334,7 @@ A self-built USB speaker that enumerates as a standard <strong>USB Audio Class 1
 </td>
 <td width="50%" valign="top" style="padding: 12px;">
   
-<h4><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Brain.png" width="20" height="20" style="vertical-align: middle;" /> <code>[A+ Connect]</code></h4>
+<h4><img src="https://raw.githubusercontent.com/asifahamed-ece/Aplus_Connect/main/assets/icons/a-plus-connect.svg" width="24" height="24" alt="A+ Connect logo" style="vertical-align: middle;"><code>[A+ Connect]</code></h4>
 <p style="font-size: 14px; margin: 4px 0;">
 <strong>Stack:</strong> <code>Electron</code> <code>Android</code> <code>D-Bus</code> <code>TLS 1.3</code> <code>ADB</code> <code>scrcpy</code> <code>Agentic Coding</code>
 </p>
